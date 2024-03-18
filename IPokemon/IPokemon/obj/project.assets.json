@@ -10262,11 +10262,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Ipo2\\IPokemon\\IPokemon\\IPokemon.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\ipokemon\\IPokemon\\IPokemon\\IPokemon.csproj",
       "projectName": "IPokemon",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\Ipo2\\IPokemon\\IPokemon\\IPokemon.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\ipokemon\\IPokemon\\IPokemon\\IPokemon.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\Ipo2\\IPokemon\\IPokemon\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\ipokemon\\IPokemon\\IPokemon\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

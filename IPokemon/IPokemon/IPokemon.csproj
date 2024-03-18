@@ -130,6 +130,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\esquivar.mp3" />
+    <Content Include="Assets\lanzallamas.mp3" />
     <Content Include="img\escenario2.jpg" />
     <Content Include="img\escudo.png" />
     <Content Include="img\imFondo.png" />

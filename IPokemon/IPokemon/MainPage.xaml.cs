@@ -5,7 +5,9 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Core;
 using Windows.Media.Playback;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,12 +36,47 @@ namespace IPokemon
             this.InitializeComponent();
             StartAnimation();
 
+            // Escuchar la tecla A
+            //Window.Current.CoreWindow.KeyDown += Ataque;
+            
+            //PRIMERO:	Hacer	interactivo	nuestro	Pokemon	para	que	atienda	a	eventos	de	teclado
+            this.IsTabStop = true;
+
+            // Paso 2: Asignar el manejador de eventos de teclado
+            this.KeyDown += ControlTeclas;
+
         }
+        //SEGUNDO:	Controlar	evento	de	teclado	y	asignar	cada	animación	a	una	tecla
+        private void ControlTeclas(object sender, KeyRoutedEventArgs e)
+        {
+            Storyboard sbaux;
+            MediaPlayer mpSonidos = new MediaPlayer();
+            switch (e.Key)
+            {
+                case Windows.System.VirtualKey.Number1:
+                    sbaux = (Storyboard)this.Resources["ataque_lanzallamas"];
+                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/lanzallamas.mp3"));
+                    
+                    mpSonidos.Play();
+                    sbaux.Begin();
+                    sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
+                    break;
+                case Windows.System.VirtualKey.Number3:
+                    sbaux = (Storyboard)this.Resources["defensa_desaparecer"];
+                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/esquivar.mp3"));
+
+                    mpSonidos.Play();
+                    sbaux.Begin();
+                    sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
+                    break;
+            }
+        }
+
         private void StartAnimation()
         {
             // Encuentra el Storyboard en los recursos de la página
             Storyboard storyboard = (Storyboard)this.Resources["mover_alas"];
-            Storyboard storyboard2 = (Storyboard)this.Resources["mover_pata"];
+            Storyboard storyboard2 = (Storyboard)this.Resources["mover_patas"];
             Storyboard storyboard3 = (Storyboard)this.Resources["mover_cola"];
             //Storyboard storyboard4 = (Storyboard)this.Resources["defensa_esquivar"];
 
@@ -49,6 +86,7 @@ namespace IPokemon
             storyboard3.Begin();
             //storyboard4.Begin();
         }
+
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
         {
             dtTime = new DispatcherTimer();
