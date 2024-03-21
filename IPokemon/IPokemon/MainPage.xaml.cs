@@ -34,23 +34,21 @@ namespace IPokemon
         public MainPage()
         {
             this.InitializeComponent();
+            // Iniciar la animación de movimiento
             StartAnimation();
-
-            // Escuchar la tecla A
-            //Window.Current.CoreWindow.KeyDown += Ataque;
             
-            //PRIMERO:	Hacer	interactivo	nuestro	Pokemon	para	que	atienda	a	eventos	de	teclado
+            //1. Hacer interactivo nuestro Pokemon para que atienda a eventos de teclado
             this.IsTabStop = true;
 
-            // Paso 2: Asignar el manejador de eventos de teclado
+            //2. Asignar el manejador de eventos de teclado
             this.KeyDown += ControlTeclas;
 
         }
-        //SEGUNDO:	Controlar	evento	de	teclado	y	asignar	cada	animación	a	una	tecla
+        //Controlar	evento de teclado y asignar cada animación a una tecla
         private void ControlTeclas(object sender, KeyRoutedEventArgs e)
         {
             Storyboard sbaux;
-            MediaPlayer mpSonidos = new MediaPlayer();
+            mpSonidos = new MediaPlayer();
             switch (e.Key)
             {
                 case Windows.System.VirtualKey.Number1:
@@ -69,6 +67,14 @@ namespace IPokemon
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
+                case Windows.System.VirtualKey.Number4:
+                    sbaux = (Storyboard)this.Resources["defensa_escudo"];
+                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/escudo.mp3"));
+
+                    mpSonidos.Play();
+                    sbaux.Begin();
+                    sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
+                    break;
             }
         }
 
@@ -78,13 +84,11 @@ namespace IPokemon
             Storyboard storyboard = (Storyboard)this.Resources["mover_alas"];
             Storyboard storyboard2 = (Storyboard)this.Resources["mover_patas"];
             Storyboard storyboard3 = (Storyboard)this.Resources["mover_cola"];
-            //Storyboard storyboard4 = (Storyboard)this.Resources["defensa_esquivar"];
 
             // Comienza la animación
             storyboard.Begin();
             storyboard2.Begin();
             storyboard3.Begin();
-            //storyboard4.Begin();
         }
 
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
