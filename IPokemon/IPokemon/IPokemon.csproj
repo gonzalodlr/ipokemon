@@ -29,6 +29,11 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <EnableGatekeeperAnalysis>false</EnableGatekeeperAnalysis>
+    <WarningLevel>4</WarningLevel>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -41,6 +46,10 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <DocumentationFile>
+    </DocumentationFile>
+    <EnableGatekeeperAnalysis>false</EnableGatekeeperAnalysis>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +61,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -99,6 +109,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -119,6 +130,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DracofireGDLRS.xaml.cs">
+      <DependentUpon>DracofireGDLRS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iPokemon.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +145,22 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AssetsDracofireGDLRS\escenario2.jpg" />
+    <Content Include="AssetsDracofireGDLRS\escudo.mp3" />
+    <Content Include="AssetsDracofireGDLRS\escudo.png" />
+    <Content Include="AssetsDracofireGDLRS\esquivar.mp3" />
+    <Content Include="AssetsDracofireGDLRS\imFondo.png" />
+    <Content Include="AssetsDracofireGDLRS\lanzallamas.mp3" />
+    <Content Include="AssetsDracofireGDLRS\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\pocion_escudo.png" />
+    <Content Include="AssetsDracofireGDLRS\pocion_vida.png" />
+    <Content Include="AssetsDracofireGDLRS\SplashScreen.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsDracofireGDLRS\StoreLogo.png" />
+    <Content Include="AssetsDracofireGDLRS\vida.png" />
+    <Content Include="AssetsDracofireGDLRS\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\escudo.mp3" />
     <Content Include="Assets\esquivar.mp3" />
     <Content Include="Assets\lanzallamas.mp3" />
@@ -153,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DracofireGDLRS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -162,6 +197,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Directory.Build.props" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

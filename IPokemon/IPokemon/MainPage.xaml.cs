@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
@@ -30,13 +31,20 @@ namespace IPokemon
         DispatcherTimer dtTime;
         MediaPlayer mpSonidos;
         Storyboard sbIde;
+        Storyboard moverAlas;
+        Storyboard moverPatas;
+        Storyboard moverCola;
 
         public MainPage()
         {
             this.InitializeComponent();
             // Iniciar la animación de movimiento
             StartAnimation();
-            
+            //sbIde = (Storyboard)this.Resources["start"];
+            //sbIde.AutoReverse = true;
+            //sbIde.RepeatBehavior = RepeatBehavior.Forever;
+            //sbIde.Begin();
+
             //1. Hacer interactivo nuestro Pokemon para que atienda a eventos de teclado
             this.IsTabStop = true;
 
@@ -45,7 +53,7 @@ namespace IPokemon
 
         }
         //Controlar	evento de teclado y asignar cada animación a una tecla
-        private void ControlTeclas(object sender, KeyRoutedEventArgs e)
+        private async void ControlTeclas(object sender, KeyRoutedEventArgs e)
         {
             Storyboard sbaux;
             mpSonidos = new MediaPlayer();
@@ -59,6 +67,24 @@ namespace IPokemon
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
+                case Windows.System.VirtualKey.Number2:
+                    sbaux = (Storyboard)this.Resources["ataque_fuerte"];
+                    // Configuro los audios
+                    MediaPlayer mpSonidos1 = new MediaPlayer();
+                    MediaPlayer mpSonidos2 = new MediaPlayer();
+                    mpSonidos1.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/lanzallamas.mp3"));
+                    mpSonidos2.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/esquivar.mp3"));
+                    // inicio la animacion y el audio 1
+                    mpSonidos2.Play();
+                    sbaux.SpeedRatio = 0.5;
+                    sbaux.Begin();
+                    // cuando pasan 4,5 segundos paro el audio 1, inicio el audio 2
+                    await Task.Delay(4500);
+                    
+                    mpSonidos2.Pause();
+                    mpSonidos1.Play();
+                    sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos1.Pause(); mpSonidos2.Pause();};
+                    break;
                 case Windows.System.VirtualKey.Number3:
                     sbaux = (Storyboard)this.Resources["defensa_desaparecer"];
                     mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/esquivar.mp3"));
@@ -71,24 +97,49 @@ namespace IPokemon
                     sbaux = (Storyboard)this.Resources["defensa_escudo"];
                     mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/escudo.mp3"));
 
+                    sbaux.SpeedRatio = 0.5;
                     mpSonidos.Play();
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
+                    break;
+                case Windows.System.VirtualKey.Number5:
+                    
+                    sbaux = (Storyboard)this.Resources["estado_herido"];                    
+                    sbaux.AutoReverse = true;
+                    sbaux.RepeatBehavior = RepeatBehavior.Forever;
+                    sbaux.Begin();
+
+                    break;
+                case Windows.System.VirtualKey.Number6:
+                    StopAnimation();
+                    sbaux = (Storyboard)this.Resources["estado_derrotado"];
+                    
+                    sbaux.RepeatBehavior = RepeatBehavior.Forever;
+                    sbaux.Begin();
+
                     break;
             }
         }
 
         private void StartAnimation()
         {
-            // Encuentra el Storyboard en los recursos de la página
-            Storyboard storyboard = (Storyboard)this.Resources["mover_alas"];
-            Storyboard storyboard2 = (Storyboard)this.Resources["mover_patas"];
-            Storyboard storyboard3 = (Storyboard)this.Resources["mover_cola"];
-
+            // Encuentra las animaciones individuales en los recursos de la página
+            moverAlas = (Storyboard)this.Resources["mover_alas"];
+            moverPatas = (Storyboard)this.Resources["mover_patas"];
+            moverCola = (Storyboard)this.Resources["mover_cola"];
+            
             // Comienza la animación
-            storyboard.Begin();
-            storyboard2.Begin();
-            storyboard3.Begin();
+            moverAlas.Begin();
+            moverPatas.Begin();
+            moverCola.Begin();
+        }
+
+        private void StopAnimation()
+        {
+            // Detiene la animación
+            moverAlas.Stop();
+            moverPatas.Stop();
+            moverCola.Stop();
         }
 
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
