@@ -33,15 +33,49 @@ namespace Dracofire
         Storyboard moverPatas;
         Storyboard moverCola;
 
-        double iPokemon.Vida { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Energia { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Nombre { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Categoría { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Tipo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Altura { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Peso { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Evolucion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Descripcion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        double iPokemon.Vida
+        { 
+            get { return ProgressBar_vida.Value; }
+            set { ProgressBar_vida.Value = value; }
+        }
+        public double Energia { 
+            get { return ProgressBar_escudo.Value; }
+            set { ProgressBar_escudo.Value = value; }
+        }
+        public string Nombre { 
+            get { return Nombre_Pokemon_Texto.Text; }
+            set { Nombre_Pokemon_Texto.Text = value; }
+        }
+        private string categoria = "Dragón";
+        public string Categoría { 
+            get { return categoria; }
+            set { categoria = value; }
+        }
+        private string tipo = "Fuego";
+        public string Tipo { 
+            get { return tipo; }
+            set { tipo = value; }
+        }
+        private double altura = 4.3;
+        public double Altura { 
+            get { return altura; }
+            set { altura = value; }
+        }
+        private double peso = 580.75;
+        public double Peso { 
+            get { return peso; }
+            set { peso = value; }
+        }
+        private string evolucion = "Octopusfire";
+        public string Evolucion { 
+            get { return evolucion; }
+            set { evolucion = value; }
+        }
+        private string descripcion = "Dracofire es un dragón de fuego que habita en las montañas de la región de España. Es un Pokémon muy poderoso y temido por su aliento de fuego.";
+        public string Descripcion { 
+            get { return descripcion; }
+            set { descripcion = value; }
+        }
 
         public DracofireGDLRS()
         {
@@ -107,6 +141,13 @@ namespace Dracofire
             }
         }
 
+        private void Reiniciar()
+        {
+            // Reiniciar la animación
+            StopAnimation();
+            StartAnimation();
+        }
+
         private void StartAnimation()
         {
             // Encuentra las animaciones individuales en los recursos de la página
@@ -126,6 +167,15 @@ namespace Dracofire
             moverAlas.Stop();
             moverPatas.Stop();
             moverCola.Stop();
+            // Detengo todas las animaciones
+            foreach (var animacion in this.Resources.Values)
+            {
+                if (animacion is Storyboard)
+                {
+                    Storyboard sb = (Storyboard)animacion;
+                    sb.Stop();
+                }
+            }
         }
 
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
@@ -205,12 +255,13 @@ namespace Dracofire
 
         public void activarAniIdle(bool activar)
         {
-            if (activar) { StartAnimation(); }
+            if (activar) { Reiniciar(); }
             else { StopAnimation(); }
         }
 
         public void animacionAtaqueFlojo()
         {
+            Reiniciar();
             sbaux = (Storyboard)this.Resources["ataque_lanzallamas"];
             mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/lanzallamas.mp3"));
 
@@ -226,6 +277,7 @@ namespace Dracofire
 
         public async Task animacionAtaqueFuerteAsync()
         {
+            Reiniciar();
             sbaux = (Storyboard)this.Resources["ataque_fuerte"];
             // Configuro los audios
             MediaPlayer mpSonidos1 = new MediaPlayer();
@@ -246,6 +298,7 @@ namespace Dracofire
 
         public void animacionDefensa()
         {
+            Reiniciar();
             sbaux = (Storyboard)this.Resources["defensa_desaparecer"];
             mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/esquivar.mp3"));
 
@@ -256,6 +309,7 @@ namespace Dracofire
 
         public void animacionDescasar()
         {
+            Reiniciar();
             sbaux = (Storyboard)this.Resources["defensa_escudo"];
             mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/escudo.mp3"));
 
@@ -267,17 +321,22 @@ namespace Dracofire
 
         public void animacionCansado()
         {
-            
+            Reiniciar();
+
+            sbaux = (Storyboard)this.Resources["estado_cansado"];
+
+            sbaux.RepeatBehavior = RepeatBehavior.Forever;
+            sbaux.Begin();
         }
 
         public void animacionNoCansado()
         {
-            StartAnimation();
+            Reiniciar();
         }
 
         public void animacionHerido()
         {
-            StartAnimation();
+            Reiniciar();
             sbaux = (Storyboard)this.Resources["estado_herido"];
             sbaux.AutoReverse = true;
             sbaux.RepeatBehavior = RepeatBehavior.Forever;
@@ -286,7 +345,7 @@ namespace Dracofire
 
         public void animacionNoHerido()
         {
-            StartAnimation();
+            Reiniciar();
         }
 
         public void animacionDerrota()

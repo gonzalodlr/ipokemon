@@ -57,9 +57,11 @@ namespace IPokemon
         {
             Storyboard sbaux;
             mpSonidos = new MediaPlayer();
+            StartAnimation();
             switch (e.Key)
             {
                 case Windows.System.VirtualKey.Number1:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["ataque_lanzallamas"];
                     mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/lanzallamas.mp3"));
                     
@@ -68,6 +70,7 @@ namespace IPokemon
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
                 case Windows.System.VirtualKey.Number2:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["ataque_fuerte"];
                     // Configuro los audios
                     MediaPlayer mpSonidos1 = new MediaPlayer();
@@ -86,6 +89,7 @@ namespace IPokemon
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos1.Pause(); mpSonidos2.Pause();};
                     break;
                 case Windows.System.VirtualKey.Number3:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["defensa_desaparecer"];
                     mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/esquivar.mp3"));
 
@@ -94,6 +98,7 @@ namespace IPokemon
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
                 case Windows.System.VirtualKey.Number4:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["defensa_escudo"];
                     mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/escudo.mp3"));
 
@@ -103,7 +108,7 @@ namespace IPokemon
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
                 case Windows.System.VirtualKey.Number5:
-                    
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["estado_herido"];                    
                     sbaux.AutoReverse = true;
                     sbaux.RepeatBehavior = RepeatBehavior.Forever;
@@ -111,6 +116,7 @@ namespace IPokemon
 
                     break;
                 case Windows.System.VirtualKey.Number6:
+                    
                     StopAnimation();
                     sbaux = (Storyboard)this.Resources["estado_derrotado"];
                     
@@ -118,7 +124,23 @@ namespace IPokemon
                     sbaux.Begin();
 
                     break;
+                case Windows.System.VirtualKey.Number7:
+                    Reiniciar();
+
+                    sbaux = (Storyboard)this.Resources["estado_cansado"];
+
+                    sbaux.RepeatBehavior = RepeatBehavior.Forever;
+                    sbaux.Begin();
+
+                    break;
             }
+        }
+
+        private void Reiniciar()
+        {
+            // Reiniciar la animación
+            StopAnimation();
+            StartAnimation();
         }
 
         private void StartAnimation()
@@ -140,6 +162,15 @@ namespace IPokemon
             moverAlas.Stop();
             moverPatas.Stop();
             moverCola.Stop();
+            // Detengo todas las animaciones
+            foreach (var animacion in this.Resources.Values)
+            {
+                if (animacion is Storyboard)
+                {
+                    Storyboard sb = (Storyboard)animacion;
+                    sb.Stop();
+                }
+            }
         }
 
         private void usePotionRed(object sender, PointerRoutedEventArgs e)

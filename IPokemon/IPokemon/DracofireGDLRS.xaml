@@ -251,71 +251,53 @@
                     </DiscreteObjectKeyFrame>
                 </ObjectAnimationUsingKeyFrames>
             </Storyboard>
-        <Storyboard x:Name="defensa_esquivar">
-                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dracofire" Storyboard.TargetProperty="(UIElement.Visibility)">
-                    <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                        <DiscreteObjectKeyFrame.Value>
-                            <Visibility>Visible</Visibility>
-                        </DiscreteObjectKeyFrame.Value>
-                    </DiscreteObjectKeyFrame>
-                    <DiscreteObjectKeyFrame KeyTime="00:00:00.2000000">
-                        <DiscreteObjectKeyFrame.Value>
-                            <Visibility>Collapsed</Visibility>
-                        </DiscreteObjectKeyFrame.Value>
-                    </DiscreteObjectKeyFrame>
-                    <DiscreteObjectKeyFrame KeyTime="00:00:01">
-                        <DiscreteObjectKeyFrame.Value>
-                            <Visibility>Visible</Visibility>
-                        </DiscreteObjectKeyFrame.Value>
-                    </DiscreteObjectKeyFrame>
-                    <DiscreteObjectKeyFrame KeyTime="00:00:01.2000000">
-                        <DiscreteObjectKeyFrame.Value>
-                            <Visibility>Collapsed</Visibility>
-                        </DiscreteObjectKeyFrame.Value>
-                    </DiscreteObjectKeyFrame>
-                    <DiscreteObjectKeyFrame KeyTime="00:00:02">
-                        <DiscreteObjectKeyFrame.Value>
-                            <Visibility>Visible</Visibility>
-                        </DiscreteObjectKeyFrame.Value>
-                    </DiscreteObjectKeyFrame>
-                </ObjectAnimationUsingKeyFrames>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_escondida" To="-0.176" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_escondida" To="0.284" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_escondida" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_del_escondida" To="-0.165" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_del_escondida" To="0.041" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_del_escondida" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq" To="-0.053" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq" To="0.078" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq" To="0.177" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq_herida" To="-0.053" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq_herida" To="0.078" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq_herida" To="0.177" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cola2" To="-0.147" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cola2" To="0.11" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cola2" To="3.057" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Fuego2" To="-0.097" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Fuego2" To="-0.212" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Fuego2" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Body" To="-0.082" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Body" To="0.148" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Body" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der" To="-0.086" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der" To="0.039" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der_herida" To="-0.086" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der_herida" To="0.039" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der_herida" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cabeza1" To="-0.055" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cabeza1" To="-0.127" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cabeza1" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Pata_trasera_der" To="-0.046" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Pata_trasera_der" To="0.346" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Pata_trasera_der" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_der" To="-0.101" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_der" To="0.017" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
-                <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="pata_der" To="0.514" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
-            </Storyboard>
+        <Storyboard x:Name="estado_cansado">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Fuego2" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_Izq" To="-25.567" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Ala_der" To="34.617" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="Cabeza1" To="-26.481" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Ojo_draco" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Ojo_herido" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="liena1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="liena2" To="-41.354" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="escudo" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="escudo" To="0.008" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)"/>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="escudo" To="0.035" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)"/>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="escudo" To="8.346" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="escudo" To="44.798" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"/>
+            <ColorAnimation Duration="00:00:00" Storyboard.TargetName="escudo" To="#FF7CEBF0" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"/>
+            <DoubleAnimation Duration="00:00:00" Storyboard.TargetName="escudo" To="0.8" Storyboard.TargetProperty="(UIElement.Opacity)"/>
+        </Storyboard>
         <Storyboard x:Name="defensa_escudo">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="escudo" Storyboard.TargetProperty="(FrameworkElement.Width)" EnableDependentAnimation="True">
                     <EasingDoubleKeyFrame KeyTime="00:00:00" Value="150"/>
@@ -785,7 +767,7 @@
         <Image x:Name="Pocion_Vida" Grid.Column="3" Grid.Row="0" Source="/AssetsDracofireGDLRS/pocion_vida.png" PointerPressed="usePotionRed"/>
         <Image x:Name="Pocion_Escudo" Grid.Column="3" Grid.Row="1" Source="/AssetsDracofireGDLRS/pocion_escudo.png" PointerPressed="usePotionYellow"/>
         <Viewbox x:Name="Nombre_Pokemon" Grid.Column="0"  Grid.ColumnSpan="3" Grid.Row="3">
-            <TextBlock TextWrapping="Wrap" Text="Dracofire" FontSize="16" Foreground="White" TextAlignment="Center" Height="24" Width="148"/>
+            <TextBlock x:Name="Nombre_Pokemon_Texto" TextWrapping="Wrap" Text="Dracofire" FontSize="16" Foreground="White" TextAlignment="Center" Height="24" Width="148"/>
         </Viewbox>
         <Viewbox x:Name="Pokemon" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2">
             <Canvas x:Name="Dracofire" Margin="200,34,200,0" Height="400" Width="400" RenderTransformOrigin="0.5,0.5">
