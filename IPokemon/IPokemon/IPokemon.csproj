@@ -161,15 +161,6 @@
     <Content Include="AssetsDracofireGDLRS\StoreLogo.png" />
     <Content Include="AssetsDracofireGDLRS\vida.png" />
     <Content Include="AssetsDracofireGDLRS\Wide310x150Logo.scale-200.png" />
-    <Content Include="Assets\escudo.mp3" />
-    <Content Include="Assets\esquivar.mp3" />
-    <Content Include="Assets\lanzallamas.mp3" />
-    <Content Include="img\escenario2.jpg" />
-    <Content Include="img\escudo.png" />
-    <Content Include="img\imFondo.png" />
-    <Content Include="img\pocion_escudo.png" />
-    <Content Include="img\pocion_vida.png" />
-    <Content Include="img\vida.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

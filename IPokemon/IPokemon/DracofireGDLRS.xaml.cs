@@ -93,23 +93,28 @@ namespace Dracofire
         //Controlar	evento de teclado y asignar cada animación a una tecla
         private async void ControlTeclas(object sender, KeyRoutedEventArgs e)
         {
+            Storyboard sbaux;
+            mpSonidos = new MediaPlayer();
+            StartAnimation();
             switch (e.Key)
             {
                 case Windows.System.VirtualKey.Number1:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["ataque_lanzallamas"];
-                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/lanzallamas.mp3"));
+                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/lanzallamas.mp3"));
 
                     mpSonidos.Play();
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
                 case Windows.System.VirtualKey.Number2:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["ataque_fuerte"];
                     // Configuro los audios
                     MediaPlayer mpSonidos1 = new MediaPlayer();
                     MediaPlayer mpSonidos2 = new MediaPlayer();
-                    mpSonidos1.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/lanzallamas.mp3"));
-                    mpSonidos2.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/esquivar.mp3"));
+                    mpSonidos1.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/lanzallamas.mp3"));
+                    mpSonidos2.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/esquivar.mp3"));
                     // inicio la animacion y el audio 1
                     mpSonidos2.Play();
                     sbaux.SpeedRatio = 0.5;
@@ -122,21 +127,43 @@ namespace Dracofire
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos1.Pause(); mpSonidos2.Pause(); };
                     break;
                 case Windows.System.VirtualKey.Number3:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["defensa_desaparecer"];
-                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/esquivar.mp3"));
+                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/esquivar.mp3"));
 
                     mpSonidos.Play();
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
                     break;
                 case Windows.System.VirtualKey.Number4:
+                    Reiniciar();
                     sbaux = (Storyboard)this.Resources["defensa_escudo"];
-                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/escudo.mp3"));
+                    mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/escudo.mp3"));
 
                     sbaux.SpeedRatio = 0.5;
                     mpSonidos.Play();
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { sbaux.Stop(); mpSonidos.Pause(); };
+                    break;
+                case Windows.System.VirtualKey.Number5:
+                    Reiniciar();
+                    sbaux = (Storyboard)this.Resources["estado_herido"];
+                    sbaux.AutoReverse = true;
+                    sbaux.RepeatBehavior = RepeatBehavior.Forever;
+                    sbaux.Begin();
+
+                    break;
+                case Windows.System.VirtualKey.Number6:
+
+                    StopAnimation();
+                    sbaux = (Storyboard)this.Resources["estado_derrotado"];
+
+                    sbaux.RepeatBehavior = RepeatBehavior.Forever;
+                    sbaux.Begin();
+
+                    break;
+                case Windows.System.VirtualKey.Number7:
+                    animacionCansado();
                     break;
             }
         }

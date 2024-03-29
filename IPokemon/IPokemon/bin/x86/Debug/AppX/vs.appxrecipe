@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-03-27T15:05:54.795</Modified>
+      <Modified>2024-03-27T16:13:50.675</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2024-03-27T15:05:34.199</Modified>
+      <Modified>2024-03-27T16:13:28.441</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\AssetsDracofireGDLRS\escenario2.jpg">
       <PackagePath>AssetsDracofireGDLRS\escenario2.jpg</PackagePath>
@@ -154,7 +154,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\DracofireGDLRS.xbf">
       <PackagePath>DracofireGDLRS.xbf</PackagePath>
-      <Modified>2024-03-27T15:05:34.152</Modified>
+      <Modified>2024-03-27T16:13:28.441</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\img\escenario2.jpg">
       <PackagePath>img\escenario2.jpg</PackagePath>
@@ -182,23 +182,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\IPokemon.dll">
       <PackagePath>IPokemon.dll</PackagePath>
-      <Modified>2024-03-27T15:05:54.625</Modified>
+      <Modified>2024-03-27T16:13:50.503</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\IPokemon.exe">
       <PackagePath>IPokemon.exe</PackagePath>
-      <Modified>2024-03-27T15:05:54.788</Modified>
+      <Modified>2024-03-27T16:13:50.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\IPokemon.pdb">
       <PackagePath>IPokemon.pdb</PackagePath>
-      <Modified>2024-03-27T15:05:54.788</Modified>
+      <Modified>2024-03-27T16:13:50.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2024-03-27T15:05:34.199</Modified>
+      <Modified>2024-03-27T16:13:28.441</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Usuario\Desktop\ipokemon\IPokemon\IPokemon\bin\x86\Debug\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-03-27T12:36:59.083</Modified>
+      <Modified>2024-03-27T16:13:30.269</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
