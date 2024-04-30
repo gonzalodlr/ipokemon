@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <Source>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</Source>
+    <SmallTileSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</SmallTileSource>
+    <MediumTileSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</MediumTileSource>
+    <WideTileSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</WideTileSource>
+    <LargeTileSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</LargeTileSource>
+    <AppIconSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</AppIconSource>
+    <SplashScreenSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\Usuario\Desktop\Ipo2\App Pokemon\App Pokemon\Assets\icon_pokeball.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>

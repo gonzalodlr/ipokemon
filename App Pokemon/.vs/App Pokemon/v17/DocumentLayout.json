@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|c:\\users\\usuario\\desktop\\ipo2\\app pokemon\\app pokemon\\pokedexpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|solutionrelative:app pokemon\\pokedexpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\app pokemon\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|solutionrelative:app pokemon\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\app pokemon\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|solutionrelative:app pokemon\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\app pokemon\\pokedexpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}|App Pokemon\\App Pokemon.csproj|solutionrelative:app pokemon\\pokedexpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 315,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PokedexPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\PokedexPage.xaml.cs",
+              "RelativeDocumentMoniker": "App Pokemon\\PokedexPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\PokedexPage.xaml.cs",
+              "RelativeToolTip": "App Pokemon\\PokedexPage.xaml.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAmwDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T16:03:47.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\MainPage.xaml",
+              "RelativeDocumentMoniker": "App Pokemon\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\MainPage.xaml",
+              "RelativeToolTip": "App Pokemon\\MainPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-30T15:41:04.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PokedexPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\PokedexPage.xaml",
+              "RelativeDocumentMoniker": "App Pokemon\\PokedexPage.xaml",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\PokedexPage.xaml",
+              "RelativeToolTip": "App Pokemon\\PokedexPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-29T21:38:16.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "App Pokemon\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Ipo2\\App Pokemon\\App Pokemon\\MainPage.xaml.cs",
+              "RelativeToolTip": "App Pokemon\\MainPage.xaml.cs",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAkwK0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T08:50:50.386Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

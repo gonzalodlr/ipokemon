@@ -1,0 +1,17 @@
+﻿<ResourceDictionary  
+    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ 
+    xmlns:my="using:Dracofire"
+    xmlns:my1="using:CharizardASM"
+    xmlns:my2="using:LucarioGAC"
+    xmlns:my3="using:Pokemon_Antonio_Campallo_Gomez" 
+    >
+    
+        <my:DracofireGDLRS x:Key="DracofireGDLRSInstance"/>
+        <my1:CharizardASM x:Key="CharizardASMInstance"/>
+        <my2:MyUCLucario x:Key="MyUCLucarioInstance"/>
+        <my3:ArticunoACG x:Key="ArticunoACGInstance"/>
+    
+</ResourceDictionary>
