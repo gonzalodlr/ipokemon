@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{ABBA1F1B-87B2-4B35-A125-865DAD67AA16}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App_Pokemon</RootNamespace>
+    <AssemblyName>App Pokemon</AssemblyName>
+    <DefaultLanguage>es-ES</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22621.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AcercaDePage.xaml.cs">
+      <DependentUpon>AcercaDePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArticunoACG.xaml.cs">
+      <DependentUpon>ArticunoACG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CharizardASM.xaml.cs">
+      <DependentUpon>CharizardASM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CombatePage.xaml.cs">
+      <DependentUpon>CombatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DracofireGDLRS.xaml.cs">
+      <DependentUpon>DracofireGDLRS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InicioCombate.xaml.cs">
+      <DependentUpon>InicioCombate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iPokemon.cs" />
+    <Compile Include="LucarioGAC.xaml.cs">
+      <DependentUpon>LucarioGAC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MisPokemonPage.xaml.cs">
+      <DependentUpon>MisPokemonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel.cs" />
+    <Compile Include="PokedexPage.xaml.cs">
+      <DependentUpon>PokedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AssetsArticunoACG\CabezazoRalentizado.mp3" />
+    <Content Include="AssetsArticunoACG\corazonVida.png" />
+    <Content Include="AssetsArticunoACG\DerrotadoBien.mp3" />
+    <Content Include="AssetsArticunoACG\energia.png" />
+    <Content Include="AssetsArticunoACG\Escudo.mp3" />
+    <Content Include="AssetsArticunoACG\fondoPokemon1.png" />
+    <Content Include="AssetsArticunoACG\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsArticunoACG\pocimaEnergia.png" />
+    <Content Include="AssetsArticunoACG\pocimaVida.png" />
+    <Content Include="AssetsArticunoACG\RayoHielo.mp3" />
+    <Content Include="AssetsArticunoACG\RecuperarVida.mp3" />
+    <Content Include="AssetsArticunoACG\SplashScreen.scale-200.png" />
+    <Content Include="AssetsArticunoACG\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsArticunoACG\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsArticunoACG\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsArticunoACG\StoreLogo.png" />
+    <Content Include="AssetsArticunoACG\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\audio\evolucion.mp3" />
+    <Content Include="AssetsCharizardASM\CharizardASM\audio\garra.mp3" />
+    <Content Include="AssetsCharizardASM\CharizardASM\audio\lanzallamas.mp3" />
+    <Content Include="AssetsCharizardASM\CharizardASM\audio\mewing.mp3" />
+    <Content Include="AssetsCharizardASM\CharizardASM\audio\recuperado.mp3" />
+    <Content Include="AssetsCharizardASM\CharizardASM\background.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\background1.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\blue_potion.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\charizard.jpg" />
+    <Content Include="AssetsCharizardASM\CharizardASM\espiral.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\garra.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\green_potion.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\heart.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\lanzallamas.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\lanzallamas_azul.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\mano_mewing.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\mano_mewing_black.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\mewing.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\mewing_black.png" />
+    <Content Include="AssetsCharizardASM\CharizardASM\shield.png" />
+    <Content Include="AssetsCharizardASM\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsCharizardASM\SplashScreen.scale-200.png" />
+    <Content Include="AssetsCharizardASM\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsCharizardASM\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsCharizardASM\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsCharizardASM\StoreLogo.png" />
+    <Content Include="AssetsCharizardASM\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\escenario2.jpg" />
+    <Content Include="AssetsDracofireGDLRS\escudo.mp3" />
+    <Content Include="AssetsDracofireGDLRS\escudo.png" />
+    <Content Include="AssetsDracofireGDLRS\esquivar.mp3" />
+    <Content Include="AssetsDracofireGDLRS\imFondo.png" />
+    <Content Include="AssetsDracofireGDLRS\lanzallamas.mp3" />
+    <Content Include="AssetsDracofireGDLRS\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\pocion_escudo.png" />
+    <Content Include="AssetsDracofireGDLRS\pocion_vida.png" />
+    <Content Include="AssetsDracofireGDLRS\SplashScreen.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsDracofireGDLRS\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsDracofireGDLRS\StoreLogo.png" />
+    <Content Include="AssetsDracofireGDLRS\vida.png" />
+    <Content Include="AssetsDracofireGDLRS\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsLucarioGAC\AuraSphere.mp3" />
+    <Content Include="AssetsLucarioGAC\AuraSphere.png" />
+    <Content Include="AssetsLucarioGAC\BattleShild.png" />
+    <Content Include="AssetsLucarioGAC\Cansado.mp3" />
+    <Content Include="AssetsLucarioGAC\Defeated.png" />
+    <Content Include="AssetsLucarioGAC\Defeated2.png" />
+    <Content Include="AssetsLucarioGAC\Derrotado.mp3" />
+    <Content Include="AssetsLucarioGAC\Energy.png" />
+    <Content Include="AssetsLucarioGAC\EnergyPotion.png" />
+    <Content Include="AssetsLucarioGAC\Enfadado.mp3" />
+    <Content Include="AssetsLucarioGAC\HealthPotion.png" />
+    <Content Include="AssetsLucarioGAC\Heart.png" />
+    <Content Include="AssetsLucarioGAC\Herrido.mp3" />
+    <Content Include="AssetsLucarioGAC\Hurt.png" />
+    <Content Include="AssetsLucarioGAC\Hurt2.png" />
+    <Content Include="AssetsLucarioGAC\Pokemon.png" />
+    <Content Include="AssetsLucarioGAC\Reversal.png" />
+    <Content Include="AssetsLucarioGAC\Reversal2.png" />
+    <Content Include="Assets\AcercaDe.png" />
+    <Content Include="Assets\home.png" />
+    <Content Include="Assets\icon_pokeball.png" />
+    <Content Include="Assets\imgCombatePage\Multijugador.png" />
+    <Content Include="Assets\imgCombatePage\solo.jpg" />
+    <Content Include="Assets\imgMainPage\dudas.png" />
+    <Content Include="Assets\imgMainPage\mispokemon.jpg" />
+    <Content Include="Assets\imgMainPage\pelea.jpg" />
+    <Content Include="Assets\imgMainPage\pokedex.png" />
+    <Content Include="Assets\Intro.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.scale-100.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.scale-125.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.scale-150.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.scale-200.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.scale-400.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.targetsize-16.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.targetsize-24.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.targetsize-256.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.targetsize-32.png" />
+    <Content Include="Assets\Tiles\icon_pokeball.targetsize-48.png" />
+    <Content Include="Assets\Tiles\LargeTile.scale-100.png" />
+    <Content Include="Assets\Tiles\LargeTile.scale-125.png" />
+    <Content Include="Assets\Tiles\LargeTile.scale-150.png" />
+    <Content Include="Assets\Tiles\LargeTile.scale-200.png" />
+    <Content Include="Assets\Tiles\LargeTile.scale-400.png" />
+    <Content Include="Assets\Tiles\SmallTile.scale-100.png" />
+    <Content Include="Assets\Tiles\SmallTile.scale-125.png" />
+    <Content Include="Assets\Tiles\SmallTile.scale-150.png" />
+    <Content Include="Assets\Tiles\SmallTile.scale-200.png" />
+    <Content Include="Assets\Tiles\SmallTile.scale-400.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-125.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-150.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Tiles\SplashScreen.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AcercaDePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ArticunoACG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CharizardASM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DracofireGDLRS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InicioCombate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LucarioGAC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MisPokemonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokedexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlNamespaces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.14</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.8.6</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AssetsLucarioGAC\Heart" />
+    <None Include="Directory.Build.props" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
