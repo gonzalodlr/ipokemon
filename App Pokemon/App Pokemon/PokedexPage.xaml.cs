@@ -30,10 +30,50 @@ namespace App_Pokemon
         public PokedexPage()
         {
             this.InitializeComponent();
+            configurar_pokedex();
             //LoadUserControlInstances();
             //ContentGridView.ItemsSource = Items;
 
         }
+
+        private void configurar_pokedex()
+        {
+            DracofireGDLRS.verFondo(false);
+            DracofireGDLRS.verNombre(false);
+            DracofireGDLRS.verFilaVida(false);
+            DracofireGDLRS.verFilaEnergia(false);
+            DracofireGDLRS.verPocionVida(false);
+            DracofireGDLRS.verPocionEnergia(false);
+
+            ArticunoACG.verFondo(false);
+            ArticunoACG.verNombre(false);
+            ArticunoACG.verFilaVida(false);
+            ArticunoACG.verFilaEnergia(false);
+            ArticunoACG.verPocionVida(false);
+            ArticunoACG.verPocionEnergia(false);
+
+            GengarJCC.verFondo(false);
+            GengarJCC.verNombre(false);
+            GengarJCC.verFilaVida(false);
+            GengarJCC.verFilaEnergia(false);
+            GengarJCC.verPocionVida(false);
+            GengarJCC.verPocionEnergia(false);
+
+            //LucarioGAC.verFondo(false);
+            //LucarioGAC.verNombre(false);
+            //LucarioGAC.verFilaVida(false);
+            //LucarioGAC.verFilaEnergia(false);
+            //LucarioGAC.verPocionVida(false);
+            //LucarioGAC.verPocionEnergia(false);
+
+            //CharizardASM.verFondo(false);
+            //CharizardASM.verNombre(false);
+            //CharizardASM.verFilaVida(false);
+            //CharizardASM.verFilaEnergia(false);
+            //CharizardASM.verPocionVida(false);
+            //CharizardASM.verPocionEnergia(false);
+        }
+
         //private void LoadUserControlInstances()
         //{
         //    Items.Add(DracofireGDLRS);

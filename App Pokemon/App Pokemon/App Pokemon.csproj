@@ -122,26 +122,29 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ArticunoACG.xaml.cs">
+    <Compile Include="PokedexPage.xaml.cs">
+      <DependentUpon>PokedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\ArticunoACG.xaml.cs">
       <DependentUpon>ArticunoACG.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CharizardASM.xaml.cs">
+    <Compile Include="Pokemons\CharizardASM.xaml.cs">
       <DependentUpon>CharizardASM.xaml</DependentUpon>
     </Compile>
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DracofireGDLRS.xaml.cs">
+    <Compile Include="Pokemons\DracofireGDLRS.xaml.cs">
       <DependentUpon>DracofireGDLRS.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GengarJCC.xaml.cs">
+    <Compile Include="Pokemons\GengarJCC.xaml.cs">
       <DependentUpon>GengarJCC.xaml</DependentUpon>
     </Compile>
     <Compile Include="InicioCombate.xaml.cs">
       <DependentUpon>InicioCombate.xaml</DependentUpon>
     </Compile>
     <Compile Include="iPokemon.cs" />
-    <Compile Include="LucarioGAC.xaml.cs">
+    <Compile Include="Pokemons\LucarioGAC.xaml.cs">
       <DependentUpon>LucarioGAC.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
@@ -151,9 +154,6 @@
       <DependentUpon>MisPokemonPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel.cs" />
-    <Compile Include="PokedexPage.xaml.cs">
-      <DependentUpon>PokedexPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -316,11 +316,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ArticunoACG.xaml">
+    <Page Include="PokedexPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CharizardASM.xaml">
+    <Page Include="Pokemons\ArticunoACG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\CharizardASM.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -328,11 +332,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DracofireGDLRS.xaml">
+    <Page Include="Pokemons\DracofireGDLRS.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GengarJCC.xaml">
+    <Page Include="Pokemons\GengarJCC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -340,7 +344,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LucarioGAC.xaml">
+    <Page Include="Pokemons\LucarioGAC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -349,10 +353,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MisPokemonPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PokedexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -254,12 +254,16 @@ namespace Dracofire
         {
             if (!ver) { this.ProgressBar_vida.Visibility = Visibility.Collapsed; }
             else { this.ProgressBar_vida.Visibility = Visibility.Visible; }
+            if (!ver) { this.Vida_Foto.Visibility = Visibility.Collapsed; }
+            else { this.Vida_Foto.Visibility = Visibility.Visible; }
         }
 
         public void verFilaEnergia(bool ver)
         {
             if (!ver) { this.ProgressBar_escudo.Visibility = Visibility.Collapsed; }
             else { this.ProgressBar_escudo.Visibility = Visibility.Visible; }
+            if (!ver) { this.Escudo.Visibility = Visibility.Collapsed; }
+            else { this.Escudo.Visibility = Visibility.Visible; }
         }
 
         public void verPocionVida(bool ver)
