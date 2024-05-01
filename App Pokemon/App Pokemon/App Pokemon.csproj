@@ -134,6 +134,9 @@
     <Compile Include="DracofireGDLRS.xaml.cs">
       <DependentUpon>DracofireGDLRS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GengarJCC.xaml.cs">
+      <DependentUpon>GengarJCC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InicioCombate.xaml.cs">
       <DependentUpon>InicioCombate.xaml</DependentUpon>
     </Compile>
@@ -219,6 +222,18 @@
     <Content Include="AssetsDracofireGDLRS\StoreLogo.png" />
     <Content Include="AssetsDracofireGDLRS\vida.png" />
     <Content Include="AssetsDracofireGDLRS\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsGengarJCC\corazon.png" />
+    <Content Include="AssetsGengarJCC\energia.png" />
+    <Content Include="AssetsGengarJCC\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsGengarJCC\pocion.png" />
+    <Content Include="AssetsGengarJCC\pocionEnergia.png" />
+    <Content Include="AssetsGengarJCC\SplashScreen.png" />
+    <Content Include="AssetsGengarJCC\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsGengarJCC\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsGengarJCC\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsGengarJCC\StoreLogo.png" />
+    <Content Include="AssetsGengarJCC\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsGengarJCC\z10o_buuk_210129.jpg" />
     <Content Include="AssetsLucarioGAC\AuraSphere.mp3" />
     <Content Include="AssetsLucarioGAC\AuraSphere.png" />
     <Content Include="AssetsLucarioGAC\BattleShild.png" />
@@ -314,6 +329,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DracofireGDLRS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GengarJCC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

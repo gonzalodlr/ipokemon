@@ -7,11 +7,13 @@
     xmlns:my1="using:CharizardASM"
     xmlns:my2="using:LucarioGAC"
     xmlns:my3="using:Pokemon_Antonio_Campallo_Gomez" 
+    xmlns:my4="using:Sesion4"
     >
     
         <my:DracofireGDLRS x:Key="DracofireGDLRSInstance"/>
         <my1:CharizardASM x:Key="CharizardASMInstance"/>
         <my2:MyUCLucario x:Key="MyUCLucarioInstance"/>
         <my3:ArticunoACG x:Key="ArticunoACGInstance"/>
-    
+        <my4:GengarJCC x:Key="GengarJCCInstance"/>
+
 </ResourceDictionary>

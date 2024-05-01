@@ -9,6 +9,19 @@ using Windows.UI.Xaml.Media.Animation;
 namespace LucarioGAC {
     public sealed partial class MyUCLucario : UserControl, iPokemon {
         DispatcherTimer dtTime;
+
+        public double Vida { get => this.pbHealth.Value; set => this.pbHealth.Value = value; }
+        public double Energia { get => this.pbEnergy.Value; set => this.pbEnergy.Value = value; }
+        public string Nombre { get => "Lucario"; set => throw new NotImplementedException(); }
+        public string Categoría { get => "Lucha/Acero"; set => throw new NotImplementedException(); }
+        public string Tipo { get => "Lucha/Acero"; set => throw new NotImplementedException(); }
+        public double Altura { get => 1.20; set => throw new NotImplementedException(); }
+        public double Peso { get => 54.0; set => throw new NotImplementedException(); }
+        public string Evolucion { get => "No evoluciona"; set => throw new NotImplementedException(); }
+        public string Descripcion { get => "Lucario es un Pokémon de tipo lucha/acero introducido en la cuarta generación. Es la evolución de Riolu. Es conocido por su gran habilidad de lucha y su capacidad de sentir y manipular las auras."; set => throw new NotImplementedException(); }
+
+
+
         public MyUCLucario() {
             this.InitializeComponent();
             this.IsTabStop = true;

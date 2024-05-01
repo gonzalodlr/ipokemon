@@ -9,6 +9,7 @@
     xmlns:my1="using:CharizardASM"
     xmlns:my2="using:LucarioGAC"
     xmlns:my3="using:Pokemon_Antonio_Campallo_Gomez"
+    xmlns:my4="using:Sesion4"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -57,9 +58,11 @@
 
             <!-- Los controles de usuario -->
             <my:DracofireGDLRS x:Name="DracofireGDLRS" Margin="5"/>
+            <my4:GengarJCC x:Name="GengarJCC" Margin="5"/>
             
             <my2:MyUCLucario x:Name="MyUCLucario" Margin="5"/>
             <my3:ArticunoACG x:Name="ArticunoACG" Margin="5"/>
+            
         </GridView>
     </Grid>
 </Page>

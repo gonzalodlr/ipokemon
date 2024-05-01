@@ -254,4 +254,8 @@ namespace Sesion4
         }
 
     }
+
+    internal interface iPokemon
+    {
+    }
 }
