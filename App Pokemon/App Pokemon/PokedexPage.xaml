@@ -14,7 +14,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/AssetsDracofireGDLRS/imFondo.png" Stretch="UniformToFill"/>
+            <ImageBrush Opacity="0.5" ImageSource="/Assets/imgPokedex/pokedexBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <GridView   x:Name="ContentGridView" Margin="10"
@@ -36,13 +36,13 @@
             <!-- Aquí se inserta el DataTemplate -->
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Grid AutomationProperties.Name="{Binding Nombre}" Width="280">
+                    <Grid AutomationProperties.Name="{Binding Nombre}" Width="880">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <!-- Image can be replaced with custom icon for the type -->
-                        <ContentControl Content="{Binding}" Width="100" Height="100"/>
+                        <ContentPresenter Content="{Binding}" Width="500" Height="500"/>
                         <StackPanel Grid.Column="1" Margin="8,0,0,8">
                             <TextBlock Text="{Binding Nombre}" Style="{ThemeResource SubtitleTextBlockStyle}" Margin="0,0,0,8"/>
                             <StackPanel Orientation="Horizontal">

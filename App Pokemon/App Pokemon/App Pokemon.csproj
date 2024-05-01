@@ -246,6 +246,7 @@
     <Content Include="Assets\imgMainPage\mispokemon.jpg" />
     <Content Include="Assets\imgMainPage\pelea.jpg" />
     <Content Include="Assets\imgMainPage\pokedex.png" />
+    <Content Include="Assets\imgPokedex\pokedexBackground.jpg" />
     <Content Include="Assets\Intro.png" />
     <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-16.png" />
     <Content Include="Assets\Tiles\icon_pokeball.altform-lightunplated_targetsize-24.png" />
