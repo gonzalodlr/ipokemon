@@ -165,24 +165,6 @@ namespace App_Pokemon
                 fmMain.GoBack();
             }
         }
-        private void ContentGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // Aquí puedes manejar el evento de cambio de selección del GridView
-            // Por ejemplo, puedes acceder al elemento seleccionado así:
-            if (ContentGridView.SelectedItem != null)
-            {
-                var selectedControl = ContentGridView.SelectedItem as UserControl;
-                // Haz lo que necesites con el control seleccionado
-            }
-        }
-
-        private void ContentGridView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            // Aquí puedes manejar el evento de clic en un elemento del GridView
-            // Por ejemplo, puedes acceder al elemento haciendo casting del argumento e:
-            var clickedControl = e.ClickedItem as UserControl;
-            // Haz lo que necesites con el control clickeado
-        }
     }
 }
 

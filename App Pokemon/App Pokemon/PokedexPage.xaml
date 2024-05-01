@@ -17,30 +17,48 @@
             <ImageBrush ImageSource="/AssetsDracofireGDLRS/imFondo.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <GridView x:Name="ContentGridView" Margin="10"
-                  IsItemClickEnabled="False"
-    CanDragItems="True"
-    AllowDrop="True"
-    CanReorderItems="True"
-    SelectionMode="Single"
-    SelectionChanged="ContentGridView_SelectionChanged"
-    ItemClick="ContentGridView_ItemClick"
-    FlowDirection="LeftToRight">
+        <GridView   x:Name="ContentGridView" Margin="10"
+                    IsItemClickEnabled="False"
+                    CanDragItems="True"
+                    AllowDrop="True"
+                    CanReorderItems="True"
+                    SelectionMode="Single"
+                    SelectionChanged="ContentGridView_SelectionChanged"
+                    ItemClick="ContentGridView_ItemClick"
+                    FlowDirection="LeftToRight">
 
-        
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapGrid Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </GridView.ItemsPanel>
 
-            <!-- First Control -->
-            <my:DracofireGDLRS DataContext="{StaticResource DracofireGDLRSInstance}" Margin="5"/>
-            <!-- Second Control -->
-            <my1:CharizardASM x:Name="CharizardASM" Margin="5"/>
-            <!-- Third Control -->
+            <!-- Aquí se inserta el DataTemplate -->
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid AutomationProperties.Name="{Binding Nombre}" Width="280">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Image can be replaced with custom icon for the type -->
+                        <ContentControl Content="{Binding}" Width="100" Height="100"/>
+                        <StackPanel Grid.Column="1" Margin="8,0,0,8">
+                            <TextBlock Text="{Binding Nombre}" Style="{ThemeResource SubtitleTextBlockStyle}" Margin="0,0,0,8"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Categoría}" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                <TextBlock Text=" - " Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                <TextBlock Text="{Binding Tipo}" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+
+            <!-- Los controles de usuario -->
+            <my:DracofireGDLRS x:Name="DracofireGDLRS" Margin="5"/>
+            
             <my2:MyUCLucario x:Name="MyUCLucario" Margin="5"/>
-            <!-- Fourth Control -->
             <my3:ArticunoACG x:Name="ArticunoACG" Margin="5"/>
         </GridView>
     </Grid>
