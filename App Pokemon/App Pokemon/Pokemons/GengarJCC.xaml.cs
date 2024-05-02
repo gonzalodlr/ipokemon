@@ -133,8 +133,8 @@ namespace Sesion4
 
         public void verFilaVida(bool ver)
         {
-            if (!ver) this.gGengar.RowDefinitions[1].Height = new GridLength(0);
-            else this.gGengar.RowDefinitions[1].Height = new GridLength(10,
+            if (!ver) this.gGengar.RowDefinitions[0].Height = new GridLength(0);
+            else this.gGengar.RowDefinitions[0].Height = new GridLength(10,
            GridUnitType.Star);
         }
 

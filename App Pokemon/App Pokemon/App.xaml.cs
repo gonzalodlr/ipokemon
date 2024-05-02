@@ -28,6 +28,7 @@ namespace App_Pokemon
         /// </summary>
         public App()
         {
+            this.RequestedTheme = ApplicationTheme.Dark;
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
@@ -62,6 +63,7 @@ namespace App_Pokemon
 
             if (e.PrelaunchActivated == false)
             {
+
                 if (rootFrame.Content == null)
                 {
                     // Cuando no se restaura la pila de navegación, navegar a la primera página,

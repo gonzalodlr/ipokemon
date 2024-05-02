@@ -3106,10 +3106,10 @@
         <ProgressBar x:Name="pbEnergy" VerticalAlignment="Stretch" Height="50"
                      Background="#33FFA600" BorderBrush="Black"
                      Value="30" Maximum="100" Foreground="#FFFFCB00" Grid.Column="1" Grid.Row="1" Margin="0,5,5,0"/>
-        <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,0,0,0">
+        <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <Canvas x:Name="CanvasLucario" Height="371" Width="480">
-                <Canvas x:Name="OrejaDerecha" Height="320" Width="470" RenderTransformOrigin="0.5,0.5">
+            <Canvas x:Name="CanvasLucario" Height="371" Width="480" Margin="0,0,0,20">
+                <Canvas x:Name="OrejaDerecha" Height="320" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3129,7 +3129,7 @@
                         <Path.Data>M361,122.44 C362.85896,122.9951 364.37742,124.33624 366.2,124.64 366.08985,123.31819 356.63279,108.79491 353.4,113.24 352.42532,114.58019 355.78946,118.53772 357,120.44 358.52125,122.83053 359.27005,126.64 363,126.64 362.84153,124.73832 361.2451,124.25731 361,122.44 z</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas x:Name="OrejaIzquierda" Height="320" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="OrejaIzquierda" Height="320" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3146,7 +3146,7 @@
                         <Path.Data>M390.8,116.44 C389.74511,117.75363 389.41447,115.86635 389.2,118.44 389.14895,119.05262 389.16049,120.80985 388.6,121.24 387.6857,121.94167 387.71551,122.16408 387.4,119.64 387.2669,118.57522 386.97428,117.4857 386.8,116.44 386.48538,114.55228 384.54292,104.70998 387.6,103.64 389.9073,102.83245 393.93455,112.90818 395.8,115.24 396.19071,115.72838 399.91357,121.0256 396.4,120.44 394.74974,120.16496 392.43472,117.37194 390.8,116.44 z</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas x:Name="Cabeza" Height="320" Width="400">
+                <Canvas x:Name="Cabeza" Height="320" Width="400" Canvas.Top="-49">
                     <Path Fill="#FF5C5C64" Height="45" Canvas.Left="223" Stroke="Black" Stretch="Fill" Canvas.Top="138.833" Width="63" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Path.Data>M235.56667,166.90667 C234.57091,166.45324 233.46939,165.75506 232.36667,165.44 232.36667,166.66509 232.7901,167.60581 233.03333,168.77333 233.30917,170.09734 232.41227,171.33533 235.16667,169.04 231.88445,170.68111 227.03175,174.14217 224.63333,177.44 223.24858,179.34403 224.47828,180.13235 227.7,181.97333 228.69733,182.54324 229.48184,182.92659 230.63333,183.17333 232.07891,183.4831 232.08981,184.25472 233.3,182.50667 235.20798,179.7507 234.14671,179.70667 238.36667,179.70667 240.57342,179.70667 242.71114,179.13814 244.9,178.77333 249.09084,178.07486 253.09788,177.64024 257.3,177.17333 259.40042,176.93995 261.4265,176.57447 263.43333,176.24 265.93499,175.82306 267.46871,174.3171 269.7,173.57333 273.75868,172.22044 277.09054,170.49901 280.63333,168.37333 286.40424,164.91079 287.64223,168.4667 284.5,159.04 283.25634,155.30902 281.1356,150.72029 280.5,146.90667 280.35241,146.02114 280.07347,144.92829 279.7,144.10667 279.23634,143.08661 278.88712,143.58192 277.3,144.64 275.20992,146.03339 273.26975,146.90168 271.16667,148.24 267.29298,150.70507 263.30501,153.29045 259.7,156.24 256.70956,158.68673 252.34112,161.58611 248.63333,163.44 246.79353,164.3599 245.7,166.57985 245.7,161.44 245.7,158.91544 245.53548,157.26437 246.5,154.90667 247.9131,151.45242 251.3,147.16594 251.3,143.30667 251.3,140.40461 253.5272,140.24 248.36667,140.24 245.91631,140.24 245.5393,142.24087 243.83333,144.37333 241.22036,147.63955 239.61226,151.95077 237.96667,155.97333 236.4002,159.80248 235.49816,163.02509 234.9,167.30667</Path.Data>
                     </Path>
@@ -3160,7 +3160,7 @@
                         <Path.Data>M381.8,158.77333 C386.47869,157.66431 385.92384,157.51904 390.33333,159.30667</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas Width="400" x:Name="Ojos" Height="320">
+                <Canvas Width="400" x:Name="Ojos" Height="320" Canvas.Top="-49">
 
                     <Image x:Name="ImgDefeated" Height="44" Width="20" Source="/AssetsLucarioGAC/Defeated2.png" HorizontalAlignment="Left" Canvas.Left="253" Canvas.Top="142" VerticalAlignment="Top" Opacity="0" RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
@@ -3193,7 +3193,7 @@
                         <Path.Data>M386.48333,140.65667 C386.86573,141.81297 387.01667,142.70893 387.01667,143.99 385.88226,143.80093 386.06721,143.39217 385.75,142.12333 385.66049,141.76528 385.67764,141.2848 385.81667,140.92333 386.21331,139.89205 386.42121,141.11582 386.55,141.05667</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas x:Name="OrejasNegras" Height="361" Width="400" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="OrejasNegras" Height="361" Width="400" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3231,7 +3231,7 @@
                         <Path.Data>M361.6,159.37333 C360.59546,161.52591 359.2372,163.08098 358.13333,164.97333 357.15355,166.65295 356.04279,168.9932 355.86667,171.10667 355.65974,173.58978 354.93627,174.86408 356.4,177.37333 358.27599,180.58931 358.03731,179.22866 361.73333,180.30667 364.4973,181.11282 364.6488,181.80575 365.6,177.24 366.2122,174.30142 367.30922,173.79142 370,171.77333 372.44979,169.93599 370.07149,168.99462 371.2,166.17333 372.24003,163.57325 373.16702,162.56153 373.46667,159.64</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas Width="470" x:Name="Cuerpo" Height="320" RenderTransformOrigin="0.5,0.5">
+                <Canvas Width="470" x:Name="Cuerpo" Height="320" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3258,7 +3258,7 @@
                         <Path.Data>M238.55,210.515 C242.05843,209.77234 244.94319,207.78394 248.45,206.615 251.67725,205.53925 253.85,206.38357 253.85,213.015 253.85,216.44713 253.92071,219.30055 247.05,217.715 245.07656,217.25959 244.63047,215.60036 243.05,214.415 241.43142,213.20106 239.8182,212.2832 238.25,210.715 238.35,210.64833 238.45,210.58167 238.55,210.515 z</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas x:Name="Piernas" Height="361" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="Piernas" Height="361" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3272,7 +3272,7 @@
                         <Path.Data>M365.23333,254.67333 C367.08363,256.3041 367.59798,258.92981 369.5,260.67333 371.64721,262.64161 374.08732,263.81034 376.3,265.74</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas x:Name="Cola" Height="320" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="Cola" Height="320" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3283,7 +3283,7 @@
                         <Path.Data>M426.6,251.14 C435.03845,251.53249 439.97261,247.21054 447,241.94 450.18229,239.55328 453.76273,238.01168 456.33333,234.74 458.49203,231.99257 460.80462,229.83492 463.13333,227.27333 464.46597,225.80743 465.55474,224.83052 466.46667,223.00667 467.54109,220.85782 467.82751,221.54 470.73333,221.54 474.23308,221.54 475.98033,224.80721 479.4,225.54 483.10741,226.33445 484.55195,228.92929 487.4,231.54 490.59366,234.46752 491.93743,237.31787 494.2,240.87333 494.99277,242.11911 495.42687,243.81095 496.06667,245.27333 496.41525,246.0701 497.13035,246.63144 497.4,247.40667 497.68789,248.23435 497.55247,248.20667 495.93333,248.20667 492.84493,248.20667 490.24481,247.19818 487.26667,246.74 484.05668,246.24616 480.93188,245.52297 477.8,244.74 475.80091,244.24023 474.66232,243.75204 473,242.47333 470.54308,240.58339 472.4641,241.18616 468.73333,243.67333 462.77465,247.64579 456.00318,250.37174 449.4,253.67333 442.65222,257.04722 436.01141,259.04826 428.6,260.74</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas Width="470" x:Name="Hombros" Height="320">
+                <Canvas Width="470" x:Name="Hombros" Height="320" Canvas.Top="-49">
                     <Path x:Name="path21" Width="15" Canvas.Top="194.5" Stretch="Fill" Stroke="Black" Canvas.Left="234.533" Height="26" Fill="#FF5C5C64" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
                         <Path.RenderTransform>
                             <CompositeTransform/>
@@ -3297,7 +3297,7 @@
                         <Path.Data>M407.73333,169.97333 C411.1271,170.82177 412.32278,171.02237 413.6,175.17333 414.599,178.42007 415.83332,177.44 409.6,177.44 406.57124,177.44 406.26667,179.97926 406.26667,184.50667 406.26667,186.84211 407.22955,189.44 411.33333,189.44 410.42661,190.80009 409.72051,192.44096 408.8,193.70667 407.44907,195.5642 406.54394,195.94934 404,196.37333 402.36845,196.64526 401.1336,197.49344 399.33333,196.77333 397.82703,196.17081 395.41585,195.02088 394.8,193.17333 393.78186,190.11892 393.33333,186.38529 393.33333,183.04 393.33333,180.88923 391.69072,173.48536 398.53333,176.90667 398.86323,172.94789 394.52552,174.66353 401.86667,173.44 403.29312,173.20226 404.35129,172.50153 405.73333,172.10667 407.87884,171.49367 407.22538,171.68582 408.4,169.70667</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas Width="400" x:Name="BrazoDerecho" Height="361" RenderTransformOrigin="0.5,0.5">
+                <Canvas Width="400" x:Name="BrazoDerecho" Height="361" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3354,7 +3354,7 @@
                         </Image.RenderTransform>
                     </Image>
                 </Canvas>
-                <Canvas x:Name="BrazoIzquierdo" Height="361" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="BrazoIzquierdo" Height="361" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3403,7 +3403,7 @@
                         </Image.RenderTransform>
                     </Image>
                 </Canvas>
-                <Canvas x:Name="PiernaDerecha" Height="320" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="PiernaDerecha" Height="320" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
@@ -3426,7 +3426,7 @@
                         <Path.Data>M318.7,335.04 C320.08443,334.51392 319.9844,334.62435 321.1,333.64</Path.Data>
                     </Path>
                 </Canvas>
-                <Canvas x:Name="PiernaIzquierda" Height="320" Width="470" RenderTransformOrigin="0.5,0.5">
+                <Canvas x:Name="PiernaIzquierda" Height="320" Width="470" RenderTransformOrigin="0.5,0.5" Canvas.Top="-49">
                     <Canvas.RenderTransform>
                         <CompositeTransform/>
                     </Canvas.RenderTransform>
