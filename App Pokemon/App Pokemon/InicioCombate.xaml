@@ -26,7 +26,7 @@
             <RowDefinition Height="187*"/>
         </Grid.RowDefinitions>
         <Viewbox x:Name="vb_titulo" Grid.ColumnSpan="5">
-            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="Elije Modo de Juego" FontSize="36" FontFamily="Algerian" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="Elige Modo de Juego" FontSize="36" FontFamily="Algerian" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1">
             <Image Source="/Assets/imgCombatePage/solo.jpg" Tapped="Solo_Tapped" Width="12" Height="7" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill">
