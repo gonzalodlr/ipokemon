@@ -770,7 +770,7 @@
             <TextBlock x:Name="Nombre_Pokemon_Texto" TextWrapping="Wrap" Text="Dracofire" FontSize="16" Foreground="White" TextAlignment="Center" Height="24" Width="148"/>
         </Viewbox>
         <Viewbox x:Name="Pokemon" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2">
-            <Canvas x:Name="Dracofire" Margin="200,34,200,0" Height="400" Width="400" RenderTransformOrigin="0.5,0.5">
+            <Canvas x:Name="Dracofire" Height="333" Width="333" RenderTransformOrigin="0.5,0.5">
                 <Canvas.RenderTransform>
                     <CompositeTransform ScaleX="-1"/>
                 </Canvas.RenderTransform>
