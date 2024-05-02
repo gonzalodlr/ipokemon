@@ -59,6 +59,13 @@ namespace App_Pokemon
             GengarJCC.verPocionVida(false);
             GengarJCC.verPocionEnergia(false);
 
+            MyUCLucario.verFondo(false);
+            MyUCLucario.verNombre(false);
+            MyUCLucario.verFilaVida(false);
+            MyUCLucario.verFilaEnergia(false);
+            MyUCLucario.verPocionVida(false);
+            MyUCLucario.verPocionEnergia(false);
+
             //LucarioGAC.verFondo(false);
             //LucarioGAC.verNombre(false);
             //LucarioGAC.verFilaVida(false);

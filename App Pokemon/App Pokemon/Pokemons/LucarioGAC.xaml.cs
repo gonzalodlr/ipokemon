@@ -344,37 +344,37 @@ namespace LucarioGAC {
             mediaPlayer.Play();
         }
 
-        void iPokemon.verFondo(bool ver)
+        public void verFondo(bool ver)
         {
             Background.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        void iPokemon.verFilaVida(bool ver)
+        public void verFilaVida(bool ver)
         {
             pbHealth.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        void iPokemon.verFilaEnergia(bool ver)
+        public void verFilaEnergia(bool ver)
         {
             pbEnergy.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        void iPokemon.verPocionVida(bool ver)
+        public void verPocionVida(bool ver)
         {
             HealthPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        void iPokemon.verPocionEnergia(bool ver)
+        public void verPocionEnergia(bool ver)
         {
             EnergyPotion.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        void iPokemon.verNombre(bool ver)
+        public void verNombre(bool ver)
         {
             PokemonName.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        void iPokemon.activarAniIdle(bool activar)
+        public void activarAniIdle(bool activar)
         {
             if (activar)
             {
@@ -389,55 +389,55 @@ namespace LucarioGAC {
             }
         }
 
-        void iPokemon.animacionAtaqueFlojo()
+        public void animacionAtaqueFlojo()
         {
             Storyboard weakAttackAnimation = (Storyboard)this.Resources["Reversal"];
             weakAttackAnimation.Begin();
         }
 
-        void iPokemon.animacionAtaqueFuerte()
+        public void animacionAtaqueFuerte()
         {
             Storyboard strongAttackAnimation = (Storyboard)this.Resources["AuraSphere"];
             strongAttackAnimation.Begin();
         }
 
-        void iPokemon.animacionDefensa()
+        public void animacionDefensa()
         {
             Storyboard defensa = (Storyboard)this.Resources["Escudo"];
             defensa.Begin();
         }
 
-        void iPokemon.animacionDescasar()
+        public void animacionDescasar()
         {
             Storyboard idle = (Storyboard)this.Resources["Idle"];
             idle.Begin();
         }
 
-        void iPokemon.animacionCansado()
+        public void animacionCansado()
         {
             Storyboard cansado = (Storyboard)this.Resources["Cansado"];
             cansado.Begin();
         }
 
-        void iPokemon.animacionNoCansado()
+        public void animacionNoCansado()
         {
             Storyboard noCansado = (Storyboard)this.Resources["Cansado_Inverso"];
             noCansado.Begin();
         }
 
-        void iPokemon.animacionHerido()
+        public void animacionHerido()
         {
             Storyboard herido = (Storyboard)this.Resources["Herido"];
             herido.Begin();
         }
 
-        void iPokemon.animacionNoHerido()
+        public void animacionNoHerido()
         {
             Storyboard noHerido = (Storyboard)this.Resources["Herido_Inverso"];
             noHerido.Begin();
         }
 
-        void iPokemon.animacionDerrota()
+        public void animacionDerrota()
         {
             Storyboard derrotado = (Storyboard)this.Resources["Derrotado"];
             derrotado.Begin();
