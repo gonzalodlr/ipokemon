@@ -9,6 +9,8 @@
     xmlns:my2="using:LucarioGAC"
     xmlns:my3="using:Pokemon_Antonio_Campallo_Gomez"
     xmlns:my4="using:Sesion4" 
+    xmlns:my5="using:ToxicroackJPG"
+    xmlns:my6="using:ControlUsuario_IPO2"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -83,6 +85,8 @@
             <my2:MyUCLucario x:Name="MyUCLucario" Margin="5"/>
             <my3:ArticunoACG x:Name="ArticunoACG" Margin="5"/>
             <my4:GengarJCC x:Name="GengarJCC" Margin="5"/>
+            <my5:ToxicroackJPG x:Name="ToxicroackJPG" Margin="5"/>
+            <my6:DragoniteCSD x:Name="DragoniteCSD" Margin="5"/>
         </GridView>
     </Grid>
 </Page>

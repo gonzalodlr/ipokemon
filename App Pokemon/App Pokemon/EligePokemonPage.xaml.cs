@@ -59,6 +59,21 @@ namespace App_Pokemon
             MyUCLucario.verPocionVida(false);
             MyUCLucario.verPocionEnergia(false);
 
+            ToxicroackJPG.verFondo(false);
+            ToxicroackJPG.verNombre(false);
+            ToxicroackJPG.verFilaVida(false);
+            ToxicroackJPG.verFilaEnergia(false);
+            ToxicroackJPG.verPocionVida(false);
+            ToxicroackJPG.verPocionEnergia(false);
+
+            DragoniteCSD.VerFondo(false);
+            DragoniteCSD.VerNombre(false);
+            DragoniteCSD.VerFilaVida(false);
+            DragoniteCSD.VerFilaEnergia(false);
+            DragoniteCSD.VerPocionVida(false);
+            DragoniteCSD.VerPocionEnergia(false);
+
+
             //CharizardASM.verFondo(false);
             //CharizardASM.verNombre(false);
             //CharizardASM.verFilaVida(false);

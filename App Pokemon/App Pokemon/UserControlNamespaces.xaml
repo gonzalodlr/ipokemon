@@ -8,6 +8,8 @@
     xmlns:my2="using:LucarioGAC"
     xmlns:my3="using:Pokemon_Antonio_Campallo_Gomez" 
     xmlns:my4="using:Sesion4"
+    xmlns:my5="using:ToxicroackJPG"
+    xmlns:my6="using:ControlUsuario_IPO2"
     >
     
         <my:DracofireGDLRS x:Key="DracofireGDLRSInstance"/>
@@ -15,5 +17,8 @@
         <my2:MyUCLucario x:Key="MyUCLucarioInstance"/>
         <my3:ArticunoACG x:Key="ArticunoACGInstance"/>
         <my4:GengarJCC x:Key="GengarJCCInstance"/>
+        <my5:ToxicroackJPG x:Key="ToxicroackJPGInstance"/>
+        <my6:DragoniteCSD x:Key="DragoniteCSDInstance"/>
+        
 
 </ResourceDictionary>

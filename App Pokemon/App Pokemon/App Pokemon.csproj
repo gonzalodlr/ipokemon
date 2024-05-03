@@ -140,6 +140,9 @@
     <Compile Include="Pokemons\DracofireGDLRS.xaml.cs">
       <DependentUpon>DracofireGDLRS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pokemons\DragoniteCSD.xaml.cs">
+      <DependentUpon>DragoniteCSD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pokemons\GengarJCC.xaml.cs">
       <DependentUpon>GengarJCC.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,9 @@
     <Compile Include="MisPokemonPage.xaml.cs">
       <DependentUpon>MisPokemonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pokemons\ToxicroackJPG.xaml.cs">
+      <DependentUpon>ToxicroackJPG.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -165,6 +171,40 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Agujero.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Bostezo.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Burbujas.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Calavera.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Corazon.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Dormir.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Energi.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Escudo.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Fondo.jpg" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\herida_1.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Herida_2.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Herida_3.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\muerto.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\nubes moradas.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\NubesOscuras.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Planta.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Planta_2.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Pocima_Energia-removebg-preview.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Pocima_Vida-removebg-preview.png" />
+    <Content Include="Assets+Pokemon+inicial\Imagenes\Venom.png" />
+    <Content Include="Assets+Pokemon+inicial\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets+Pokemon+inicial\Muerte.mp3" />
+    <Content Include="Assets+Pokemon+inicial\Sonidos\AtaqueDebil2.mp3" />
+    <Content Include="Assets+Pokemon+inicial\Sonidos\AtaqueFuerte.mp3" />
+    <Content Include="Assets+Pokemon+inicial\Sonidos\Bostezo.mp3" />
+    <Content Include="Assets+Pokemon+inicial\Sonidos\Herido.mp3" />
+    <Content Include="Assets+Pokemon+inicial\Sonidos\Muerte.mp3" />
+    <Content Include="Assets+Pokemon+inicial\Sonidos\Ronquido.mp3" />
+    <Content Include="Assets+Pokemon+inicial\SplashScreen.scale-200.png" />
+    <Content Include="Assets+Pokemon+inicial\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets+Pokemon+inicial\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets+Pokemon+inicial\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets+Pokemon+inicial\StoreLogo.png" />
+    <Content Include="Assets+Pokemon+inicial\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsArticunoACG\CabezazoRalentizado.mp3" />
     <Content Include="AssetsArticunoACG\corazonVida.png" />
     <Content Include="AssetsArticunoACG\DerrotadoBien.mp3" />
@@ -225,6 +265,43 @@
     <Content Include="AssetsDracofireGDLRS\StoreLogo.png" />
     <Content Include="AssetsDracofireGDLRS\vida.png" />
     <Content Include="AssetsDracofireGDLRS\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsDragoniteCSD\angel.png" />
+    <Content Include="AssetsDragoniteCSD\arañazo.png" />
+    <Content Include="AssetsDragoniteCSD\Ataque.mp3" />
+    <Content Include="AssetsDragoniteCSD\cansado.mp3" />
+    <Content Include="AssetsDragoniteCSD\colazo.png" />
+    <Content Include="AssetsDragoniteCSD\colazo.wav" />
+    <Content Include="AssetsDragoniteCSD\CuraVida.mp3" />
+    <Content Include="AssetsDragoniteCSD\default.mp3" />
+    <Content Include="AssetsDragoniteCSD\Enfado.mp3" />
+    <Content Include="AssetsDragoniteCSD\escenariopokemon.jpg" />
+    <Content Include="AssetsDragoniteCSD\escudo.mp3" />
+    <Content Include="AssetsDragoniteCSD\escudoesfera.png" />
+    <Content Include="AssetsDragoniteCSD\escudoReal.png" />
+    <Content Include="AssetsDragoniteCSD\explosion.png" />
+    <Content Include="AssetsDragoniteCSD\explosion.wav" />
+    <Content Include="AssetsDragoniteCSD\herido.mp3" />
+    <Content Include="AssetsDragoniteCSD\herido.png" />
+    <Content Include="AssetsDragoniteCSD\humoenfado.png" />
+    <Content Include="AssetsDragoniteCSD\img_meteorito.png" />
+    <Content Include="AssetsDragoniteCSD\img_stamina.png" />
+    <Content Include="AssetsDragoniteCSD\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsDragoniteCSD\muertedef.mp3" />
+    <Content Include="AssetsDragoniteCSD\muerto.png" />
+    <Content Include="AssetsDragoniteCSD\oxigeno.png" />
+    <Content Include="AssetsDragoniteCSD\pocionstamina.png" />
+    <Content Include="AssetsDragoniteCSD\pocionvida.png" />
+    <Content Include="AssetsDragoniteCSD\recuperarenergiavida.png" />
+    <Content Include="AssetsDragoniteCSD\SplashScreen.scale-200.png" />
+    <Content Include="AssetsDragoniteCSD\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsDragoniteCSD\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsDragoniteCSD\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsDragoniteCSD\stamina.png" />
+    <Content Include="AssetsDragoniteCSD\StoreLogo.png" />
+    <Content Include="AssetsDragoniteCSD\sudor.png" />
+    <Content Include="AssetsDragoniteCSD\termometro.png" />
+    <Content Include="AssetsDragoniteCSD\Vidapokemon2.png" />
+    <Content Include="AssetsDragoniteCSD\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsGengarJCC\corazon.png" />
     <Content Include="AssetsGengarJCC\energia.png" />
     <Content Include="AssetsGengarJCC\LockScreenLogo.scale-200.png" />
@@ -343,6 +420,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pokemons\DragoniteCSD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pokemons\GengarJCC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -362,6 +443,10 @@
     <Page Include="MisPokemonPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pokemons\ToxicroackJPG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlNamespaces.xaml">
       <SubType>Designer</SubType>
