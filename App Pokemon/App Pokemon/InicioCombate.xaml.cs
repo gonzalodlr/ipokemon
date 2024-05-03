@@ -28,7 +28,7 @@ namespace App_Pokemon
         }
         private void Solo_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CombatePage), "solo");
+            this.Frame.Navigate(typeof(EligePokemonPage), "solo");
         }
         private void Multijugador_Tapped(object sender, TappedRoutedEventArgs e)
         {

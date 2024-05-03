@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -21,18 +20,12 @@ namespace App_Pokemon
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class PokedexPage : Page
+    public sealed partial class EligePokemonPage : Page
     {
-        public List<UserControl> UserControls { get; set; }
-        public List<UserControl> Items { get; set;  } = new List<UserControl>();
-
-        //private List<UserControl> UserControls = new List<UserControl>(); // Initialize the UserControls list
-        public PokedexPage()
+        public EligePokemonPage()
         {
             this.InitializeComponent();
             configurar_pokedex();
-            //LoadUserControlInstances();
-            //ContentGridView.ItemsSource = Items;
 
         }
 
@@ -74,24 +67,6 @@ namespace App_Pokemon
             //CharizardASM.verPocionEnergia(false);
         }
 
-        //private void LoadUserControlInstances()
-        //{
-        //    Items.Add(DracofireGDLRS);
-        //    Items.Add(CharizardASM);
-        //    Items.Add(MyUCLucario);
-        //    Items.Add(ArticunoACG);
-        //}
-        //private void crearListaPokemons()
-        //{
-        //    ViewModel viewModel = new ViewModel();
-
-        //    UserControls = new List<UserControl>(); // Initialize the UserControls list
-
-        //    foreach (var userControl in viewModel.UserControls)
-        //    {
-        //        UserControls.Add(userControl);
-        //    }
-        //}
         private void ContentGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Aquí puedes manejar el evento de cambio de selección del GridView
@@ -110,6 +85,5 @@ namespace App_Pokemon
             var clickedControl = e.ClickedItem as UserControl;
             // Haz lo que necesites con el control clickeado
         }
-
     }
 }

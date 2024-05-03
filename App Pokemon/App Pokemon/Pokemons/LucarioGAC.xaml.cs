@@ -352,11 +352,13 @@ namespace LucarioGAC {
         public void verFilaVida(bool ver)
         {
             pbHealth.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
+            Heart.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public void verFilaEnergia(bool ver)
         {
             pbEnergy.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
+            Energy.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public void verPocionVida(bool ver)
