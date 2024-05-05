@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -23,6 +24,8 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class EligePokemonPage : Page
     {
+        private UserControl pokemonCPU;
+
         public EligePokemonPage()
         {
             this.InitializeComponent();
@@ -134,9 +137,24 @@ namespace App_Pokemon
             // Por ejemplo, puedes acceder al elemento haciendo casting del argumento e:
             var clickedControl = e.ClickedItem as UserControl;
             // Haz lo que necesites con el control clickeado
-            //SeleccionarPokemonParaCPU();
+            SeleccionarPokemonParaCPU();
+            this.Frame.Navigate(typeof(CombatePage), new List<UserControl> { clickedControl, pokemonCPU });
         }
 
-        
+        private void SeleccionarPokemonParaCPU()
+        {
+            // Aquí seleccionas aleatoriamente un Pokémon para la CPU
+            Random rnd = new Random();
+            // Selecciona un índice aleatorio dentro del rango de la cantidad de controles de usuario de Pokémon
+            int randomIndex = rnd.Next(0, ContentGridView.Items.Count);
+            // Obtén el control de usuario de Pokémon en el índice aleatorio
+            var pokemonCPU = ContentGridView.Items[randomIndex] as UserControl;
+            // Haz lo que necesites con el control de usuario de Pokémon seleccionado para la CPU
+            // Por ejemplo, podrías mostrar un mensaje con el nombre del Pokémon seleccionado
+            //MessageBox.Show($"El Pokémon de la CPU es: {pokemonCPU.Name}");
+            // O realizar alguna otra lógica de juego para la CPU
+        }
+
+
     }
 }

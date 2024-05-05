@@ -20,7 +20,7 @@
         </Grid.Background>
 
         <GridView   x:Name="ContentGridView"
-                    IsItemClickEnabled="False"
+                    IsItemClickEnabled="True"
                     CanDragItems="True"
                     AllowDrop="True"
                     CanReorderItems="True"
