@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,8 +26,32 @@ namespace App_Pokemon
         public EligePokemonPage()
         {
             this.InitializeComponent();
+            // Establece el tamaño mínimo preferido de la ventana
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1000, 1000));
+
+            // Maneja el evento SizeChanged de la ventana
+            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
             configurar_pokedex();
 
+        }
+
+        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+        {
+            // Obtén el ancho y el alto actual de la ventana
+            double width = Window.Current.Bounds.Width;
+            double height = Window.Current.Bounds.Height;
+
+            // Si el ancho es menor que 600, ajusta el ancho a 600
+            if (width < 600)
+            {
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(600, height));
+            }
+
+            // Si la altura es menor que 600, ajusta la altura a 600
+            if (height < 600)
+            {
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(width, 600));
+            }
         }
 
         private void configurar_pokedex()

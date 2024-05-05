@@ -19,7 +19,7 @@
             <ImageBrush Opacity="0.5" ImageSource="/Assets/imgPokedex/pokedexBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <GridView   x:Name="ContentGridView" Margin="10"
+        <GridView   x:Name="ContentGridView"
                     IsItemClickEnabled="False"
                     CanDragItems="True"
                     AllowDrop="True"
@@ -27,7 +27,7 @@
                     SelectionMode="Single"
                     SelectionChanged="ContentGridView_SelectionChanged"
                     ItemClick="ContentGridView_ItemClick"
-                    FlowDirection="LeftToRight">
+                    FlowDirection="LeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -37,7 +37,7 @@
 
             <GridView.ItemContainerStyle>
                 <Style TargetType="GridViewItem">
-                    <Setter Property="Margin" Value="20,10,20,10"/>
+                    <Setter Property="Margin" Value="10,10,10,10"/>
                 </Style>
             </GridView.ItemContainerStyle>
 
@@ -49,7 +49,10 @@
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
+                        <Viewbox Grid.Column="0">
+                            <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
+                        </Viewbox>
+                     
 
                         <Grid Grid.Column="1">
                             <Grid.ColumnDefinitions>
