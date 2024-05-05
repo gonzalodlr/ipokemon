@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PokemonNoelia;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -81,6 +82,51 @@ namespace App_Pokemon
             DragoniteCSD.VerFilaEnergia(false);
             DragoniteCSD.VerPocionVida(false);
             DragoniteCSD.VerPocionEnergia(false);
+
+
+            /*Este Pokemon hace que pete la aplicación si se descomenta*/
+            //ButterFreeACC.verFondo(false);
+            //ButterFreeACC.verNombre(false);
+            //ButterFreeACC.verFilaVida(false);
+            //ButterFreeACC.verFilaEnergia(false);
+            //ButterFreeACC.verPocionVida(false);
+            //ButterFreeACC.verPocionEnergia(false);
+
+            
+            ChandelureNDAA.verFondo(false);
+            ChandelureNDAA.verNombre(false);
+            ChandelureNDAA.verFilaVida(false);
+            ChandelureNDAA.verFilaEnergia(false);
+            ChandelureNDAA.verPocionVida(false);
+            ChandelureNDAA.verPocionEnergia(false);
+
+
+            /*Este Pokemon no se ve xd*/
+            PiplupMLTN.verFondo(false);
+            PiplupMLTN.verNombre(false);
+            PiplupMLTN.verFilaVida(false);
+            PiplupMLTN.verFilaEnergia(false);
+            PiplupMLTN.verPocionVida(false);
+            PiplupMLTN.verPocionEnergia(false);
+
+            Snorlax.verFondo(false);
+            Snorlax.verNombre(false);
+            Snorlax.verFilaVida(false);
+            Snorlax.verFilaEnergia(false);
+            Snorlax.verPocionVida(false);
+            Snorlax.verPocionEnergia(false);
+
+            ScizorAPJ.verFondo(false);
+            ScizorAPJ.verNombre(false);
+            ScizorAPJ.verFilaVida(false);
+            ScizorAPJ.verFilaEnergia(false);
+            ScizorAPJ.verPocionVida(false);
+            ScizorAPJ.verPocionEnergia(false);
+
+
+
+
+
 
 
 

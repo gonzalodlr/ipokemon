@@ -131,6 +131,12 @@
     <Compile Include="Pokemons\ArticunoACG.xaml.cs">
       <DependentUpon>ArticunoACG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pokemons\ButterFreeACC.xaml.cs">
+      <DependentUpon>ButterFreeACC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\ChandelureNDAA.xaml.cs">
+      <DependentUpon>ChandelureNDAA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pokemons\CharizardASM.xaml.cs">
       <DependentUpon>CharizardASM.xaml</DependentUpon>
     </Compile>
@@ -158,6 +164,15 @@
     </Compile>
     <Compile Include="MisPokemonPage.xaml.cs">
       <DependentUpon>MisPokemonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\PiplupMLTN.xaml.cs">
+      <DependentUpon>PiplupMLTN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\ScizorAPJ.xaml.cs">
+      <DependentUpon>ScizorAPJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\SnorlaxROC.xaml.cs">
+      <DependentUpon>SnorlaxROC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pokemons\ToxicroackJPG.xaml.cs">
       <DependentUpon>ToxicroackJPG.xaml</DependentUpon>
@@ -222,6 +237,49 @@
     <Content Include="AssetsArticunoACG\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="AssetsArticunoACG\StoreLogo.png" />
     <Content Include="AssetsArticunoACG\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsButterFreeACC\brillo.png" />
+    <Content Include="AssetsButterFreeACC\capullo.png" />
+    <Content Include="AssetsButterFreeACC\cicatrizGrande.png" />
+    <Content Include="AssetsButterFreeACC\energia.png" />
+    <Content Include="AssetsButterFreeACC\escudo.mp3" />
+    <Content Include="AssetsButterFreeACC\escudo.png" />
+    <Content Include="AssetsButterFreeACC\fondo1.jpg" />
+    <Content Include="AssetsButterFreeACC\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsButterFreeACC\muerte.mp3" />
+    <Content Include="AssetsButterFreeACC\nube.png" />
+    <Content Include="AssetsButterFreeACC\ojos_muerte.png" />
+    <Content Include="AssetsButterFreeACC\pocima_energia.png" />
+    <Content Include="AssetsButterFreeACC\pocima_vida.png" />
+    <Content Include="AssetsButterFreeACC\SplashScreen.scale-200.png" />
+    <Content Include="AssetsButterFreeACC\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsButterFreeACC\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsButterFreeACC\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsButterFreeACC\StoreLogo.png" />
+    <Content Include="AssetsButterFreeACC\tirita.png" />
+    <Content Include="AssetsButterFreeACC\tornado.mp3" />
+    <Content Include="AssetsButterFreeACC\tronado.png" />
+    <Content Include="AssetsButterFreeACC\vida.png" />
+    <Content Include="AssetsButterFreeACC\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsChandelureNDAA\AtaqueDebilSonido.mp3" />
+    <Content Include="AssetsChandelureNDAA\AtaqueFuerteSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\CansadoSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\corazon.png" />
+    <Content Include="AssetsChandelureNDAA\fondo.jpg" />
+    <Content Include="AssetsChandelureNDAA\HeridoSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsChandelureNDAA\MuerteSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\Normal.mp4" />
+    <Content Include="AssetsChandelureNDAA\pocionAmarilla.png" />
+    <Content Include="AssetsChandelureNDAA\pocionMorada.png" />
+    <Content Include="AssetsChandelureNDAA\rayo.png" />
+    <Content Include="AssetsChandelureNDAA\SplashScreen.scale-200.png" />
+    <Content Include="AssetsChandelureNDAA\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsChandelureNDAA\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsChandelureNDAA\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsChandelureNDAA\StoreLogo.png" />
+    <Content Include="AssetsChandelureNDAA\VidaSonidoFeliz.mp4" />
+    <Content Include="AssetsChandelureNDAA\VueloSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsCharizardASM\CharizardASM\audio\evolucion.mp3" />
     <Content Include="AssetsCharizardASM\CharizardASM\audio\garra.mp3" />
     <Content Include="AssetsCharizardASM\CharizardASM\audio\lanzallamas.mp3" />
@@ -332,6 +390,55 @@
     <Content Include="AssetsLucarioGAC\Pokemon.png" />
     <Content Include="AssetsLucarioGAC\Reversal.png" />
     <Content Include="AssetsLucarioGAC\Reversal2.png" />
+    <Content Include="AssetsPiplupMLTN\alma.png" />
+    <Content Include="AssetsPiplupMLTN\bocadillo.png" />
+    <Content Include="AssetsPiplupMLTN\bola_rayo_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\burbujas.png" />
+    <Content Include="AssetsPiplupMLTN\carambano.png" />
+    <Content Include="AssetsPiplupMLTN\copo_de_nieve_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\corazon_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\cruz.png" />
+    <Content Include="AssetsPiplupMLTN\cubito_de_hielo_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\destello_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\energia_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\escudo_de_hielo_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\espiral_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\FondoFinal.png" />
+    <Content Include="AssetsPiplupMLTN\gota_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\herida1.png" />
+    <Content Include="AssetsPiplupMLTN\lloro.png" />
+    <Content Include="AssetsPiplupMLTN\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsPiplupMLTN\ojeras_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\ola.png" />
+    <Content Include="AssetsPiplupMLTN\pocion_amarilla_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\pocion_roja_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\rayo_burbuja_sin_fondo.png" />
+    <Content Include="AssetsPiplupMLTN\sonido_cansado.mp3" />
+    <Content Include="AssetsPiplupMLTN\sonido_derrotado.mp3" />
+    <Content Include="AssetsPiplupMLTN\sonido_descanso.mp3" />
+    <Content Include="AssetsPiplupMLTN\sonido_escudo.mp3" />
+    <Content Include="AssetsPiplupMLTN\sonido_frioPolar.mp3" />
+    <Content Include="AssetsPiplupMLTN\sonido_herir.m4a" />
+    <Content Include="AssetsPiplupMLTN\sonido_surf.mp3" />
+    <Content Include="AssetsPiplupMLTN\SplashScreen.scale-200.png" />
+    <Content Include="AssetsPiplupMLTN\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsPiplupMLTN\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsPiplupMLTN\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsPiplupMLTN\StoreLogo.png" />
+    <Content Include="AssetsPiplupMLTN\tabla_surf.png" />
+    <Content Include="AssetsPiplupMLTN\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsScizorAPJ\icoEnergia.png" />
+    <Content Include="AssetsScizorAPJ\icoSalud.png" />
+    <Content Include="AssetsScizorAPJ\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsScizorAPJ\paisajePokemon.png" />
+    <Content Include="AssetsScizorAPJ\PocionEnergia.png" />
+    <Content Include="AssetsScizorAPJ\PocionSalud.png" />
+    <Content Include="AssetsScizorAPJ\SplashScreen.scale-200.png" />
+    <Content Include="AssetsScizorAPJ\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsScizorAPJ\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsScizorAPJ\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsScizorAPJ\StoreLogo.png" />
+    <Content Include="AssetsScizorAPJ\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\AcercaDe.png" />
     <Content Include="Assets\home.png" />
     <Content Include="Assets\icon_pokeball.png" />
@@ -378,6 +485,39 @@
     <Content Include="Assets\Tiles\SplashScreen.scale-150.png" />
     <Content Include="Assets\Tiles\SplashScreen.scale-200.png" />
     <Content Include="Assets\Tiles\SplashScreen.scale-400.png" />
+    <Content Include="Assets_Pokemon_iniciales\1fa78.png" />
+    <Content Include="Assets_Pokemon_iniciales\aDormir.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\arabn.png" />
+    <Content Include="Assets_Pokemon_iniciales\arañazo.jpg" />
+    <Content Include="Assets_Pokemon_iniciales\arañazoSan2.png" />
+    <Content Include="Assets_Pokemon_iniciales\arañazoSangre.png" />
+    <Content Include="Assets_Pokemon_iniciales\baba.png" />
+    <Content Include="Assets_Pokemon_iniciales\caida.png" />
+    <Content Include="Assets_Pokemon_iniciales\cama.png" />
+    <Content Include="Assets_Pokemon_iniciales\cartel-minimo-ilustracion-vector-arbol-coco_969863-6808.png" />
+    <Content Include="Assets_Pokemon_iniciales\cartoon-bunny-easy-to-use-without-gradients-or-other-effects-vector.jpg" />
+    <Content Include="Assets_Pokemon_iniciales\corazon.png" />
+    <Content Include="Assets_Pokemon_iniciales\derrumbe.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\energia.png" />
+    <Content Include="Assets_Pokemon_iniciales\escudo.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\fondo.jpg" />
+    <Content Include="Assets_Pokemon_iniciales\heridas.png" />
+    <Content Include="Assets_Pokemon_iniciales\lapida.png" />
+    <Content Include="Assets_Pokemon_iniciales\manta.png" />
+    <Content Include="Assets_Pokemon_iniciales\moraton.png" />
+    <Content Include="Assets_Pokemon_iniciales\moraton2.png" />
+    <Content Include="Assets_Pokemon_iniciales\muerte.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\ojosmuerto.png" />
+    <Content Include="Assets_Pokemon_iniciales\pocionA.png" />
+    <Content Include="Assets_Pokemon_iniciales\pocionR.png" />
+    <Content Include="Assets_Pokemon_iniciales\roncar.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\tierra.png" />
+    <Content Include="Assets_Pokemon_iniciales\tierrabn.png" />
+    <Content Include="Assets_Pokemon_iniciales\uñas.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\vidaBaja.mp3" />
+    <Content Include="Assets_Pokemon_iniciales\z.png" />
+    <Content Include="Assets_Pokemon_iniciales\z2b.png" />
+    <Content Include="Assets_Pokemon_iniciales\zb.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -405,6 +545,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pokemons\ArticunoACG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\ButterFreeACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\ChandelureNDAA.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -443,6 +591,18 @@
     <Page Include="MisPokemonPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pokemons\PiplupMLTN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\ScizorAPJ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\SnorlaxROC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pokemons\ToxicroackJPG.xaml">
       <Generator>MSBuild:Compile</Generator>

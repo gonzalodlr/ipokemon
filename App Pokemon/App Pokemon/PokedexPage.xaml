@@ -12,6 +12,12 @@
     xmlns:my4="using:Sesion4" 
     xmlns:my5="using:ToxicroackJPG"
     xmlns:my6="using:ControlUsuario_IPO2"
+    xmlns:my7="using:ButterFreeACC"
+    xmlns:my8="using:PokemonNoelia"
+    xmlns:my9="using:piplupUserControl"
+    xmlns:my10="using:OrtizCañameroRoberto_Snorlax"
+    xmlns:my11="using:Scizor_AdrianPeinado"
+    
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -97,6 +103,12 @@
             <my4:GengarJCC x:Name="GengarJCC" Margin="5"/>
             <my5:ToxicroackJPG x:Name="ToxicroackJPG" Margin="5"/>
             <my6:DragoniteCSD x:Name="DragoniteCSD" Margin="5"/>
+            <!--<my7:ButterFreeACC x:Name="ButterFreeACC" Margin="5"/>-->
+            <my8:ChandelureNDAA x:Name="ChandelureNDAA" Margin="5"/>
+            <my9:PiplupMLTN x:Name="PiplupMLTN" Margin="5"/>
+            <my10:SnorlaxROC x:Name="Snorlax" Margin="5"/>
+            <my11:ScizorAPJ x:Name="ScizorAPJ" Margin="5"/>
+
         </GridView>
     </Grid>
 </Page>

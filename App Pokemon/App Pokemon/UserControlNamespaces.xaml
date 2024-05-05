@@ -10,6 +10,11 @@
     xmlns:my4="using:Sesion4"
     xmlns:my5="using:ToxicroackJPG"
     xmlns:my6="using:ControlUsuario_IPO2"
+    xmlns:my7="using:ButterFreeACC"
+    xmlns:my8="using:PokemonNoelia"
+    xmlns:my9="using:piplupUserControl"
+    xmlns:my10="using:OrtizCañameroRoberto_Snorlax"
+    xmlns:my11="using:Scizor_AdrianPeinado"
     >
     
         <my:DracofireGDLRS x:Key="DracofireGDLRSInstance"/>
@@ -19,6 +24,11 @@
         <my4:GengarJCC x:Key="GengarJCCInstance"/>
         <my5:ToxicroackJPG x:Key="ToxicroackJPGInstance"/>
         <my6:DragoniteCSD x:Key="DragoniteCSDInstance"/>
-        
+        <my7:ButterFreeACC x:Key="ButterFreeACCInstance"/>
+        <my8:ChandelureNDAA x:Key="ChandelureInstance"/>
+        <my9:PiplupMLTN x:Key="PiplupMLTNInstance"/>
+        <my10:SnorlaxROC x:Key="SnorlaxInstance"/>
+        <my11:ScizorAPJ x:Key="ScizorAPJInstance"/>
+
 
 </ResourceDictionary>
