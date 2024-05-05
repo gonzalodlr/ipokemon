@@ -2897,7 +2897,7 @@
             </Canvas>
 
         </Viewbox>
-        <Border Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center">
+        <Border x:Name="border_nombre" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center">
             <Grid>
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFC1C1C1" Height="25" Width="103"/>
                 <TextBlock x:Name="NombrePokemon" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Toxicroack" VerticalAlignment="Center" FontSize="20" Foreground="Black" FocusVisualSecondaryBrush="#997F0B0B" FocusVisualPrimaryBrush="#FF820808"/>

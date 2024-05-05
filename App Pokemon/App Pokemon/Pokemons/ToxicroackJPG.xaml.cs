@@ -232,12 +232,12 @@ namespace ToxicroackJPG
             if (ver)
             {
                 // Mostrar el nombre del Pokémon
-                NombrePokemon.Visibility = Visibility.Visible;
+                border_nombre.Visibility = Visibility.Visible;
             }
             else
             {
                 // Ocultar el nombre del Pokémon
-                this.NombrePokemon.Visibility = Visibility.Collapsed;
+                this.border_nombre.Visibility = Visibility.Collapsed;
                 //NombrePokemon.Visibility = Visibility.Collapsed;
             }
         }
