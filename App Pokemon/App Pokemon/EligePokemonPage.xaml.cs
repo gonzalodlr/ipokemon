@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -82,6 +83,16 @@ namespace App_Pokemon
             //CharizardASM.verPocionEnergia(false);
         }
 
+        private void PokemonPointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Hand, 1);
+        }
+
+        private void PokemonPointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Arrow, 1);
+        }
+
         private void ContentGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Aquí puedes manejar el evento de cambio de selección del GridView
@@ -99,6 +110,9 @@ namespace App_Pokemon
             // Por ejemplo, puedes acceder al elemento haciendo casting del argumento e:
             var clickedControl = e.ClickedItem as UserControl;
             // Haz lo que necesites con el control clickeado
+            //SeleccionarPokemonParaCPU();
         }
+
+        
     }
 }
