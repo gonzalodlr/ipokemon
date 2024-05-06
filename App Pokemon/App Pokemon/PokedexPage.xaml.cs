@@ -101,13 +101,13 @@ namespace App_Pokemon
             ChandelureNDAA.verPocionEnergia(false);
 
 
-            /*Este Pokemon no se ve xd*/
-            PiplupMLTN.verFondo(false);
-            PiplupMLTN.verNombre(false);
-            PiplupMLTN.verFilaVida(false);
-            PiplupMLTN.verFilaEnergia(false);
-            PiplupMLTN.verPocionVida(false);
-            PiplupMLTN.verPocionEnergia(false);
+            /*Este Pokemon es invisible xd*/
+            //PiplupMLTN.verFondo(false);
+            //PiplupMLTN.verNombre(false);
+            //PiplupMLTN.verFilaVida(false);
+            //PiplupMLTN.verFilaEnergia(false);
+            //PiplupMLTN.verPocionVida(false);
+            //PiplupMLTN.verPocionEnergia(false);
 
             Snorlax.verFondo(false);
             Snorlax.verNombre(false);
@@ -122,6 +122,14 @@ namespace App_Pokemon
             ScizorAPJ.verFilaEnergia(false);
             ScizorAPJ.verPocionVida(false);
             ScizorAPJ.verPocionEnergia(false);
+
+            MakuhitaAPQ.verFondo(false);
+            MakuhitaAPQ.verNombre(false);
+            MakuhitaAPQ.verFilaVida(false);
+            MakuhitaAPQ.verFilaEnergia(false);
+            MakuhitaAPQ.verPocionVida(false);
+            MakuhitaAPQ.verPocionEnergia(false);
+
 
 
 

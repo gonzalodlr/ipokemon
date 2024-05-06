@@ -17,6 +17,7 @@
     xmlns:my9="using:piplupUserControl"
     xmlns:my10="using:OrtizCañameroRoberto_Snorlax"
     xmlns:my11="using:Scizor_AdrianPeinado"
+    xmlns:my12="using:PokemonIPO2"
     
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -108,6 +109,7 @@
             <my9:PiplupMLTN x:Name="PiplupMLTN" Margin="5"/>
             <my10:SnorlaxROC x:Name="Snorlax" Margin="5"/>
             <my11:ScizorAPJ x:Name="ScizorAPJ" Margin="5"/>
+            <my12:MakuhitaAPQ2 x:Name="MakuhitaAPQ" Margin="5"/>
 
         </GridView>
     </Grid>

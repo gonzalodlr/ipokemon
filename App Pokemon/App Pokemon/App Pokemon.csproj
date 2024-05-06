@@ -165,6 +165,9 @@
     <Compile Include="MisPokemonPage.xaml.cs">
       <DependentUpon>MisPokemonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pokemons\MakuhitaAPQ.xaml.cs">
+      <DependentUpon>MakuhitaAPQ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pokemons\PiplupMLTN.xaml.cs">
       <DependentUpon>PiplupMLTN.xaml</DependentUpon>
     </Compile>
@@ -390,6 +393,18 @@
     <Content Include="AssetsLucarioGAC\Pokemon.png" />
     <Content Include="AssetsLucarioGAC\Reversal.png" />
     <Content Include="AssetsLucarioGAC\Reversal2.png" />
+    <Content Include="AssetsMakuhitaAPQ\Corazon.png" />
+    <Content Include="AssetsMakuhitaAPQ\Energia.png" />
+    <Content Include="AssetsMakuhitaAPQ\fondo.jpg" />
+    <Content Include="AssetsMakuhitaAPQ\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsMakuhitaAPQ\PocionEnergia.png" />
+    <Content Include="AssetsMakuhitaAPQ\PocionVida.png" />
+    <Content Include="AssetsMakuhitaAPQ\SplashScreen.scale-200.png" />
+    <Content Include="AssetsMakuhitaAPQ\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsMakuhitaAPQ\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsMakuhitaAPQ\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsMakuhitaAPQ\StoreLogo.png" />
+    <Content Include="AssetsMakuhitaAPQ\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsPiplupMLTN\alma.png" />
     <Content Include="AssetsPiplupMLTN\bocadillo.png" />
     <Content Include="AssetsPiplupMLTN\bola_rayo_sin_fondo.png" />
@@ -591,6 +606,10 @@
     <Page Include="MisPokemonPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pokemons\MakuhitaAPQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pokemons\PiplupMLTN.xaml">
       <Generator>MSBuild:Compile</Generator>

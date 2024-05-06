@@ -15,6 +15,7 @@
     xmlns:my9="using:piplupUserControl"
     xmlns:my10="using:OrtizCañameroRoberto_Snorlax"
     xmlns:my11="using:Scizor_AdrianPeinado"
+    xmlns:my12="using:PokemonIPO2"
     >
     
         <my:DracofireGDLRS x:Key="DracofireGDLRSInstance"/>
@@ -29,6 +30,7 @@
         <my9:PiplupMLTN x:Key="PiplupMLTNInstance"/>
         <my10:SnorlaxROC x:Key="SnorlaxInstance"/>
         <my11:ScizorAPJ x:Key="ScizorAPJInstance"/>
+        <my12:MakuhitaAPQ2 x:Key="MakuhitaAPQInstance"/>
 
 
 </ResourceDictionary>
