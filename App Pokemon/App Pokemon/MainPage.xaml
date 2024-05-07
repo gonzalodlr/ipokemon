@@ -20,13 +20,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <NavigationView ItemInvoked="viPokedex_PointerReleased" IsBackEnabled="True" BackRequested="NavigationView_BackRequested" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <NavigationView ItemInvoked="viPokedex_PointerReleased" IsSettingsVisible="False" IsBackEnabled="True" BackRequested="NavigationView_BackRequested" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Inicio" x:Name="viHome" Icon="Home"/>
                 <NavigationViewItem Content="Mis Pokemon" x:Name="viPokemons" Icon="AllApps"/>
                 <NavigationViewItem Content="Pokedex" x:Name="viPokedex" Icon="AllApps"/>
                 <NavigationViewItem Content="Combate" x:Name="viCombate" Icon="People"/>
-                <NavigationViewItem Content="Acerca De" x:Name="viAcercaDe" Icon="Map"/>
+                <NavigationViewItem Content="Acerca De" x:Name="viAcercaDe" Icon="Help"/>
             </NavigationView.MenuItems>
             <Frame x:Name="fmMain">
                 <Grid>

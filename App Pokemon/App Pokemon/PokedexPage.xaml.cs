@@ -5,7 +5,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using ToxicroackJPG;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -130,19 +129,6 @@ namespace App_Pokemon
             MakuhitaAPQ.verPocionVida(false);
             MakuhitaAPQ.verPocionEnergia(false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             //CharizardASM.verFondo(false);
             //CharizardASM.verNombre(false);
             //CharizardASM.verFilaVida(false);
@@ -151,24 +137,6 @@ namespace App_Pokemon
             //CharizardASM.verPocionEnergia(false);
         }
 
-        //private void LoadUserControlInstances()
-        //{
-        //    Items.Add(DracofireGDLRS);
-        //    Items.Add(CharizardASM);
-        //    Items.Add(MyUCLucario);
-        //    Items.Add(ArticunoACG);
-        //}
-        //private void crearListaPokemons()
-        //{
-        //    ViewModel viewModel = new ViewModel();
-
-        //    UserControls = new List<UserControl>(); // Initialize the UserControls list
-
-        //    foreach (var userControl in viewModel.UserControls)
-        //    {
-        //        UserControls.Add(userControl);
-        //    }
-        //}
         private void ContentGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Aquí puedes manejar el evento de cambio de selección del GridView

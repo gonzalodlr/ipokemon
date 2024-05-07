@@ -180,7 +180,6 @@
     <Compile Include="Pokemons\ToxicroackJPG.xaml.cs">
       <DependentUpon>ToxicroackJPG.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -637,6 +636,9 @@
       <Version>6.2.14</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
       <Version>7.1.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">

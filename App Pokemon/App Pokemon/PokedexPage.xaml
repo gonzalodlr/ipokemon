@@ -106,7 +106,7 @@
             <my6:DragoniteCSD x:Name="DragoniteCSD" Margin="5"/>
             <!--<my7:ButterFreeACC x:Name="ButterFreeACC" Margin="5"/>-->
             <my8:ChandelureNDAA x:Name="ChandelureNDAA" Margin="5"/>
-            <my9:PiplupMLTN x:Name="PiplupMLTN" Margin="5"/>
+            <!--<my9:PiplupMLTN x:Name="PiplupMLTN" Margin="5"/>-->
             <my10:SnorlaxROC x:Name="Snorlax" Margin="5"/>
             <my11:ScizorAPJ x:Name="ScizorAPJ" Margin="5"/>
             <my12:MakuhitaAPQ2 x:Name="MakuhitaAPQ" Margin="5"/>
