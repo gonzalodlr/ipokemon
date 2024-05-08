@@ -458,6 +458,8 @@
     <Content Include="Assets\icon_pokeball.png" />
     <Content Include="Assets\imgCombatePage\Multijugador.png" />
     <Content Include="Assets\imgCombatePage\solo.jpg" />
+    <Content Include="Assets\imgDatosPokemon\height.png" />
+    <Content Include="Assets\imgDatosPokemon\weigth.png" />
     <Content Include="Assets\imgMainPage\dudas.png" />
     <Content Include="Assets\imgMainPage\mispokemon.jpg" />
     <Content Include="Assets\imgMainPage\pelea.jpg" />
@@ -643,6 +645,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>5.0.0.2662</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

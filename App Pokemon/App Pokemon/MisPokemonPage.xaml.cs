@@ -27,43 +27,29 @@ namespace App_Pokemon
         public MisPokemonPage()
         {
             this.InitializeComponent();
-            //...
-            ApplicationView.GetForCurrentView().VisibleBoundsChanged
-            += UcRatingText_VisibleBoundsChanged;
-            miGolbat.verFondo(false);
-            miGolbat.verNombre(false);
-            miGolbat.verFilaVida(false);
-            miGolbat.verFilaEnergia(false);
-            miGolbat.verPocionVida(false);
-            miGolbat.verPocionEnergia(false);
-            
-            tbNombre.Text = "Nombre: " + miGolbat.Nombre;
-            tbCategoria.Text = "Categoría: " + miGolbat.Categoría;
-            tbDesc.Text = "Descripción: " + miGolbat.Descripcion;
+            // Establece el tamaño mínimo preferido de la ventana
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1000, 1000));
+
+            // Maneja el evento SizeChanged de la ventana
+            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
         }
-        private void UcRatingText_VisibleBoundsChanged(ApplicationView sender, object args)
+        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
-            var Width = ApplicationView.GetForCurrentView().VisibleBounds.Width;
+            // Obtén el ancho y el alto actual de la ventana
+            double width = Window.Current.Bounds.Width;
+            double height = Window.Current.Bounds.Height;
 
-            if (Width >= 900)
+            // Si el ancho es menor que 600, ajusta el ancho a 600
+            if (width < 700)
             {
-                RelativePanel.SetBelow(tbNombre, null);
-                RelativePanel.SetRightOf(tbNombre, miGolbat);
-                RelativePanel.SetRightOf(tbCategoria, miGolbat);
-                RelativePanel.SetRightOf(tbDesc, miGolbat);
-
-                RelativePanel.SetBelow(tbCategoria, tbNombre);
-                RelativePanel.SetBelow(tbDesc, tbCategoria);
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(600, height));
             }
-            else
+
+            // Si la altura es menor que 600, ajusta la altura a 600
+            if (height < 1000)
             {
-                RelativePanel.SetRightOf(tbNombre, null);
-                RelativePanel.SetRightOf(tbCategoria, null);
-                RelativePanel.SetRightOf(tbDesc, null);
-                RelativePanel.SetBelow(tbNombre, miGolbat);
-                RelativePanel.SetBelow(tbCategoria, tbNombre);
-                RelativePanel.SetBelow(tbDesc, tbCategoria);
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(width, 600));
             }
         }
-    }
-    }
+    }        
+}

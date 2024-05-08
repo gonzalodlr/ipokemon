@@ -3,8 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:App_Pokemon"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    x:Name="PokemonsPage"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my2="using:LucarioGAC" xmlns:my3="using:Pokemon_Antonio_Campallo_Gomez" xmlns:my4="using:Sesion4" xmlns:my6="using:ControlUsuario_IPO2" xmlns:my5="using:ToxicroackJPG"
+      x:Name="PokemonsPage"
     x:Class="App_Pokemon.MisPokemonPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -13,16 +13,75 @@
         <Grid.Background>
             <ImageBrush ImageSource="/AssetsDracofireGDLRS/imFondo.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <RelativePanel Margin="0,100,0,0">
-            <my:DracofireGDLRS x:Name="miGolbat" Height="425" Width="405"/>
-            <TextBlock x:Name="tbNombre" TextWrapping="Wrap" Text="Nombre: " FontSize="24"
-FontWeight="Bold" RelativePanel.RightOf="miGolbat"/>
-            <TextBlock x:Name="tbCategoria" TextWrapping="Wrap" Text="Categoria: " FontSize="24"
-FontWeight="Bold" RelativePanel.Below="tbNombre" RelativePanel.RightOf="miGolbat"/>
-            <TextBlock x:Name="tbDesc" TextWrapping="Wrap" Text="Descripción: " FontSize="20"
-RelativePanel.Below="tbCategoria" RelativePanel.RightOf="miGolbat"/>
-        </RelativePanel>
+        
+
+        <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" Height="900" Width="600" CornerRadius="20,20,20,20" Background="#FF262626" >
+            <!-- Los controles de usuario -->
+            <my:DracofireGDLRS x:Name="DracofireGDLRS"/>
+            <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
+            <my2:MyUCLucario x:Name="MyUCLucario" />
+            <my3:ArticunoACG x:Name="ArticunoACG" />
+            <my4:GengarJCC x:Name="GengarJCC" />
+            <my5:ToxicroackJPG x:Name="ToxicroackJPG"/>
+            <my6:DragoniteCSD x:Name="DragoniteCSD"/>
+            
+            <FlipView.ItemsPanel >
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </FlipView.ItemsPanel>
+
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="25*"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
+                            </Viewbox>
+                            <Viewbox Grid.Row="1">
+                                <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="10*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="15*"/>
+                            </Grid.RowDefinitions>
+                            
+
+                            <TextBlock Text="Tipo: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
+                            <TextBlock Text="Categoría: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
+
+                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5">
+                                <TextBlock Text="{Binding Tipo}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5">
+                                <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+            
+        </FlipView>
 
     </Grid>
-   
 </Page>

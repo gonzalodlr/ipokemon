@@ -52,7 +52,7 @@
                         <Viewbox Grid.Column="0">
                             <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
                         </Viewbox>
-                     
+
 
                         <Grid Grid.Column="1">
                             <Grid.ColumnDefinitions>
@@ -67,7 +67,7 @@
                             <Viewbox Grid.ColumnSpan="2">
                                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
                             </Viewbox>
-                            
+
                             <TextBlock Text="Tipo: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
                             <TextBlock Text="Categoría: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
 
@@ -83,13 +83,13 @@
             </GridView.ItemTemplate>
 
             <!-- Los controles de usuario -->
-            <my:DracofireGDLRS x:Name="DracofireGDLRS" Margin="5"/>
+            <my:DracofireGDLRS x:Name="DracofireGDLRS"/>
             <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
-            <my2:MyUCLucario x:Name="MyUCLucario" Margin="5"/>
-            <my3:ArticunoACG x:Name="ArticunoACG" Margin="5"/>
-            <my4:GengarJCC x:Name="GengarJCC" Margin="5"/>
-            <my5:ToxicroackJPG x:Name="ToxicroackJPG" Margin="5"/>
-            <my6:DragoniteCSD x:Name="DragoniteCSD" Margin="5"/>
+            <my2:MyUCLucario x:Name="MyUCLucario" />
+            <my3:ArticunoACG x:Name="ArticunoACG" />
+            <my4:GengarJCC x:Name="GengarJCC" />
+            <my5:ToxicroackJPG x:Name="ToxicroackJPG"/>
+            <my6:DragoniteCSD x:Name="DragoniteCSD"/>
         </GridView>
     </Grid>
 </Page>

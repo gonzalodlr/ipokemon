@@ -28,6 +28,7 @@ namespace App_Pokemon
         public MainPage()
         {
             this.InitializeComponent();
+
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
             AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;

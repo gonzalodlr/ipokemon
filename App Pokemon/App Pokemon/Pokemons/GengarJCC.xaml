@@ -1081,8 +1081,8 @@
                 <CompositeTransform Rotation="23.35"/>
             </Image.RenderTransform>
         </Image>
-        <Viewbox Margin="31,0,-72,7" Width="400" Height="400" Grid.RowSpan="3" Grid.Column="1" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
-            <Canvas x:Name="cvGengar" Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" FocusVisualPrimaryBrush="Black">
+        <Viewbox Grid.Row="2" Grid.Column="1" >
+            <Canvas x:Name="cvGengar" Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Canvas.RenderTransform>
                     <CompositeTransform/>
                 </Canvas.RenderTransform>
@@ -1224,7 +1224,7 @@
                         <CompositeTransform Rotation="34.911" TranslateX="0.089354029837041438" TranslateY="-0.31114308424698578"/>
                     </Path.RenderTransform>
                 </Path>
-                <Ellipse x:Name="bolaSombra" HorizontalAlignment="Left" Height="83" Stroke="{x:Null}" VerticalAlignment="Top" Width="83" Opacity="0" RenderTransformOrigin="0.5,0.5" Canvas.Left="148" Canvas.Top="163">
+                <Ellipse x:Name="bolaSombra" HorizontalAlignment="Left" Height="83" VerticalAlignment="Top" Width="83" Opacity="0" RenderTransformOrigin="0.5,0.5" Canvas.Left="148" Canvas.Top="163">
                     <Ellipse.Fill>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
