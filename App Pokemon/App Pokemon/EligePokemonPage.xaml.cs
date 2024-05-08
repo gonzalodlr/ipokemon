@@ -47,7 +47,7 @@ namespace App_Pokemon
             // Si el ancho es menor que 600, ajusta el ancho a 600
             if (width < 600)
             {
-                ApplicationView.GetForCurrentView().TryResizeView(new Size(600, height));
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(700, height));
             }
 
             // Si la altura es menor que 600, ajusta la altura a 600

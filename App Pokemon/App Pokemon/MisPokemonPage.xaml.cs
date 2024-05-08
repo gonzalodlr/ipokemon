@@ -28,10 +28,11 @@ namespace App_Pokemon
         {
             this.InitializeComponent();
             // Establece el tamaño mínimo preferido de la ventana
-            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1000, 1000));
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1500, 700));
 
             // Maneja el evento SizeChanged de la ventana
             Window.Current.SizeChanged += CurrentWindow_SizeChanged;
+            configurar_pokemons();
         }
         private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
@@ -42,14 +43,47 @@ namespace App_Pokemon
             // Si el ancho es menor que 600, ajusta el ancho a 600
             if (width < 700)
             {
-                ApplicationView.GetForCurrentView().TryResizeView(new Size(600, height));
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(700, height));
             }
 
             // Si la altura es menor que 600, ajusta la altura a 600
-            if (height < 1000)
+            if (height < 1500)
             {
-                ApplicationView.GetForCurrentView().TryResizeView(new Size(width, 600));
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(width, 1500));
             }
         }
-    }        
+
+        private void configurar_pokemons()
+        {
+            DracofireGDLRS.verFondo(false);
+            DracofireGDLRS.verNombre(false);
+            DracofireGDLRS.verPocionVida(false);
+            DracofireGDLRS.verPocionEnergia(false);
+
+            ArticunoACG.verFondo(false);
+            ArticunoACG.verNombre(false);
+            ArticunoACG.verPocionVida(false);
+            ArticunoACG.verPocionEnergia(false);
+
+            GengarJCC.verFondo(false);
+            GengarJCC.verNombre(false);
+            GengarJCC.verPocionVida(false);
+            GengarJCC.verPocionEnergia(false);
+
+            MyUCLucario.verFondo(false);
+            MyUCLucario.verNombre(false);
+            MyUCLucario.verPocionVida(false);
+            MyUCLucario.verPocionEnergia(false);
+
+            ToxicroackJPG.verFondo(false);
+            ToxicroackJPG.verNombre(false);
+            ToxicroackJPG.verPocionVida(false);
+            ToxicroackJPG.verPocionEnergia(false);
+
+            DragoniteCSD.verFondo(false);
+            DragoniteCSD.verNombre(false);
+            DragoniteCSD.verPocionVida(false);
+            DragoniteCSD.verPocionEnergia(false);
+        }
+        }        
 }

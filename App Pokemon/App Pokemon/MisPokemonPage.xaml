@@ -15,7 +15,7 @@
         </Grid.Background>
         
 
-        <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" Height="900" Width="600" CornerRadius="20,20,20,20" Background="#FF262626" >
+        <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="500">
             <!-- Los controles de usuario -->
             <my:DracofireGDLRS x:Name="DracofireGDLRS"/>
             <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
@@ -27,7 +27,7 @@
             
             <FlipView.ItemsPanel >
                 <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Orientation="Vertical"/>
+                    <VirtualizingStackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </FlipView.ItemsPanel>
 
@@ -55,7 +55,8 @@
                             </Viewbox>
                         </Grid>
 
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Background="#FFE8E8E8" Margin="20,5,20,10" CornerRadius="10,10,10,10">
+                            
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10*"/>
                                 <ColumnDefinition Width="10*"/>
