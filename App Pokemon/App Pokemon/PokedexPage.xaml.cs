@@ -75,12 +75,12 @@ namespace App_Pokemon
             ToxicroackJPG.verPocionVida(false);
             ToxicroackJPG.verPocionEnergia(false);
 
-            DragoniteCSD.VerFondo(false);
-            DragoniteCSD.VerNombre(false);
-            DragoniteCSD.VerFilaVida(false);
-            DragoniteCSD.VerFilaEnergia(false);
-            DragoniteCSD.VerPocionVida(false);
-            DragoniteCSD.VerPocionEnergia(false);
+            DragoniteCSD.verFondo(false);
+            DragoniteCSD.verNombre(false);
+            DragoniteCSD.verFilaVida(false);
+            DragoniteCSD.verFilaEnergia(false);
+            DragoniteCSD.verPocionVida(false);
+            DragoniteCSD.verPocionEnergia(false);
 
 
             /*Este Pokemon hace que pete la aplicación si se descomenta*/

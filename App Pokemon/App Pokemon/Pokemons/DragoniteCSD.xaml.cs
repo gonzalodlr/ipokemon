@@ -169,7 +169,7 @@ namespace ControlUsuario_IPO2
 
 
 
-        public void VerFondo(bool ver)
+        public void verFondo(bool ver)
         {
             if (!ver) { this.FondoPK.Background = null; }
             else
@@ -182,7 +182,7 @@ namespace ControlUsuario_IPO2
             }
         }
 
-        public void VerFilaVida(bool ver)
+        public void verFilaVida(bool ver)
         {
             if (!ver)
             {
@@ -195,7 +195,7 @@ namespace ControlUsuario_IPO2
             }
         }
 
-        public void VerFilaEnergia(bool ver)
+        public void verFilaEnergia(bool ver)
         {
             if (!ver)
             {
@@ -210,7 +210,7 @@ namespace ControlUsuario_IPO2
 
 
 
-        public void VerPocionVida(bool ver)
+        public void verPocionVida(bool ver)
         {
             if (!ver)
             {
@@ -224,7 +224,7 @@ namespace ControlUsuario_IPO2
 
 
 
-        public void VerPocionEnergia(bool ver)
+        public void verPocionEnergia(bool ver)
         {
             if (!ver)
             {
@@ -238,7 +238,7 @@ namespace ControlUsuario_IPO2
         }
 
 
-        public void VerNombre(bool ver)
+        public void verNombre(bool ver)
         {
             if (!ver)
             {
