@@ -19,7 +19,18 @@
             <ImageBrush Opacity="0.5" ImageSource="/Assets/imgPokedex/pokedexBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Row="0">
+            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="Elige tu Pokemon" FontSize="36" FontFamily="Algerian" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Viewbox>
+        
         <GridView   x:Name="ContentGridView"
+                    Grid.Row="1"
                     IsItemClickEnabled="True"
                     CanDragItems="True"
                     AllowDrop="True"
@@ -60,32 +71,33 @@
                                 <ColumnDefinition Width="10*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="15*"/>
-                                <RowDefinition Height="5*"/>
-                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="70*"/>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="30*"/>
                             </Grid.RowDefinitions>
                             <Viewbox Grid.ColumnSpan="2">
                                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
                             </Viewbox>
 
                             <TextBlock Text="Tipo: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
-                            <TextBlock Text="Categoría: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
+                            <TextBlock Text="Categoría: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" FontFamily="Arial Black" Margin="0,16,0,0"/>
 
                             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5">
                                 <TextBlock Text="{Binding Tipo}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
                             </StackPanel>
-                            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5">
+                            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5" Margin="0,11,0,0">
                                 <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
                             </StackPanel>
 
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <TextBlock x:Name="MensajeTextBlock" Text="Elija un Pokémon" VerticalAlignment="Center" Margin="10"/>
-                                <Button x:Name="ConfirmarSeleccionButton" Content="Confirmar Selección" Click="ConfirmarSeleccion_Click" Margin="10"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2">
+                                <TextBlock x:Name="MensajeTextBlock" Text="Elija un Pokémon" VerticalAlignment="Center"/>
+                                <Button x:Name="ConfirmarSeleccionButton" Content="Confirmar Selección" Click="ConfirmarSeleccion_Click" HorizontalAlignment="Right"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
-                    
-                    
+
+
                 </DataTemplate>
             </GridView.ItemTemplate>
 
@@ -97,6 +109,9 @@
             <my5:ToxicroackJPG x:Name="ToxicroackJPG"/>
             <my6:DragoniteCSD x:Name="DragoniteCSD"/>
         </GridView>
-        <TextBlock x:Name="MensajeTextBlock" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,20" Foreground="White" FontSize="20"/>
+
+        <Viewbox Grid.Row="2">
+            <TextBlock x:Name="MensajeTextBlock" Text="" FontSize="36" FontFamily="Algerian" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Viewbox> 
     </Grid>
 </Page>
