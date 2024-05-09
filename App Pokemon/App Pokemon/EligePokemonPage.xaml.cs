@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ClassLibrary1_Prueba;
+using System.Diagnostics;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,7 +26,8 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class EligePokemonPage : Page
     {
-        private UserControl pokemonCPU;
+        private List<iPokemon> pokemonsSeleccionados = new List<iPokemon>();
+        private string modoDeJuego;
 
         public EligePokemonPage()
         {
@@ -36,6 +39,12 @@ namespace App_Pokemon
             Window.Current.SizeChanged += CurrentWindow_SizeChanged;
             configurar_pokedex();
 
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            modoDeJuego = e.Parameter as string;  // Recibe el modo de juego de la navegación anterior
         }
 
         private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
@@ -135,25 +144,25 @@ namespace App_Pokemon
         {
             // Aquí puedes manejar el evento de clic en un elemento del GridView
             // Por ejemplo, puedes acceder al elemento haciendo casting del argumento e:
-            var clickedControl = e.ClickedItem as UserControl;
+            //var clickedControl = e.ClickedItem as UserControl;
             // Haz lo que necesites con el control clickeado
-            SeleccionarPokemonParaCPU();
-            this.Frame.Navigate(typeof(CombatePage), new List<UserControl> { clickedControl, pokemonCPU });
+            var clickedItem = e.ClickedItem;
+
+            // Imprime información en la consola de depuración
+            Debug.WriteLine($"Clicked item: {clickedItem.GetType().FullName}");
+            if (clickedItem is iPokemon pokemon)
+            {
+                Debug.WriteLine($"Pokemon Name: {pokemon.Nombre}");
+                Debug.WriteLine($"Pokemon Type: {pokemon.Tipo}");
+            }
+            else
+            {
+                Debug.WriteLine("Clicked item is not a Pokemon.");
+            }
+
+
         }
 
-        private void SeleccionarPokemonParaCPU()
-        {
-            // Aquí seleccionas aleatoriamente un Pokémon para la CPU
-            Random rnd = new Random();
-            // Selecciona un índice aleatorio dentro del rango de la cantidad de controles de usuario de Pokémon
-            int randomIndex = rnd.Next(0, ContentGridView.Items.Count);
-            // Obtén el control de usuario de Pokémon en el índice aleatorio
-            var pokemonCPU = ContentGridView.Items[randomIndex] as UserControl;
-            // Haz lo que necesites con el control de usuario de Pokémon seleccionado para la CPU
-            // Por ejemplo, podrías mostrar un mensaje con el nombre del Pokémon seleccionado
-            //MessageBox.Show($"El Pokémon de la CPU es: {pokemonCPU.Name}");
-            // O realizar alguna otra lógica de juego para la CPU
-        }
 
 
     }

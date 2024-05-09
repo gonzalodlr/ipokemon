@@ -32,7 +32,7 @@ namespace App_Pokemon
         }
         private void Multijugador_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CombatePage), "multijugador");
+            this.Frame.Navigate(typeof(EligePokemonPage), "multijugador");
         }
     }
 }

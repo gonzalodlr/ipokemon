@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1_Prueba
 {
-    interface iPokemon
+    public interface iPokemon
     {
         public double Vida { get; set; }
         public double Energia { get; set; }
