@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1_Prueba;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -24,6 +25,7 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class MisPokemonPage : Page
     {
+        private iPokemon pokemon_seleccionado;
         public MisPokemonPage()
         {
             this.InitializeComponent();
@@ -88,22 +90,40 @@ namespace App_Pokemon
 
         private void btn_ataqueFuerte_Click(object sender, RoutedEventArgs e)
         {
-            // Se muestra ataque fuerte del pokemon seleccionado
+            if (pokemon_seleccionado != null)
+            {
+                pokemon_seleccionado.animacionAtaqueFuerte();
+            }
         }
-
         private void btn_ataqueDebil_Click(object sender, RoutedEventArgs e)
         {
-            // Se muestra ataque debil del pokemon seleccionado
+            if (pokemon_seleccionado != null)
+            {
+                pokemon_seleccionado.animacionAtaqueFlojo();
+            }
         }
-
         private void btn_defensa_Click(object sender, RoutedEventArgs e)
         {
-            // Se muestra defensa del pokemon seleccionado
+            if (pokemon_seleccionado != null)
+            {
+                pokemon_seleccionado.animacionDefensa();
+            }
         }
-
         private void btn_recuperacion_Click(object sender, RoutedEventArgs e)
         {
-            // Se muestra recuperacion del pokemon seleccionado
+            if (pokemon_seleccionado != null)
+            {
+                pokemon_seleccionado.animacionDescasar();
+            }  
+        }
+        private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                // Obtener el elemento seleccionado actualmente en el FlipView
+                var pokemon = e.AddedItems[0] as iPokemon;
+                pokemon_seleccionado = pokemon;
+            }
         }
     }        
 }

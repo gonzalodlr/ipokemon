@@ -218,6 +218,5 @@ namespace App_Pokemon
         }
 
 
-
     }
 }

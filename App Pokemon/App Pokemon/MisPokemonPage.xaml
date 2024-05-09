@@ -38,7 +38,7 @@
         </Grid.Background>
 
 
-        <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="500">
+        <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="500" SelectionChanged="FlipView_SelectionChanged">
             <!-- Los controles de usuario -->
             <my:DracofireGDLRS x:Name="DracofireGDLRS"/>
             <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
@@ -106,7 +106,7 @@
                             <Viewbox Grid.Row="1" VerticalAlignment="Bottom" Width="20" HorizontalAlignment="Left" Margin="45,0,0,0">
                                 <TextBlock Grid.Column="0" Grid.Row="1" Text="Altura" Foreground="Black" FontSize="9" VerticalAlignment="Bottom" />
                             </Viewbox>
-                            
+
                             <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
                                 <Image Source="/Assets/imgDatosPokemon/weigth.png" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="30,0,0,0"/>
                                 <TextBlock Text="{Binding Peso}" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black" Margin="20,0,0,0"/>
@@ -126,12 +126,11 @@
                             <Button  x:Name="btn_ataqueDebil" Content="Ataque débil" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Background="#FF69934B" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_ataqueDebil_Click"/>
                             <Button  x:Name="btn_defensa" Content="Defensa" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Background="#FF568B9D" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_defensa_Click"/>
                             <Button x:Name="btn_recuperacion" Content="Recuperación" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Background="#FF905686" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_recuperacion_Click"/>
-                            
+
                         </Grid>
                     </Grid>
                 </DataTemplate>
             </FlipView.ItemTemplate>
-
         </FlipView>
 
     </Grid>
