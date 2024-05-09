@@ -16,12 +16,12 @@ using ClassLibrary1_Prueba;
 using Dracofire;
 using Sesion4;
 using LucarioGAC;
-using ClassLibraryPokemon = ClassLibrary1_Prueba.iPokemon;
-using Sesion4Pokemon = Sesion4.iPokemon;
+using ClassLibrary1_Prueba;
 using static App_Pokemon.EligePokemonPage;
 using ControlUsuario_IPO2;
 using Pokemon_Antonio_Campallo_Gomez;
 using ToxicroackJPG;
+using piplupUserControl;
 
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -77,7 +77,7 @@ namespace App_Pokemon
             }*/
         }
 
-        private void MostrarPokemons(ClassLibraryPokemon pokemonJugador1, ClassLibraryPokemon pokemonJugador2)
+        private void MostrarPokemons(iPokemon pokemonJugador1, iPokemon pokemonJugador2)
         {
             // Asumiendo que tienes un método para crear un UserControl basado en iPokemon
             UserControl pokemonControl1 = CrearPokemonControl(pokemonJugador1);
@@ -88,41 +88,57 @@ namespace App_Pokemon
         }
 
 
-        private UserControl CrearPokemonControl(ClassLibraryPokemon pokemon)
+        private UserControl CrearPokemonControl(iPokemon pokemon)
         {
+            UserControl control = null;
             // Aquí necesitas determinar qué UserControl utilizar basado en el tipo de Pokémon
             // Ejemplo simplificado:
             if (pokemon is DracofireGDLRS)
             {
-                return new DracofireGDLRS();
+                control = new DracofireGDLRS();
                 
 
             }
             else if (pokemon is GengarJCC)
             {
-                return new GengarJCC();
+                control = new GengarJCC();
             }
 
             else if (pokemon is MyUCLucario)
             {
 
-                return new MyUCLucario();
+                control = new MyUCLucario();
             }
             else if (pokemon is DragoniteCSD)
             {
-                return new DragoniteCSD();
+                control = new DragoniteCSD();
             }
             else if (pokemon is ArticunoACG)
             {
-                return new ArticunoACG();
+                control = new ArticunoACG();
             }
             /*else if (pokemon is ToxicroackJPG)
             {
                 return new ToxicroackJPG();
             }*/
-            else
+            else { 
                 throw new InvalidOperationException("Tipo de Pokémon no soportado");
-            
+            }
+
+            if (control is ClassLibrary1_Prueba.iPokemon pokemonControl)
+            {
+                // Configura los ajustes visuales como deseas que aparezcan en la pantalla de combate
+                pokemonControl.verFondo(false);
+                pokemonControl.verPocionVida(false);
+                pokemonControl.verPocionEnergia(false);
+                //pokemonControl.verNombre(false);  
+            }
+            else
+            {
+                throw new InvalidOperationException("El control creado no implementa iPokemon correctamente.");
+            }
+            return control;
+
 
             // Continúa con otros casos según tus necesidades
         }
@@ -132,6 +148,10 @@ namespace App_Pokemon
             public ClassLibrary1_Prueba.iPokemon Jugador1 { get; set; }
             public ClassLibrary1_Prueba.iPokemon Jugador2 { get; set; }
         }
+
+        
+        
+
 
 
     }

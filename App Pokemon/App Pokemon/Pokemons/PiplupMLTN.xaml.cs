@@ -18,6 +18,7 @@ using Windows.Media.Playback;
 using Windows.UI;
 using Windows.UI.Xaml.Media.Animation;
 using System.ServiceModel.Channels;
+using ClassLibrary1_Prueba;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -348,7 +349,5 @@ namespace piplupUserControl
         }
     }
 
-    internal interface iPokemon
-    {
-    }
+    
 }

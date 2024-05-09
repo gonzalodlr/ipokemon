@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using ClassLibrary1_Prueba;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -253,9 +254,5 @@ namespace Sesion4
             }
         }
 
-    }
-
-    internal interface iPokemon
-    {
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1_Prueba;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -76,27 +77,27 @@ namespace ControlUsuario_IPO2
             switch (e.Key)
             {
                 case Windows.System.VirtualKey.Number1:
-                    AnimacionAtaqueFlojo();
+                    animacionAtaqueFlojo();
                     break;
 
                 case Windows.System.VirtualKey.Number2:
-                    AnimacionAtaqueFuerte();
+                    animacionAtaqueFuerte();
                     break;
 
                 case Windows.System.VirtualKey.Number3:
-                    AnimacionDefensa();
+                    animacionDefensa();
                     break;
 
                 case Windows.System.VirtualKey.Number4:
-                    AnimacionDescansar();
+                    animacionDescasar();
                     break;
 
                 case Windows.System.VirtualKey.Number5:
-                    AnimacionHerido();
+                    animacionHerido();
                     break;
 
                 case Windows.System.VirtualKey.Number6:
-                    AnimacionDerrota();
+                    animacionDerrota();
                     break;
 
                 case Windows.System.VirtualKey.Number7:
@@ -105,7 +106,7 @@ namespace ControlUsuario_IPO2
                     break;
 
                 case Windows.System.VirtualKey.Number8:
-                    AnimacionCansado();
+                    animacionCansado();
                     break;
 
                 default:
@@ -252,7 +253,7 @@ namespace ControlUsuario_IPO2
         }
 
 
-        public void ActivarAnimacionIdle(bool activar)
+        public void activarAniIdle(bool activar)
         {
             if (activar)
             {
@@ -266,7 +267,7 @@ namespace ControlUsuario_IPO2
             }
         }
 
-        public void AnimacionAtaqueFuerte()
+        public void animacionAtaqueFuerte()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["Cabezazo"];
@@ -283,7 +284,7 @@ namespace ControlUsuario_IPO2
             dtTime.Start();
         }
 
-        public void AnimacionAtaqueFlojo()
+        public void animacionAtaqueFlojo()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["ColaDragon"];
@@ -301,7 +302,7 @@ namespace ControlUsuario_IPO2
             dtTime.Start();
         }
 
-        public void AnimacionDefensa()
+        public void animacionDefensa()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["Escudo"];
@@ -318,7 +319,7 @@ namespace ControlUsuario_IPO2
             dtTime.Start();
         }
 
-        public void AnimacionDescansar()
+        public void animacionDescasar()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["CuraVida"];
@@ -337,7 +338,7 @@ namespace ControlUsuario_IPO2
             herido = false;
         }
 
-        public void AnimacionCansado()
+        public void animacionCansado()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["Cansado"];
@@ -348,12 +349,12 @@ namespace ControlUsuario_IPO2
             cansado = true;
         }
 
-        public void AnimacionNoCansado()
+        public void animacionNoCansado()
         {
             ResetAnimation(cansado, herido);
         }
 
-        public void AnimacionHerido()
+        public void animacionHerido()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["Herido"];
@@ -371,12 +372,12 @@ namespace ControlUsuario_IPO2
             herido = true;
         }
 
-        public void AnimacionNoHerido()
+        public void animacionNoHerido()
         {
             ResetAnimation(cansado, herido);
         }
 
-        public void AnimacionDerrota()
+        public void animacionDerrota()
         {
             sb.Stop();
             sb = (Storyboard)this.Resources["Muerte"];
@@ -387,10 +388,5 @@ namespace ControlUsuario_IPO2
         }
     }
 
-
-        internal interface iPokemon
-    {
-        
-    }
 }
 

@@ -164,6 +164,7 @@ namespace App_Pokemon
             else
             {
                 Debug.WriteLine("Clicked item is not a Pokemon.");
+                Debug.WriteLine($"Clicked item: {clickedItem}");
             }
 
 
