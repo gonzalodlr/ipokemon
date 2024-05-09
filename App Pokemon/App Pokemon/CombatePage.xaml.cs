@@ -131,7 +131,7 @@ namespace App_Pokemon
                 pokemonControl.verFondo(false);
                 pokemonControl.verPocionVida(false);
                 pokemonControl.verPocionEnergia(false);
-                //pokemonControl.verNombre(false);  
+                pokemonControl.verNombre(false);  
             }
             else
             {
