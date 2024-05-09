@@ -85,5 +85,25 @@ namespace App_Pokemon
             DragoniteCSD.verPocionVida(false);
             DragoniteCSD.verPocionEnergia(false);
         }
-        }        
+
+        private void btn_ataqueFuerte_Click(object sender, RoutedEventArgs e)
+        {
+            // Se muestra ataque fuerte del pokemon seleccionado
+        }
+
+        private void btn_ataqueDebil_Click(object sender, RoutedEventArgs e)
+        {
+            // Se muestra ataque debil del pokemon seleccionado
+        }
+
+        private void btn_defensa_Click(object sender, RoutedEventArgs e)
+        {
+            // Se muestra defensa del pokemon seleccionado
+        }
+
+        private void btn_recuperacion_Click(object sender, RoutedEventArgs e)
+        {
+            // Se muestra recuperacion del pokemon seleccionado
+        }
+    }        
 }

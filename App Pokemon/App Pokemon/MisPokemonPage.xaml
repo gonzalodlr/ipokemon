@@ -9,11 +9,34 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <!--<Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="PointerOver">
+                                        <VisualState.Setters>
+                                            <Setter Target="{Binding Background}" Value="Black"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+    </Page.Resources>
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/AssetsDracofireGDLRS/imFondo.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        
+
 
         <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="500">
             <!-- Los controles de usuario -->
@@ -24,7 +47,7 @@
             <my4:GengarJCC x:Name="GengarJCC" />
             <my5:ToxicroackJPG x:Name="ToxicroackJPG"/>
             <my6:DragoniteCSD x:Name="DragoniteCSD"/>
-            
+
             <FlipView.ItemsPanel >
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Horizontal"/>
@@ -55,33 +78,60 @@
                             </Viewbox>
                         </Grid>
 
-                        <Grid Grid.Row="1" Background="#FFE8E8E8" Margin="20,5,20,10" CornerRadius="10,10,10,10">
-                            
+                        <Grid Grid.Row="1" Background="#FFE8E8E8" Margin="20,5,20,10" CornerRadius="80,80,20,10">
+
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10*"/>
                                 <ColumnDefinition Width="10*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="15*"/>
-                                <RowDefinition Height="15*"/>
-                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="5*"/>
                             </Grid.RowDefinitions>
+
+
+                            <TextBlock Text="Información" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
+                            <TextBlock Text="Categoría" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
+
+
+                            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,225,0">
+                                <Image Source="/Assets/imgDatosPokemon/height.png" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="30,0,0,0">
+                                </Image>
+                                <TextBlock Text="{Binding Altura}" FontFamily="Arial Black" Foreground="Black" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                                <TextBlock Text="m" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                            </StackPanel>
+                            <Viewbox Grid.Row="1" VerticalAlignment="Bottom" Width="20" HorizontalAlignment="Left" Margin="45,0,0,0">
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Altura" Foreground="Black" FontSize="9" VerticalAlignment="Bottom" />
+                            </Viewbox>
                             
+                            <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+                                <Image Source="/Assets/imgDatosPokemon/weigth.png" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="30,0,0,0"/>
+                                <TextBlock Text="{Binding Peso}" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black" Margin="20,0,0,0"/>
+                                <TextBlock Text="kg" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                            </StackPanel>
+                            <Viewbox Grid.Row="2" VerticalAlignment="Bottom" Width="20" HorizontalAlignment="Left" Margin="45,0,0,0">
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Peso" Foreground="Black" FontSize="9" VerticalAlignment="Bottom" />
+                            </Viewbox>
 
-                            <TextBlock Text="Tipo: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
-                            <TextBlock Text="Categoría: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black"/>
-
-                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5">
+                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5">
                                 <TextBlock Text="{Binding Tipo}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
                             </StackPanel>
-                            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFC9B6B6" Padding="10,5,10,5">
+                            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5" VerticalAlignment="Center" >
                                 <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
                             </StackPanel>
+                            <Button  x:Name="btn_ataqueFuerte" Content="Ataque Fuerte" Grid.Column="0"  Grid.Row="3" VerticalAlignment="Center" Background="#FFAF3F3F" CornerRadius="10,10,10,10" Padding="40,0,40,0" HorizontalAlignment="Center" Click="btn_ataqueFuerte_Click" Foreground="White"/>
+                            <Button  x:Name="btn_ataqueDebil" Content="Ataque débil" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Background="#FF69934B" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_ataqueDebil_Click"/>
+                            <Button  x:Name="btn_defensa" Content="Defensa" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Background="#FF568B9D" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_defensa_Click"/>
+                            <Button x:Name="btn_recuperacion" Content="Recuperación" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Background="#FF905686" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_recuperacion_Click"/>
+                            
                         </Grid>
                     </Grid>
                 </DataTemplate>
             </FlipView.ItemTemplate>
-            
+
         </FlipView>
 
     </Grid>
