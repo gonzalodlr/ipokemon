@@ -27,7 +27,11 @@ namespace App_Pokemon
     public sealed partial class EligePokemonPage : Page
     {
         private List<iPokemon> pokemonsSeleccionados = new List<iPokemon>();
+        private int jugadorActual = 1;
         private string modoDeJuego;
+        private iPokemon seleccionJugador1;
+        private iPokemon seleccionJugador2;
+        private iPokemon pokemonTempSeleccionado;
 
         public EligePokemonPage()
         {
@@ -44,7 +48,12 @@ namespace App_Pokemon
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            modoDeJuego = e.Parameter as string;  // Recibe el modo de juego de la navegación anterior
+            modoDeJuego = e.Parameter as string;
+            if (modoDeJuego == "multijugador")
+            {
+                MostrarMensaje("Jugador 1, escoge un Pokémon");
+            }
+
         }
 
         private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
@@ -146,14 +155,11 @@ namespace App_Pokemon
             // Por ejemplo, puedes acceder al elemento haciendo casting del argumento e:
             //var clickedControl = e.ClickedItem as UserControl;
             // Haz lo que necesites con el control clickeado
-            var clickedItem = e.ClickedItem;
-
-            // Imprime información en la consola de depuración
-            Debug.WriteLine($"Clicked item: {clickedItem.GetType().FullName}");
-            if (clickedItem is iPokemon pokemon)
+            var clickedItem = e.ClickedItem as iPokemon;
+            if (clickedItem != null)
             {
-                Debug.WriteLine($"Pokemon Name: {pokemon.Nombre}");
-                Debug.WriteLine($"Pokemon Type: {pokemon.Tipo}");
+                pokemonTempSeleccionado = clickedItem;
+                MostrarMensaje($"Jugador {jugadorActual}, ha seleccionado {clickedItem.Nombre}. Confirme o seleccione otro.");
             }
             else
             {
@@ -161,6 +167,53 @@ namespace App_Pokemon
             }
 
 
+        }
+
+        private void ConfirmarSeleccion_Click(object sender, RoutedEventArgs e)
+        {
+            if (pokemonTempSeleccionado != null)
+            {
+                if (jugadorActual == 1)
+                {
+                    seleccionJugador1 = pokemonTempSeleccionado;
+                    jugadorActual = 2;
+                    pokemonTempSeleccionado = null; // Resetea la selección temporal
+                    MostrarMensaje("Jugador 2, escoge un Pokémon");
+                }
+                else if (jugadorActual == 2)
+                {
+                    seleccionJugador2 = pokemonTempSeleccionado;
+                    NavegarAPantallaDeCombate();
+                }
+            }
+            else
+            {
+                MostrarMensaje("Seleccione un Pokémon antes de confirmar.");
+            }
+        }
+
+        private void MostrarMensaje(string mensaje)
+        {
+            // Suponiendo que tienes un TextBlock o similar para mostrar mensajes:
+            MensajeTextBlock.Text = mensaje;
+        }
+
+        public class PokemonSelectionParameters
+        {
+            public iPokemon Jugador1 { get; set; }
+            public iPokemon Jugador2 { get; set; }
+        }
+
+        private void NavegarAPantallaDeCombate()
+        {
+            var parameters = new PokemonSelectionParameters
+            {
+                Jugador1 = seleccionJugador1,
+                Jugador2 = seleccionJugador2
+            };
+
+            //Frame.Navigate(typeof(CombatePage), new { Jugador1 = seleccionJugador1, Jugador2 = seleccionJugador2 });
+            Frame.Navigate(typeof(CombatePage), parameters);
         }
 
 

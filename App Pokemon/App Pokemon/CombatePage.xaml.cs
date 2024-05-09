@@ -12,6 +12,17 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ClassLibrary1_Prueba;
+using Dracofire;
+using Sesion4;
+using LucarioGAC;
+using ClassLibraryPokemon = ClassLibrary1_Prueba.iPokemon;
+using Sesion4Pokemon = Sesion4.iPokemon;
+using static App_Pokemon.EligePokemonPage;
+using ControlUsuario_IPO2;
+using Pokemon_Antonio_Campallo_Gomez;
+using ToxicroackJPG;
+
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,8 +41,20 @@ namespace App_Pokemon
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            System.Diagnostics.Debug.WriteLine($"Tipo de parámetro recibido: {e.Parameter.GetType()}");
+
+            if (e.Parameter is PokemonSelectionParameters parameters)
+            {
+                MostrarPokemons(parameters.Jugador1, parameters.Jugador2);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("El parámetro no es del tipo esperado.");
+                this.Frame.Navigate(typeof(InicioCombate)); // O manejar el error adecuadamente
+            }
 
             // Verifica si el parámetro de navegación es una cadena
+            /*
             if (e.Parameter is string modo)
             {
                 if (modo == "solo")
@@ -45,13 +68,71 @@ namespace App_Pokemon
                     // Realiza acciones específicas para el modo multijugador
                     // Por ejemplo:
                     // Hacer algo diferente...
+                    
                 }
                 else
                 {
                     this.Frame.Navigate(typeof(InicioCombate));
                 }
-            }
+            }*/
         }
+
+        private void MostrarPokemons(ClassLibraryPokemon pokemonJugador1, ClassLibraryPokemon pokemonJugador2)
+        {
+            // Asumiendo que tienes un método para crear un UserControl basado en iPokemon
+            UserControl pokemonControl1 = CrearPokemonControl(pokemonJugador1);
+            UserControl pokemonControl2 = CrearPokemonControl(pokemonJugador2);
+
+            vb_Pokemon1.Child = pokemonControl1;
+            vb_Pokemon2.Child = pokemonControl2;
+        }
+
+
+        private UserControl CrearPokemonControl(ClassLibraryPokemon pokemon)
+        {
+            // Aquí necesitas determinar qué UserControl utilizar basado en el tipo de Pokémon
+            // Ejemplo simplificado:
+            if (pokemon is DracofireGDLRS)
+            {
+                return new DracofireGDLRS();
+                
+
+            }
+            else if (pokemon is GengarJCC)
+            {
+                return new GengarJCC();
+            }
+
+            else if (pokemon is MyUCLucario)
+            {
+
+                return new MyUCLucario();
+            }
+            else if (pokemon is DragoniteCSD)
+            {
+                return new DragoniteCSD();
+            }
+            else if (pokemon is ArticunoACG)
+            {
+                return new ArticunoACG();
+            }
+            /*else if (pokemon is ToxicroackJPG)
+            {
+                return new ToxicroackJPG();
+            }*/
+            else
+                throw new InvalidOperationException("Tipo de Pokémon no soportado");
+            
+
+            // Continúa con otros casos según tus necesidades
+        }
+
+        public class MyNavigationParameters
+        {
+            public ClassLibrary1_Prueba.iPokemon Jugador1 { get; set; }
+            public ClassLibrary1_Prueba.iPokemon Jugador2 { get; set; }
+        }
+
 
     }
 }
