@@ -23,6 +23,7 @@
             <RowDefinition Height="12.5*"/>
             <RowDefinition Height="12.5*"/>
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
@@ -30,6 +31,7 @@
         <Grid.Background>
             <ImageBrush Opacity="0.85" Stretch="UniformToFill" ImageSource="/AssetsDracoFireGDLRS/escenario2.jpg"/>
         </Grid.Background>
+        <TextBlock x:Name="tbTurno" Text="Turno del Jugador 1" FontSize="24" HorizontalAlignment="Center" Grid.Row="0"/>
         <Viewbox x:Name="vb_Pokemon1" Grid.Row="1" Grid.Column="0">
             
         </Viewbox>
@@ -37,17 +39,18 @@
             
         </Viewbox>
         <Viewbox Grid.Row="2">
-            <Button x:Name="btn_ataque_fuerte" Content="Button" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_ataque_fuerte"  Click="Btn_ataque_fuerte_Click" Content="Ataque fuerte" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
         <Viewbox Grid.Row="3">
-            <Button x:Name="btn_ataque_flojo" Content="Button" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_ataque_flojo" Click="Btn_ataque_flojo_Click" Content="Ataque flojo" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="2">
-            <Button x:Name="btn_descanso" Content="Button" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_descanso" Click="Btn_descanso_Click" Content="Descansar" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="3">
-            <Button x:Name="btn_defensa" Content="Button" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_defensa" Click="Btn_defensa_Click" Content="Defensa" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
 
     </Grid>
+    
 </Page>

@@ -33,6 +33,13 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class CombatePage : Page
     {
+        private int turnoActual = 1; // 1 para jugador 1, 2 para jugador 2
+        //private iPokemon pokemonJugador1;
+        //private iPokemon pokemonJugador2;
+        private UserControl pokemonControlJugador1;
+        private UserControl pokemonControlJugador2;
+        //private TextBlock tbTurno; // Mostrará de quién es el turno
+
         public CombatePage()
         {
             this.InitializeComponent();
@@ -45,6 +52,7 @@ namespace App_Pokemon
 
             if (e.Parameter is PokemonSelectionParameters parameters)
             {
+                
                 MostrarPokemons(parameters.Jugador1, parameters.Jugador2);
             }
             else
@@ -80,63 +88,34 @@ namespace App_Pokemon
         private void MostrarPokemons(iPokemon pokemonJugador1, iPokemon pokemonJugador2)
         {
             // Asumiendo que tienes un método para crear un UserControl basado en iPokemon
-            UserControl pokemonControl1 = CrearPokemonControl(pokemonJugador1);
-            UserControl pokemonControl2 = CrearPokemonControl(pokemonJugador2);
+            pokemonControlJugador1 = CrearPokemonControl(pokemonJugador1);
+            pokemonControlJugador2 = CrearPokemonControl(pokemonJugador2);
 
-            vb_Pokemon1.Child = pokemonControl1;
-            vb_Pokemon2.Child = pokemonControl2;
+            vb_Pokemon1.Child = pokemonControlJugador1;
+            vb_Pokemon2.Child = pokemonControlJugador2;
         }
 
 
         private UserControl CrearPokemonControl(iPokemon pokemon)
         {
-            UserControl control = null;
-            // Aquí necesitas determinar qué UserControl utilizar basado en el tipo de Pokémon
-            // Ejemplo simplificado:
-            if (pokemon is DracofireGDLRS)
+            UserControl control = pokemon switch
             {
-                control = new DracofireGDLRS();
-                
+                DracofireGDLRS _ => new DracofireGDLRS(),
+                GengarJCC _ => new GengarJCC(),
+                MyUCLucario _ => new MyUCLucario(),
+                DragoniteCSD _ => new DragoniteCSD(),
+                ArticunoACG _ => new ArticunoACG(),
+                _ => throw new InvalidOperationException("Tipo de Pokémon no soportado"),
+            };
 
-            }
-            else if (pokemon is GengarJCC)
+            if (control is iPokemon pokemonControl)
             {
-                control = new GengarJCC();
-            }
-
-            else if (pokemon is MyUCLucario)
-            {
-
-                control = new MyUCLucario();
-            }
-            else if (pokemon is DragoniteCSD)
-            {
-                control = new DragoniteCSD();
-            }
-            else if (pokemon is ArticunoACG)
-            {
-                control = new ArticunoACG();
-            }
-            /*else if (pokemon is ToxicroackJPG)
-            {
-                return new ToxicroackJPG();
-            }*/
-            else { 
-                throw new InvalidOperationException("Tipo de Pokémon no soportado");
-            }
-
-            if (control is ClassLibrary1_Prueba.iPokemon pokemonControl)
-            {
-                // Configura los ajustes visuales como deseas que aparezcan en la pantalla de combate
                 pokemonControl.verFondo(false);
                 pokemonControl.verPocionVida(false);
                 pokemonControl.verPocionEnergia(false);
-                pokemonControl.verNombre(false);  
+                pokemonControl.verNombre(false);
             }
-            else
-            {
-                throw new InvalidOperationException("El control creado no implementa iPokemon correctamente.");
-            }
+
             return control;
 
 
@@ -149,10 +128,26 @@ namespace App_Pokemon
             public ClassLibrary1_Prueba.iPokemon Jugador2 { get; set; }
         }
 
-        
-        
+        private void CambiarTurno()
+        {
+            turnoActual = turnoActual == 1 ? 2 : 1;
+            tbTurno.Text = $"Turno del Jugador {turnoActual}";
+        }
 
+        private void EjecutarAccion(Action<iPokemon> accion)
+        {
+            var controlActivo = turnoActual == 1 ? pokemonControlJugador1 : pokemonControlJugador2;
+            if (controlActivo is iPokemon pokemonActivo)
+            {
+                accion(pokemonActivo);
+            }
+            CambiarTurno();
+        }
 
-
+        private void Btn_ataque_fuerte_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionAtaqueFuerte());
+        private void Btn_ataque_flojo_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionAtaqueFlojo());
+        private void Btn_descanso_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionDescasar());
+        private void Btn_defensa_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionDefensa());
     }
 }
+
