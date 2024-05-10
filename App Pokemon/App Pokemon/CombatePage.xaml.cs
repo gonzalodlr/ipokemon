@@ -16,7 +16,6 @@ using ClassLibrary1_Prueba;
 using Dracofire;
 using Sesion4;
 using LucarioGAC;
-using ClassLibrary1_Prueba;
 using static App_Pokemon.EligePokemonPage;
 using ControlUsuario_IPO2;
 using Pokemon_Antonio_Campallo_Gomez;
@@ -39,6 +38,13 @@ namespace App_Pokemon
         private UserControl pokemonControlJugador1;
         private UserControl pokemonControlJugador2;
         //private TextBlock tbTurno; // Mostrará de quién es el turno
+        private double ataque_Fuerte = 25;
+        private double ataque_Debil = 15;
+        // defensa recupera energia
+        private double defensa = 15;
+        // descanso recupera vida
+        private double recuperacion = 25;
+
 
         public CombatePage()
         {
@@ -52,7 +58,7 @@ namespace App_Pokemon
 
             if (e.Parameter is PokemonSelectionParameters parameters)
             {
-                
+
                 MostrarPokemons(parameters.Jugador1, parameters.Jugador2);
             }
             else
@@ -114,6 +120,9 @@ namespace App_Pokemon
                 pokemonControl.verPocionVida(false);
                 pokemonControl.verPocionEnergia(false);
                 pokemonControl.verNombre(false);
+                // inicialmente los pokemons tienen 100 de vida y 100 de energía
+                pokemonControl.Vida = 100;
+                pokemonControl.Energia = 100;
             }
 
             return control;
@@ -134,20 +143,125 @@ namespace App_Pokemon
             tbTurno.Text = $"Turno del Jugador {turnoActual}";
         }
 
-        private void EjecutarAccion(Action<iPokemon> accion)
+        //private void EjecutarAccion(Action<iPokemon> accion)
+        //{
+        //    var controlActivo = turnoActual == 1 ? pokemonControlJugador1 : pokemonControlJugador2;
+        //    if (controlActivo is iPokemon pokemonActivo)
+        //    {
+        //        accion(pokemonActivo);
+        //        pokemonActivo.
+
+        //    }
+        //    CambiarTurno();
+        //}
+
+        //private void Btn_ataque_fuerte_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionAtaqueFuerte());
+        //private void Btn_ataque_flojo_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionAtaqueFlojo());
+        //private void Btn_descanso_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionDescasar());
+        //private void Btn_defensa_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionDefensa());
+
+        private void Btn_ataque_fuerte_Click(object sender, RoutedEventArgs e) {
+            var controlActivo1 = pokemonControlJugador1;
+            var controlActivo2 = pokemonControlJugador2;
+
+            if (turnoActual == 1)
+            {
+
+                if (controlActivo1 is iPokemon pokemonActivo)
+                {
+                    pokemonActivo.animacionAtaqueFuerte();
+                    if (controlActivo2 is iPokemon pokemonActivo2)
+                    {
+                        pokemonActivo2.Vida -= ataque_Fuerte;
+                    }
+                }
+                CambiarTurno();
+                return;
+            }
+            else
+            {
+
+                if (controlActivo2 is iPokemon pokemonActivo3)
+                {
+                    pokemonActivo3.animacionAtaqueFuerte();
+                    if (controlActivo1 is iPokemon pokemonActivo4)
+                    {
+                        pokemonActivo4.Vida -= ataque_Fuerte;
+                    }
+                }
+                CambiarTurno();
+                return;
+            }
+        }
+        private void Btn_ataque_flojo_Click(object sender, RoutedEventArgs e)
+        {
+            var controlActivo1 = pokemonControlJugador1;
+            var controlActivo2 = pokemonControlJugador2;
+
+            if (turnoActual == 1)
+            {
+
+                if (controlActivo1 is iPokemon pokemonActivo)
+                {
+                    pokemonActivo.animacionAtaqueFlojo();
+                    if (controlActivo2 is iPokemon pokemonActivo2)
+                    {
+                        pokemonActivo2.Vida -= ataque_Debil;
+                    }
+                }
+                CambiarTurno();
+                return;
+            }
+            else
+            {
+
+                if (controlActivo2 is iPokemon pokemonActivo3)
+                {
+                    pokemonActivo3.animacionAtaqueFlojo();
+                    if (controlActivo1 is iPokemon pokemonActivo4)
+                    {
+                        pokemonActivo4.Vida -= ataque_Debil;
+                    }
+                }
+                CambiarTurno();
+                return;
+            }
+        }
+        private void Btn_descanso_Click(object sender, RoutedEventArgs e)
+        {
+            if (turnoActual == 1)
+            {
+                var controlActivo = pokemonControlJugador1;
+                if (controlActivo is iPokemon pokemonActivo)
+                {
+                    pokemonActivo.animacionDescasar();
+                    pokemonActivo.Vida += recuperacion;
+                }
+                CambiarTurno();
+            }
+            else
+            {
+                var controlActivo = pokemonControlJugador2;
+                if (controlActivo is iPokemon pokemonActivo)
+                {
+                    pokemonActivo.animacionDescasar();
+                    pokemonActivo.Vida += recuperacion;
+                }
+                CambiarTurno();
+            }
+        }
+
+        private void Btn_defensa_Click(object sender, RoutedEventArgs e)
         {
             var controlActivo = turnoActual == 1 ? pokemonControlJugador1 : pokemonControlJugador2;
             if (controlActivo is iPokemon pokemonActivo)
             {
-                accion(pokemonActivo);
+                pokemonActivo.animacionDefensa();
+                pokemonActivo.Energia += defensa;
+
             }
             CambiarTurno();
         }
-
-        private void Btn_ataque_fuerte_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionAtaqueFuerte());
-        private void Btn_ataque_flojo_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionAtaqueFlojo());
-        private void Btn_descanso_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionDescasar());
-        private void Btn_defensa_Click(object sender, RoutedEventArgs e) => EjecutarAccion(pokemon => pokemon.animacionDefensa());
     }
 }
 

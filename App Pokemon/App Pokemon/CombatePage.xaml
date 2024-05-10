@@ -35,9 +35,7 @@
         <Viewbox x:Name="vb_Pokemon1" Grid.Row="1" Grid.Column="0">
             
         </Viewbox>
-        <Viewbox x:Name="vb_Pokemon2"  Grid.Column="1" Grid.Row="1">
-            
-        </Viewbox>
+        <Viewbox x:Name="vb_Pokemon2"  Grid.Column="1"/>
         <Viewbox Grid.Row="2">
             <Button x:Name="btn_ataque_fuerte"  Click="Btn_ataque_fuerte_Click" Content="Ataque fuerte" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
