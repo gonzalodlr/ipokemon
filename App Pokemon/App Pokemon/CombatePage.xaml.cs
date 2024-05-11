@@ -21,6 +21,7 @@ using ControlUsuario_IPO2;
 using Pokemon_Antonio_Campallo_Gomez;
 using ToxicroackJPG;
 using piplupUserControl;
+using Windows.UI.Core;
 
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -143,10 +144,34 @@ namespace App_Pokemon
             tbTurno.Text = $"Turno del Jugador {turnoActual}";
         }
 
+        private void InicializarJuego()
+        {
+            
+            turnoActual = 1; 
+            tbTurno.Text = "Turno del Jugador 1";
+            (pokemonControlJugador1 as iPokemon).Vida = 100;
+            (pokemonControlJugador2 as iPokemon).Vida = 100;
+            MostrarPokemons((pokemonControlJugador1 as iPokemon), (pokemonControlJugador2 as iPokemon));
+            // Rehabilitamos los botones
+            btn_ataque_fuerte.IsEnabled = true;
+            btn_ataque_flojo.IsEnabled = true;
+            btn_descanso.IsEnabled = true;
+            btn_defensa.IsEnabled = true;
+        }
+
         private void MostrarMensajeFinal(string mensaje)
         {
             tbTurno.Text = mensaje;
-            
+            GameEndPanel.Visibility = Visibility.Visible;
+
+        }
+
+        private void DesactivarAcciones()
+        {
+            btn_ataque_fuerte.IsEnabled = false;
+            btn_ataque_flojo.IsEnabled = false;
+            btn_descanso.IsEnabled = false;
+            btn_defensa.IsEnabled = false;
         }
 
         private void CheckGameOver()
@@ -155,15 +180,19 @@ namespace App_Pokemon
             {
                 (pokemonControlJugador1 as iPokemon).animacionDerrota();
                 MostrarMensajeFinal("Pokemon 2 ha ganado");
+                DesactivarAcciones();
                 // Detener el juego o reiniciar
             }
             else if ((pokemonControlJugador2 as iPokemon).Vida <= 0)
             {
                 (pokemonControlJugador2 as iPokemon).animacionDerrota();
                 MostrarMensajeFinal("Pokemon 1 ha ganado");
+                DesactivarAcciones();
                 // Detener el juego o reiniciar
             }
         }
+
+
 
         //private void EjecutarAccion(Action<iPokemon> accion)
         //{
@@ -185,6 +214,7 @@ namespace App_Pokemon
         private void Btn_ataque_fuerte_Click(object sender, RoutedEventArgs e) {
             var controlActivo1 = pokemonControlJugador1;
             var controlActivo2 = pokemonControlJugador2;
+
 
             if (turnoActual == 1)
             {
@@ -290,6 +320,27 @@ namespace App_Pokemon
             }
             CambiarTurno();
             CheckGameOver();
+        }
+
+        private void BtnRevancha_Click(object sender, RoutedEventArgs e)
+        {
+            GameEndPanel.Visibility = Visibility.Collapsed;
+            InicializarJuego();
+        }
+
+        private void BtnIrInicio_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Hand, 1);
+        }
+
+        private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Arrow, 1);
         }
     }
 }

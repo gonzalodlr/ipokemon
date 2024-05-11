@@ -37,18 +37,41 @@
         </Viewbox>
         <Viewbox x:Name="vb_Pokemon2"  Grid.Column="1"/>
         <Viewbox Grid.Row="2">
-            <Button x:Name="btn_ataque_fuerte"  Click="Btn_ataque_fuerte_Click" Content="Ataque fuerte" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_ataque_fuerte"  Click="Btn_ataque_fuerte_Click" Content="Ataque fuerte" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
         <Viewbox Grid.Row="3">
-            <Button x:Name="btn_ataque_flojo" Click="Btn_ataque_flojo_Click" Content="Ataque flojo" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_ataque_flojo" Click="Btn_ataque_flojo_Click" Content="Ataque flojo" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="2">
-            <Button x:Name="btn_descanso" Click="Btn_descanso_Click" Content="Descansar" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_descanso" Click="Btn_descanso_Click" Content="Descansar" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="3">
-            <Button x:Name="btn_defensa" Click="Btn_defensa_Click" Content="Defensa" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_defensa" Click="Btn_defensa_Click" Content="Defensa" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
         </Viewbox>
 
+        <Grid x:Name="GameEndPanel" Background="SlateGray" CornerRadius="20" Width="500" Height="500" Visibility="Collapsed"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="¿Y ahora qué...?" FontSize="24" FontWeight="Bold" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
+                <Button x:Name="btnIrInicio" Click="BtnIrInicio_Click" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" BorderBrush="White" Background="DarkBlue" HorizontalAlignment="Center" Margin="20">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Glyph="&#xE10F;" FontSize="24" Foreground="White"/>
+                        <TextBlock Text=" Ir a página de inicio" Margin="5,0,0,0" FontSize="20" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnRevancha" Click="BtnRevancha_Click" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" BorderBrush="White" Background="DarkBlue" HorizontalAlignment="Center" Margin="0">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Glyph="&#xE149;" FontSize="24" Foreground="White"/>
+                        <TextBlock Text=" Revancha" Margin="5,0,0,0" FontSize="20" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+                
+            </StackPanel>
+        </Grid>
+
+
+
     </Grid>
+    
+    
     
 </Page>
