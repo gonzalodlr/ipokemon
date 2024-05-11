@@ -51,7 +51,9 @@
 
         <Grid x:Name="GameEndPanel" Background="SlateGray" CornerRadius="20" Width="500" Height="500" Visibility="Collapsed"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="¿Y ahora qué...?" FontSize="24" FontWeight="Bold" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="tbGanador" Text="Turno del Jugador 1" Margin="0,0,0,0" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                <Image Source="/Assets/imgCombate/trofeo.png" Width="200" Height="200" Margin="0,10" HorizontalAlignment="Center"/>
+                <TextBlock Text="¿Y ahora qué...?" Margin="0,   0,0,0" FontSize="24" FontWeight="Bold" Foreground="WhiteSmoke" VerticalAlignment="Top" HorizontalAlignment="Center"/>
                 <Button x:Name="btnIrInicio" Click="BtnIrInicio_Click" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" BorderBrush="White" Background="DarkBlue" HorizontalAlignment="Center" Margin="20">
                     <StackPanel Orientation="Horizontal">
                         <FontIcon Glyph="&#xE10F;" FontSize="24" Foreground="White"/>

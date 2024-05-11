@@ -162,7 +162,15 @@ namespace App_Pokemon
         private void MostrarMensajeFinal(string mensaje)
         {
             tbTurno.Text = mensaje;
+            tbTurno.Visibility = Visibility.Collapsed;
             GameEndPanel.Visibility = Visibility.Visible;
+
+        }
+
+        private void MostrarMensajeenGrid(string mensaje)
+        {
+            tbGanador.Text = mensaje;
+            //GameEndPanel.Visibility = Visibility.Visible;
 
         }
 
@@ -180,15 +188,26 @@ namespace App_Pokemon
             {
                 (pokemonControlJugador1 as iPokemon).animacionDerrota();
                 MostrarMensajeFinal("Pokemon 2 ha ganado");
+                MostrarMensajeenGrid("¡Jugador 2 ha ganado!");
                 DesactivarAcciones();
-                // Detener el juego o reiniciar
             }
             else if ((pokemonControlJugador2 as iPokemon).Vida <= 0)
             {
                 (pokemonControlJugador2 as iPokemon).animacionDerrota();
                 MostrarMensajeFinal("Pokemon 1 ha ganado");
+                MostrarMensajeenGrid("¡Jugador 1 ha ganado!");
                 DesactivarAcciones();
-                // Detener el juego o reiniciar
+                
+            }
+
+            if ((pokemonControlJugador1 as iPokemon).Vida < 50)
+            {
+                (pokemonControlJugador1 as iPokemon).animacionHerido();
+            }
+
+            if ((pokemonControlJugador2 as iPokemon).Vida < 50)
+            {
+                (pokemonControlJugador2 as iPokemon).animacionHerido();
             }
         }
 
@@ -328,9 +347,10 @@ namespace App_Pokemon
             InicializarJuego();
         }
 
+
         private void BtnIrInicio_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof(MainPage)); ;
         }
 
         private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)

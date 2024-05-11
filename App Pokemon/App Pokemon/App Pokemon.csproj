@@ -458,6 +458,7 @@
     <Content Include="Assets\icon_pokeball.png" />
     <Content Include="Assets\imgCombatePage\Multijugador.png" />
     <Content Include="Assets\imgCombatePage\solo.jpg" />
+    <Content Include="Assets\imgCombate\trofeo.png" />
     <Content Include="Assets\imgDatosPokemon\height.png" />
     <Content Include="Assets\imgDatosPokemon\weigth.png" />
     <Content Include="Assets\imgMainPage\dudas.png" />

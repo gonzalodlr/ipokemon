@@ -91,8 +91,7 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2">
-                                <TextBlock x:Name="MensajeTextBlock" Text="Elija un Pokémon" VerticalAlignment="Center"/>
-                                <Button x:Name="ConfirmarSeleccionButton" Content="Confirmar Selección" Click="ConfirmarSeleccion_Click" HorizontalAlignment="Right"/>
+                                <Button x:Name="ConfirmarSeleccionButton" Content="Confirmar Selección" Click="ConfirmarSeleccion_Click" Visibility="Visible" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </Grid>
                     </Grid>

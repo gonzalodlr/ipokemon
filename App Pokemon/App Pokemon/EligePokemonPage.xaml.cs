@@ -140,13 +140,13 @@ namespace App_Pokemon
 
         private void ContentGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Aquí puedes manejar el evento de cambio de selección del GridView
-            // Por ejemplo, puedes acceder al elemento seleccionado así:
             if (ContentGridView.SelectedItem != null)
             {
                 var selectedControl = ContentGridView.SelectedItem as UserControl;
+
                 // Haz lo que necesites con el control seleccionado
             }
+           
         }
 
         private void ContentGridView_ItemClick(object sender, ItemClickEventArgs e)
@@ -160,6 +160,7 @@ namespace App_Pokemon
             {
                 pokemonTempSeleccionado = clickedItem;
                 MostrarMensaje($"Jugador {jugadorActual}, ha seleccionado {clickedItem.Nombre}. Confirme o seleccione otro.");
+
             }
             else
             {
@@ -195,8 +196,8 @@ namespace App_Pokemon
 
         private void MostrarMensaje(string mensaje)
         {
-            // Suponiendo que tienes un TextBlock o similar para mostrar mensajes:
             MensajeTextBlock.Text = mensaje;
+
         }
 
         public class PokemonSelectionParameters
@@ -216,6 +217,8 @@ namespace App_Pokemon
             //Frame.Navigate(typeof(CombatePage), new { Jugador1 = seleccionJugador1, Jugador2 = seleccionJugador2 });
             Frame.Navigate(typeof(CombatePage), parameters);
         }
+
+
 
 
     }
