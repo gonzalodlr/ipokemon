@@ -143,6 +143,28 @@ namespace App_Pokemon
             tbTurno.Text = $"Turno del Jugador {turnoActual}";
         }
 
+        private void MostrarMensajeFinal(string mensaje)
+        {
+            tbTurno.Text = mensaje;
+            
+        }
+
+        private void CheckGameOver()
+        {
+            if ((pokemonControlJugador1 as iPokemon).Vida <= 0)
+            {
+                (pokemonControlJugador1 as iPokemon).animacionDerrota();
+                MostrarMensajeFinal("Pokemon 2 ha ganado");
+                // Detener el juego o reiniciar
+            }
+            else if ((pokemonControlJugador2 as iPokemon).Vida <= 0)
+            {
+                (pokemonControlJugador2 as iPokemon).animacionDerrota();
+                MostrarMensajeFinal("Pokemon 1 ha ganado");
+                // Detener el juego o reiniciar
+            }
+        }
+
         //private void EjecutarAccion(Action<iPokemon> accion)
         //{
         //    var controlActivo = turnoActual == 1 ? pokemonControlJugador1 : pokemonControlJugador2;
@@ -176,6 +198,7 @@ namespace App_Pokemon
                     }
                 }
                 CambiarTurno();
+                CheckGameOver();
                 return;
             }
             else
@@ -190,6 +213,7 @@ namespace App_Pokemon
                     }
                 }
                 CambiarTurno();
+                CheckGameOver();
                 return;
             }
         }
@@ -210,6 +234,7 @@ namespace App_Pokemon
                     }
                 }
                 CambiarTurno();
+                CheckGameOver();
                 return;
             }
             else
@@ -224,6 +249,7 @@ namespace App_Pokemon
                     }
                 }
                 CambiarTurno();
+                CheckGameOver();    
                 return;
             }
         }
@@ -238,6 +264,7 @@ namespace App_Pokemon
                     pokemonActivo.Vida += recuperacion;
                 }
                 CambiarTurno();
+                CheckGameOver();
             }
             else
             {
@@ -248,6 +275,7 @@ namespace App_Pokemon
                     pokemonActivo.Vida += recuperacion;
                 }
                 CambiarTurno();
+                CheckGameOver();
             }
         }
 
@@ -261,6 +289,7 @@ namespace App_Pokemon
 
             }
             CambiarTurno();
+            CheckGameOver();
         }
     }
 }
