@@ -26,91 +26,160 @@
         <Grid.Background>
             <ImageBrush Opacity="0.5" ImageSource="/Assets/imgPokedex/pokedexBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
 
-        <GridView   x:Name="ContentGridView" Margin="10"
-                    IsItemClickEnabled="False"
-                    CanDragItems="True"
-                    AllowDrop="True"
-                    CanReorderItems="True"
-                    SelectionMode="Single"
-                    SelectionChanged="ContentGridView_SelectionChanged"
-                    ItemClick="ContentGridView_ItemClick"
-                    FlowDirection="LeftToRight">
+        <!-- Columna izquierda (Detalle del Pokémon seleccionado) -->
+        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626">
+            <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
 
-            <GridView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapGrid Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </GridView.ItemsPanel>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
+                    <Viewbox Grid.Row="0">
+                        <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
+                    </Viewbox>
+                    <Viewbox Grid.Row="1">
+                        <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
+                    </Viewbox>
+                </Grid>
 
-            <!-- Aquí se inserta el DataTemplate -->
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid AutomationProperties.Name="{Binding Nombre}" Width="1000">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="500"/>
-                            <ColumnDefinition Width="500"/>
-                        </Grid.ColumnDefinitions>
-                        <ContentPresenter Content="{Binding}" Width="500" Height="500"/>
+                <Grid Grid.Row="1" Background="#FFE8E8E8" Margin="20,5,20,10" CornerRadius="0,0,20,10">
 
-                        <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
 
-                            <Grid.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.8">
-                                    <GradientStop Color="Black"/>
-                                    <GradientStop Color="#FF512222" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Grid.Background>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="10*"/>
-                                <RowDefinition Height="10*"/>
-                                <RowDefinition Height="10*"/>
-                                <RowDefinition Height="10*"/>
-                                <RowDefinition Height="10*"/>
-                                <RowDefinition Height="10*"/>
-                                <RowDefinition Height="10*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Arial Black" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Tipo: " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Categoría: " Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Altura: " Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Peso: " Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Evolución: " Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="Descripción: " Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Ellipse Fill="#FF262626" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="100" Margin="0,-55,0,0" />
+                    <Rectangle Fill="#FF262626" Grid.RowSpan="5" HorizontalAlignment="Right" Width="1" Margin="0,50,-0.5,10" />
 
-                            <TextBlock Text="{Binding Tipo}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Altura}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Peso}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding Evolucion}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Información" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial Black"/>
+                    <TextBlock Text="Categoría" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial Black"/>
 
-                            <Viewbox Grid.Row="6" Grid.Column="1">
-                                <TextBlock Text="{Binding Descripcion}"/>
-                            </Viewbox>
-                        </Grid>
-                    </Grid>
-                </DataTemplate>
-            </GridView.ItemTemplate>
 
+                    <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,225,0">
+                        <Image Source="/Assets/imgDatosPokemon/height.png" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="30,0,0,0">
+                        </Image>
+                        <TextBlock Text="{Binding Altura}" FontFamily="Arial Black" Foreground="Black" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        <TextBlock Text="m" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                    </StackPanel>
+                    <Viewbox Grid.Row="1" VerticalAlignment="Bottom" Width="20" HorizontalAlignment="Left" Margin="45,0,0,0">
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Altura" Foreground="Black" FontSize="9" VerticalAlignment="Bottom" />
+                    </Viewbox>
+
+                    <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Source="/Assets/imgDatosPokemon/weigth.png" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="30,0,0,0"/>
+                        <TextBlock Text="{Binding Peso}" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black" Margin="20,0,0,0"/>
+                        <TextBlock Text="kg" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                    </StackPanel>
+                    <Viewbox Grid.Row="2" VerticalAlignment="Bottom" Width="20" HorizontalAlignment="Left" Margin="45,0,0,0">
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Peso" Foreground="Black" FontSize="9" VerticalAlignment="Bottom" />
+                    </Viewbox>
+
+                    <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5">
+                        <TextBlock Text="{Binding Tipo}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5" VerticalAlignment="Center" >
+                        <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                    </StackPanel>
+                    <Button  x:Name="btn_ataqueFuerte" Content="Ataque Fuerte" Grid.Column="0"  Grid.Row="3" VerticalAlignment="Center" Background="#FFAF3F3F" CornerRadius="10,10,10,10" Padding="40,0,40,0" HorizontalAlignment="Center" Click="btn_ataqueFuerte_Click" Foreground="White"/>
+                    <Button  x:Name="btn_ataqueDebil" Content="Ataque débil" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Background="#FF69934B" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_ataqueDebil_Click"/>
+                    <Button  x:Name="btn_defensa" Content="Defensa" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Background="#FF568B9D" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_defensa_Click"/>
+                    <Button x:Name="btn_recuperacion" Content="Recuperación" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Background="#FF905686" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_recuperacion_Click"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+        <ListView x:Name="FilteredListView" SelectionMode="Single" ShowsScrollingPlaceholders="True" BorderThickness="1" SelectionChanged="PokemonListView_SelectionChanged" Width="400" Grid.Column="1">
             <!-- Los controles de usuario -->
             <my:DracofireGDLRS x:Name="DracofireGDLRS" Margin="5"/>
             <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
-            <my2:MyUCLucario x:Name="MyUCLucario" Margin="5"/>
-            <my3:ArticunoACG x:Name="ArticunoACG" Margin="5"/>
-            <my4:GengarJCC x:Name="GengarJCC" Margin="5"/>
-            <my5:ToxicroackJPG x:Name="ToxicroackJPG" Margin="5"/>
-            <my6:DragoniteCSD x:Name="DragoniteCSD" Margin="5"/>
+            <my2:MyUCLucario x:Name="MyUCLucario"/>
+            <my3:ArticunoACG x:Name="ArticunoACG"/>
+            <my4:GengarJCC x:Name="GengarJCC"/>
+            <my5:ToxicroackJPG x:Name="ToxicroackJPG" />
+            <my6:DragoniteCSD x:Name="DragoniteCSD" />
             <!--<my7:ButterFreeACC x:Name="ButterFreeACC" Margin="5"/>-->
-            <my8:ChandelureNDAA x:Name="ChandelureNDAA" Margin="5"/>
+            <my8:ChandelureNDAA x:Name="ChandelureNDAA" />
             <!--<my9:PiplupMLTN x:Name="PiplupMLTN" Margin="5"/>-->
-            <my10:SnorlaxROC x:Name="Snorlax" Margin="5"/>
-            <my11:ScizorAPJ x:Name="ScizorAPJ" Margin="5"/>
-            <my12:MakuhitaAPQ2 x:Name="MakuhitaAPQ" Margin="5"/>
+            <my10:SnorlaxROC x:Name="Snorlax" />
+            <my11:ScizorAPJ x:Name="ScizorAPJ" />
+            <my12:MakuhitaAPQ2 x:Name="MakuhitaAPQ"/>
 
-        </GridView>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="2"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="280"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Viewbox Grid.Column="0">
+                            <ContentPresenter Content="{Binding}" Width="48" Height="48"/>
+                        </Viewbox>
+
+                        <Ellipse x:Name="Ellipse"
+                    Grid.Column="1"
+                    Width ="48"
+                    Height="48"
+                    Margin="6"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="50*"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Text="{Binding Nombre}" />
+                            <TextBlock  Grid.Row="1" Text="{Binding Tipo}"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+        <StackPanel Width="200" Grid.Column="2">
+            <TextBlock Margin="8,8,8,4" Style="{ThemeResource BaseTextBlockStyle}">Filter by...</TextBlock>
+            <TextBox x:Name="FilterByFirstName" Width="150" Header="Name" Margin="8"
+HorizontalAlignment="Left" />
+            <TextBox x:Name="FilterByType" Width="150" Header="Type" Margin="8"
+HorizontalAlignment="Left" />
+            <TextBox x:Name="FilterByCategory" Width="150" Header="Category" Margin="8"
+HorizontalAlignment="Left" />
+        </StackPanel>
+
+        
     </Grid>
 </Page>
