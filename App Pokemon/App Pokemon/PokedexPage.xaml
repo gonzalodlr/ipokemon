@@ -33,7 +33,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Columna izquierda (Detalle del Pokémon seleccionado) -->
-        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626">
+        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" Visibility="Collapsed">
             <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -52,7 +52,7 @@
                         <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
                     </Viewbox>
                     <Viewbox Grid.Row="1">
-                        <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
+                        <ContentPresenter x:Name="contenidoPokemon" Content="{Binding pokemon_seleccionado}" Width="250" Height="250"/>
                     </Viewbox>
                 </Grid>
 
@@ -112,8 +112,7 @@
         </Grid>
 
 
-        <ListView x:Name="FilteredListView" SelectionMode="Single" ShowsScrollingPlaceholders="True" BorderThickness="1" SelectionChanged="PokemonListView_SelectionChanged" Width="400" Grid.Column="1">
-            <!-- Los controles de usuario -->
+        <ListView x:Name="FilteredListView" SelectionMode="Single" ShowsScrollingPlaceholders="True" BorderThickness="1" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="400" SelectionChanged="PokemonListView_SelectionChanged" Grid.Column="1">
             <my:DracofireGDLRS x:Name="DracofireGDLRS" Margin="5"/>
             <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
             <my2:MyUCLucario x:Name="MyUCLucario"/>
@@ -128,46 +127,38 @@
             <my11:ScizorAPJ x:Name="ScizorAPJ" />
             <my12:MakuhitaAPQ2 x:Name="MakuhitaAPQ"/>
 
-            <ListView.ItemsPanel>
+            <ListView.ItemsPanel >
                 <ItemsPanelTemplate>
-                    <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="2"/>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="280"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
 
                         <Viewbox Grid.Column="0">
-                            <ContentPresenter Content="{Binding}" Width="48" Height="48"/>
+                            <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
                         </Viewbox>
 
-                        <Ellipse x:Name="Ellipse"
-                    Grid.Column="1"
-                    Width ="48"
-                    Height="48"
-                    Margin="6"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
-                        <Grid Grid.Column="2">
+                        <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50*"/>
                                 <RowDefinition Height="50*"/>
                             </Grid.RowDefinitions>
-                            
+
                             <TextBlock Grid.Row="0" Text="{Binding Nombre}" />
                             <TextBlock  Grid.Row="1" Text="{Binding Tipo}"/>
                         </Grid>
+
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            
+
         </ListView>
 
         <StackPanel Width="200" Grid.Column="2">

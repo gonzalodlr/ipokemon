@@ -28,7 +28,7 @@ namespace App_Pokemon
         public MainPage()
         {
             this.InitializeComponent();
-
+            ShowWelcomeNotification();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
             AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
@@ -130,6 +130,9 @@ namespace App_Pokemon
                 case "Combate":
                     fmMain.Navigate(typeof(InicioCombate));
                     break;
+                case "Capturar":
+                    fmMain.Navigate(typeof(CapturarMap));
+                    break;
                 case "Acerca De":
                     fmMain.Navigate(typeof(AcercaDePage));
                     break;
@@ -165,6 +168,25 @@ namespace App_Pokemon
             {
                 fmMain.GoBack();
             }
+        }
+        private void ShowWelcomeNotification()
+        {
+            // Crea el contenido de la notificación
+            var toastContent = new ToastContentBuilder()
+                .AddArgument("action", "welcome")
+                .AddText("¡Bienvenido a la Aplicación!")
+                .AddText("Gracias por usar nuestra aplicación.")
+                .AddAppLogoOverride(new Uri("ms-appx:///Assets/Logo.png"), ToastGenericAppLogoCrop.Circle)
+                .GetToastContent();
+
+            // Crea la notificación
+            var toast = new ToastNotification(toastContent.GetXml())
+            {
+                ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(1)
+            };
+
+            // Muestra la notificación
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
     }
 }

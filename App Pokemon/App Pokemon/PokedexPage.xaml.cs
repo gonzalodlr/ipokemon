@@ -8,7 +8,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
-using System.Linq;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
@@ -27,19 +26,12 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class PokedexPage : Page
     {
-        public List<UserControl> UserControls { get; set; }
-        public List<UserControl> Items { get; set;  } = new List<UserControl>();
-        private iPokemon pokemon_seleccionado;
+        private iPokemon pokemon_seleccionado { get; set; }
 
-
-        //private List<UserControl> UserControls = new List<UserControl>(); // Initialize the UserControls list
         public PokedexPage()
         {
             this.InitializeComponent();
             configurar_pokedex();
-            //LoadUserControlInstances();
-            //ContentGridView.ItemsSource = Items;
-
         }
 
         private void configurar_pokedex()
@@ -182,15 +174,21 @@ namespace App_Pokemon
         //    }
         //}
 
-
+        public iPokemon ConvertName(iPokemon name)
+        {
+            return name;
+        }
         private void PokemonListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (FilteredListView.SelectedItem != null)
             {
                 var selectedPokemon = FilteredListView.SelectedItem as iPokemon;
-                pokemonDetailGrid.DataContext = selectedPokemon;
-                pokemonDetailGrid.Visibility = Visibility.Visible;
                 pokemon_seleccionado = selectedPokemon;
+                DataContext = pokemon_seleccionado;
+                ConvertName(selectedPokemon);
+                
+
+                pokemonDetailGrid.Visibility = Visibility.Visible;
             }
         }
         private void btn_ataqueFuerte_Click(object sender, RoutedEventArgs e)

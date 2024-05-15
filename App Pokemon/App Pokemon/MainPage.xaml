@@ -26,6 +26,7 @@
                 <NavigationViewItem Content="Mis Pokemon" x:Name="viPokemons" Icon="AllApps"/>
                 <NavigationViewItem Content="Pokedex" x:Name="viPokedex" Icon="AllApps"/>
                 <NavigationViewItem Content="Combate" x:Name="viCombate" Icon="People"/>
+                <NavigationViewItem Content="Capturar" x:Name="viCaptura" Icon="Map"/>
                 <NavigationViewItem Content="Acerca De" x:Name="viAcercaDe" Icon="Help"/>
             </NavigationView.MenuItems>
             <Frame x:Name="fmMain">

@@ -122,6 +122,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CapturarMap.xaml.cs">
+      <DependentUpon>CapturarMap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EligePokemonPage.xaml.cs">
       <DependentUpon>EligePokemonPage.xaml</DependentUpon>
     </Compile>
@@ -550,6 +553,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="AcercaDePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapturarMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

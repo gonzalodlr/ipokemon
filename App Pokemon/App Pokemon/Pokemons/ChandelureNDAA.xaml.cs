@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1_Prueba;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -335,17 +336,5 @@ namespace PokemonNoelia
                 this.imPocionMorada.Source = new BitmapImage(new Uri("/AssetsChandelureNDAA/pocionMorada.png", UriKind.Relative));
             }
         }
-    }
-    internal interface iPokemon
-    {
-        double Vida { get; set; }
-        double Energia { get; set; }
-        string Nombre { get; }
-        string Categoría { get; }
-        string Tipo { get; }
-        double Altura { get; }
-        double Peso { get; }
-        string Evolucion { get; }
-        string Descripcion { get; }
     }
 }
