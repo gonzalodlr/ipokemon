@@ -13,6 +13,7 @@
         <Maps:MapControl x:Name="myMap"
                          HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
-                         MapServiceToken="YourMapServiceToken" />
+                         MapServiceToken="YourMapServiceToken"
+                         PointerMoved="MapControl_PointerMoved"/>
     </Grid>
 </Page>

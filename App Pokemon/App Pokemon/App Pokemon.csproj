@@ -125,6 +125,9 @@
     <Compile Include="CapturarMap.xaml.cs">
       <DependentUpon>CapturarMap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CapturarPage.xaml.cs">
+      <DependentUpon>CapturarPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EligePokemonPage.xaml.cs">
       <DependentUpon>EligePokemonPage.xaml</DependentUpon>
     </Compile>
@@ -459,6 +462,8 @@
     <Content Include="Assets\AcercaDe.png" />
     <Content Include="Assets\home.png" />
     <Content Include="Assets\icon_pokeball.png" />
+    <Content Include="Assets\imgCaptura\Error.png" />
+    <Content Include="Assets\imgCaptura\Ok.png" />
     <Content Include="Assets\imgCombatePage\Multijugador.png" />
     <Content Include="Assets\imgCombatePage\solo.jpg" />
     <Content Include="Assets\imgCombate\trofeo.png" />
@@ -557,6 +562,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CapturarMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapturarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
