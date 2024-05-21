@@ -217,9 +217,5 @@ namespace App_Pokemon
             //Frame.Navigate(typeof(CombatePage), new { Jugador1 = seleccionJugador1, Jugador2 = seleccionJugador2 });
             Frame.Navigate(typeof(CombatePage), parameters);
         }
-
-
-
-
     }
 }

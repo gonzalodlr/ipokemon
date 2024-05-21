@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:NavigationView="using:Microsoft.UI.Xaml.Controls"
+
     x:Class="App_Pokemon.MainPage"
     mc:Ignorable="d">
 
@@ -20,7 +22,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <NavigationView ItemInvoked="viPokedex_PointerReleased" IsSettingsVisible="False" IsBackEnabled="True" BackRequested="NavigationView_BackRequested" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <NavigationView x:Name="navigationView" ItemInvoked="viPokedex_PointerReleased" IsSettingsVisible="False" IsBackEnabled="True" BackRequested="NavigationView_BackRequested" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Inicio" x:Name="viHome" Icon="Home"/>
                 <NavigationViewItem Content="Mis Pokemon" x:Name="viPokemons" Icon="AllApps"/>

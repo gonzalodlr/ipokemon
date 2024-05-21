@@ -127,9 +127,6 @@ namespace App_Pokemon
             }
 
             return control;
-
-
-            // Continúa con otros casos según tus necesidades
         }
 
         public class MyNavigationParameters
@@ -350,7 +347,19 @@ namespace App_Pokemon
 
         private void BtnIrInicio_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage)); ;
+            // Navegar a la página MainPage
+            this.Frame.Navigate(typeof(MainPage));
+
+            // Obtener una referencia al NavigationView de MainPage
+            MainPage mainPage = Window.Current.Content as MainPage;
+            NavigationView navigationView = mainPage?.FindName("navigationView") as NavigationView;
+
+            // Verificar si se obtuvo una referencia válida al NavigationView
+            if (navigationView != null)
+            {
+                // Seleccionar el elemento "Inicio" en el NavigationView
+                navigationView.SelectedItem = navigationView.MenuItems[0];
+            }
         }
 
         private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)

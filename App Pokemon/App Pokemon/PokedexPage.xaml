@@ -51,8 +51,8 @@
                     <Viewbox Grid.Row="0">
                         <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
                     </Viewbox>
-                    <Viewbox Grid.Row="1">
-                        <ContentPresenter x:Name="contenidoPokemon" Content="{Binding pokemon_seleccionado}" Width="250" Height="250"/>
+                    <Viewbox x:Name="Pokemon_Content" Grid.Row="1">
+                        
                     </Viewbox>
                 </Grid>
 

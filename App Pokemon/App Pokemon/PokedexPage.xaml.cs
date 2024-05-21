@@ -16,6 +16,17 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Collections.ObjectModel;
 using Windows.ApplicationModel.Contacts;
+using ControlUsuario_IPO2;
+using Dracofire;
+using LucarioGAC;
+using Pokemon_Antonio_Campallo_Gomez;
+using Sesion4;
+using PokemonIPO2;
+using Scizor_AdrianPeinado;
+using PokemonNoelia;
+using OrtizCañameroRoberto_Snorlax;
+using ButterFreeACC;
+using ToxicroackJPG;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -174,10 +185,7 @@ namespace App_Pokemon
         //    }
         //}
 
-        public iPokemon ConvertName(iPokemon name)
-        {
-            return name;
-        }
+       
         private void PokemonListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (FilteredListView.SelectedItem != null)
@@ -185,12 +193,42 @@ namespace App_Pokemon
                 var selectedPokemon = FilteredListView.SelectedItem as iPokemon;
                 pokemon_seleccionado = selectedPokemon;
                 DataContext = pokemon_seleccionado;
-                ConvertName(selectedPokemon);
                 
-
+                UserControl pokemonControlJugador1 = CrearPokemonControl(pokemon_seleccionado);
+                Pokemon_Content.Child = pokemonControlJugador1;
                 pokemonDetailGrid.Visibility = Visibility.Visible;
             }
         }
+
+        private UserControl CrearPokemonControl(iPokemon pokemon)
+        {
+            UserControl control = pokemon switch
+            {
+                DracofireGDLRS _ => new DracofireGDLRS(),
+                GengarJCC _ => new GengarJCC(),
+                MyUCLucario _ => new MyUCLucario(),
+                DragoniteCSD _ => new DragoniteCSD(),
+                ArticunoACG _ => new ArticunoACG(),
+                //ToxicroackJPG _ => new ToxicroackJPG(),
+                ChandelureNDAA _ => new ChandelureNDAA(),
+                SnorlaxROC _ => new SnorlaxROC(),
+                ScizorAPJ _ => new ScizorAPJ(),
+                MakuhitaAPQ2 _ => new MakuhitaAPQ2(),
+                _ => throw new InvalidOperationException("Tipo de Pokémon no soportado"),
+            };
+
+            if (control is iPokemon pokemonControl)
+            {
+                pokemonControl.verFilaVida(false);
+                pokemonControl.verFilaEnergia(false);
+                pokemonControl.verPocionVida(false);
+                pokemonControl.verPocionEnergia(false);
+                pokemonControl.verNombre(false);
+            }
+
+            return control;
+        }
+
         private void btn_ataqueFuerte_Click(object sender, RoutedEventArgs e)
         {
             if (pokemon_seleccionado != null)

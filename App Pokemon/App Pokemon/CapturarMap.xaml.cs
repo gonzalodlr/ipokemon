@@ -84,10 +84,6 @@ namespace App_Pokemon
             }
         }
 
-
-
-
-
         private void MapControl_PointerMoved(object sender, PointerRoutedEventArgs e)
         {
             var point = e.GetCurrentPoint(myMap);

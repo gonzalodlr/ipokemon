@@ -26,8 +26,8 @@ namespace Dracofire
     public sealed partial class DracofireGDLRS : UserControl, iPokemon
     {
         DispatcherTimer dtTime;
-        MediaPlayer mpSonidos;
-        
+        private MediaPlayer mpSonidos;
+
         Storyboard sbaux;
         Storyboard moverAlas;
         Storyboard moverPatas;
@@ -80,6 +80,7 @@ namespace Dracofire
         public DracofireGDLRS()
         {
             this.InitializeComponent();
+            mpSonidos = new MediaPlayer();
             // Iniciar la animación de movimiento
             StartAnimation();
 
@@ -94,7 +95,7 @@ namespace Dracofire
         private async void ControlTeclas(object sender, KeyRoutedEventArgs e)
         {
             Storyboard sbaux;
-            mpSonidos = new MediaPlayer();
+            MediaPlayer mpSonidos = new MediaPlayer();
             StartAnimation();
             switch (e.Key)
             {
@@ -329,6 +330,11 @@ namespace Dracofire
 
         public void animacionDefensa()
         {
+            Task task = animacionDefensaAsync();
+        }
+        public async Task animacionDefensaAsync()
+        {
+            await Task.Delay(500);
             Reiniciar();
             sbaux = (Storyboard)this.Resources["defensa_desaparecer"];
             mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/esquivar.mp3"));
@@ -340,6 +346,11 @@ namespace Dracofire
 
         public void animacionDescasar()
         {
+            Task task = animacionDescasarAsync();
+        }
+        public async Task animacionDescasarAsync()
+        {
+            await Task.Delay(500);
             Reiniciar();
             sbaux = (Storyboard)this.Resources["defensa_escudo"];
             mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsDracofireGDLRS/escudo.mp3"));
@@ -352,6 +363,12 @@ namespace Dracofire
 
         public void animacionCansado()
         {
+            Task task = animacionCansadoAsync();
+        }
+
+        public async Task animacionCansadoAsync()
+        {
+            await Task.Delay(500);
             Reiniciar();
 
             sbaux = (Storyboard)this.Resources["estado_cansado"];
