@@ -1179,7 +1179,7 @@
                     <ColumnDefinition Width="80*"/>
                     <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="Nombre" Grid.Column="1" Height="30" Grid.Row="3" TextWrapping="Wrap" Text="SNORLAX" FontSize="20" FontWeight="Bold" SelectionHighlightColor="#FF881798" Padding="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox x:Name="Nombretxt" Grid.Column="1" Height="30" Grid.Row="3" TextWrapping="Wrap" Text="SNORLAX" FontSize="20" FontWeight="Bold" SelectionHighlightColor="#FF881798" Padding="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Image x:Name="negro" HorizontalAlignment="Left" Height="1000" VerticalAlignment="Bottom" Width="1500" Grid.ColumnSpan="3" Grid.RowSpan="4" Source="/Assets_Pokemon_iniciales/cartel-minimo-ilustracion-vector-arbol-coco_969863-6808.png" Stretch="Fill" Opacity="0"/>
                 <Image x:Name="fondo_dos" Source="/Assets_Pokemon_iniciales/fondo.jpg" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.RowSpan="4" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="1000" Stretch="Fill" Visibility="Collapsed">
                     <Image.RenderTransform>

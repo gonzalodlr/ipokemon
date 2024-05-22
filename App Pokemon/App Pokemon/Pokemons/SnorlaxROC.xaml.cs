@@ -42,7 +42,7 @@ namespace OrtizCañameroRoberto_Snorlax
 
         public double Vida { get { return this.vida.Value; } set { this.vida.Value = value; } }
         public double Energia { get { return this.energia.Value; } set { this.Energia = value; } }
-        string iPokemon.Nombre { get { return this.Nombre.Text; } set { this.Nombre.Text = value; } }
+        public string Nombre { get { return this.Nombretxt.Text; } set { this.Nombretxt.Text = value; } }
         public string Categoría { get { return this.categoria; } set { this.categoria = value; } }
         public string Tipo { get { return this.tipo; } set { this.tipo = value; } }
         public double Altura { get { return this.altura; } set { this.altura = value; } }
@@ -104,7 +104,7 @@ namespace OrtizCañameroRoberto_Snorlax
 
         public void verNombre(bool ver)
         {
-            if (!ver) { this.Nombre.Visibility = Visibility.Collapsed; }
+            if (!ver) { this.Nombretxt.Visibility = Visibility.Collapsed; }
             else
             {
                 //TODO Poner fondo de nuevo
@@ -233,10 +233,6 @@ namespace OrtizCañameroRoberto_Snorlax
             }
 
         }
-
-
-
-
 
 
         //animacion1

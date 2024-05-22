@@ -28,7 +28,8 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class CapturarPage : Page
     {
-
+        private int contador = 0;
+        private int max_intentos = 3;
         DispatcherTimer dtTimeB;
         bool direccionBarra = true;
         string ipokemon;
@@ -140,16 +141,33 @@ namespace App_Pokemon
                 };
             }
             else { 
-                Storyboard sbaux = (Storyboard)this.Resources["LanzarMal"];
-                sbaux.Begin();
-                sbaux.Completed += (s, ev) => { sbaux.Stop();
-                    ToastContentBuilder notificacion = new ToastContentBuilder();
-                    notificacion.AddArgument("action", "FalloCaptura")
-                    .AddText("¡Captura Pokemon Fallida!")
-                    .AddAppLogoOverride(new Uri("ms-appx:///Assets/imgCaptura/Error.png"), ToastGenericAppLogoCrop.Circle)
-                    .SetToastDuration(0)
-                    .Show();
-                };
+                contador++;
+                if (contador == 3)
+                {
+                    Storyboard sbaux = (Storyboard)this.Resources["LanzarMal"];
+                    sbaux.Begin();
+                    sbaux.Completed += (s, ev) => {
+                        sbaux.Stop();
+                        ToastContentBuilder notificacion = new ToastContentBuilder();
+                        notificacion.AddArgument("action", "FalloCaptura")
+                        .AddText("¡Captura Pokemon Fallida!")
+                        .AddAppLogoOverride(new Uri("ms-appx:///Assets/imgCaptura/Error.png"), ToastGenericAppLogoCrop.Circle)
+                        .SetToastDuration(0)
+                        .Show();
+
+                        Frame.GoBack();
+                    };
+                } else
+                {
+                    Storyboard sbaux = (Storyboard)this.Resources["LanzarMal"];
+                    sbaux.Begin();
+                    sbaux.Completed += (s, ev) => { 
+                        sbaux.Stop(); 
+                        txt_intentos.Text = "Intentos restantes: " + (max_intentos - contador).ToString();                    
+                    };
+                    
+                }
+
             }
         }
     }

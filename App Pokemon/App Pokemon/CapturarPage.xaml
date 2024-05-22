@@ -115,9 +115,9 @@
             <Image x:Name="imgError" Source="/Assets/imgCaptura/Error.png" Width="50" Height="50"/>
         </Canvas>
 
-        <Button Content="Lanzar ipokeball" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="White" Click="Button_Click"/>
+        <Button Content="Usar pokeball" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="White" Click="Button_Click"/>
 
-        <ProgressBar x:Name="pbFuerza" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Height="25" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderBrush="Black">
+        <ProgressBar x:Name="pbFuerza" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Height="25" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderBrush="Black" Visibility="Collapsed">
             <ProgressBar.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Transparent"/>
@@ -144,6 +144,9 @@
                 <CompositeTransform Rotation="-90"/>
             </ProgressBar.RenderTransform>
         </ProgressBar>
+        <Viewbox Grid.Column="4" Grid.Row="1">
+            <TextBlock x:Name="txt_intentos" TextWrapping="Wrap" Text="Numero de intentos"/>
+        </Viewbox>
 
     </Grid>
 </Page>

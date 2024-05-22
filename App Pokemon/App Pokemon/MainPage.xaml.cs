@@ -154,13 +154,6 @@ namespace App_Pokemon
         {
             fmMain.Navigate(typeof(PokedexPage));
         }
-        private void NavigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
-        {
-            if (fmMain.BackStack.Any())
-            {
-                fmMain.GoBack();
-            }
-        }
 
         private void opcionVolver(object sender, BackRequestedEventArgs e)
         {

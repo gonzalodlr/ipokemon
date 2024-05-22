@@ -1,21 +1,7 @@
 ﻿using ClassLibrary1_Prueba;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using System.Collections.ObjectModel;
-using Windows.ApplicationModel.Contacts;
 using ControlUsuario_IPO2;
 using Dracofire;
 using LucarioGAC;
@@ -25,9 +11,7 @@ using PokemonIPO2;
 using Scizor_AdrianPeinado;
 using PokemonNoelia;
 using OrtizCañameroRoberto_Snorlax;
-using ButterFreeACC;
 using ToxicroackJPG;
-
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App_Pokemon
@@ -144,48 +128,7 @@ namespace App_Pokemon
             //CharizardASM.verPocionVida(false);
             //CharizardASM.verPocionEnergia(false);
         }
-
-        //private void OnFilterChanged(object sender, TextChangedEventArgs args)
-        //{
-        //    // This is a Linq query that selects only items that return True after being passed through
-        //    // the Filter function, and adds all of those selected items to filtered.
-        //    var filtered = allContacts.Where(contact => Filter(contact));
-        //    Remove_NonMatching(filtered);
-        //    AddBack_Contacts(filtered);
-        //}
-        //private void Remove_NonMatching(IEnumerable<Contact> filteredData)
-        //{
-        //    for (int i = contacts3Filtered.Count - 1; i >= 0; i--)
-        //    {
-        //        var item = contacts3Filtered[i];
-        //        // If contact is not in the filtered argument list, remove it from the ListView's source.
-        //        if (!filteredData.Contains(item))
-        //        {
-        //            contacts3Filtered.Remove(item);
-        //        }
-        //    }
-        //}
-        //private bool Filter(Contact contact)
-        //{
-        //    return contact.FirstName.Contains(FilterByFirstName.Text, StringComparison.InvariantCultureIgnoreCase) &&
-        //            contact.LastName.Contains(FilterByLastName.Text, StringComparison.InvariantCultureIgnoreCase) &&
-        //            contact.Company.Contains(FilterByCompany.Text, StringComparison.InvariantCultureIgnoreCase);
-        //}
-
-
-        //private void AddBack_Contacts(IEnumerable<Contact> filteredData)
-        //{
-        //    foreach (var item in filteredData)
-        //    {
-        //        // If item in filtered list is not currently in ListView's source collection, add it back in
-        //        if (!contacts3Filtered.Contains(item))
-        //        {
-        //            contacts3Filtered.Add(item);
-        //        }
-        //    }
-        //}
-
-       
+               
         private void PokemonListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (FilteredListView.SelectedItem != null)
@@ -209,7 +152,7 @@ namespace App_Pokemon
                 MyUCLucario _ => new MyUCLucario(),
                 DragoniteCSD _ => new DragoniteCSD(),
                 ArticunoACG _ => new ArticunoACG(),
-                //ToxicroackJPG _ => new ToxicroackJPG(),
+                ToxicroackJPG.ToxicroackJPG _ => new ToxicroackJPG.ToxicroackJPG(),
                 ChandelureNDAA _ => new ChandelureNDAA(),
                 SnorlaxROC _ => new SnorlaxROC(),
                 ScizorAPJ _ => new ScizorAPJ(),
