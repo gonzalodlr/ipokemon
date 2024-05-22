@@ -39,40 +39,63 @@ namespace App_Pokemon
             this.InitializeComponent();
             configurar_pokemons();
             pbMove();
+            pokemons_ocultar();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            pokemons_ocultar();
             if (e != null)
             {
                 string str = e.Parameter as string;
                 if (str == "Gengar")
                 {
                     this.ipokemon = "Gengar";
-                    vbGengar.Visibility = Visibility.Collapsed;
-                    vbDracofire.Visibility = Visibility.Visible;
+                    vbGengar.Visibility = Visibility.Visible;
                 }
                 else if (str == "DracoFire")
                 {
                     this.ipokemon = "DracoFire";
-                    vbDracofire.Visibility = Visibility.Collapsed;
-                    vbGengar.Visibility = Visibility.Visible;
+                    vbDracofire.Visibility = Visibility.Visible;
+                }
+                else if (str == "Articuno")
+                {
+                    this.ipokemon = "Articuno";
+                    vbArticuno.Visibility = Visibility.Visible;
+                }
+                else if (str == "Toxicroac")
+                {
+                    this.ipokemon = "Toxicroac";
+                    vbToxicroac.Visibility = Visibility.Visible;
                 }
             }
         }
 
+        private void pokemons_ocultar()
+        {
+            vbDracofire.Visibility = Visibility.Collapsed;
+            vbGengar.Visibility = Visibility.Collapsed;
+            vbArticuno.Visibility = Visibility.Collapsed;
+            vbToxicroac.Visibility = Visibility.Collapsed;
+        }
+
         private void configurar_pokemons()
         {
+            DracofireGDLRS.verFondo(false);
             DracofireGDLRS.verNombre(false);
             DracofireGDLRS.verPocionVida(false);
             DracofireGDLRS.verPocionEnergia(false);
             DracofireGDLRS.verFilaEnergia(false);
             DracofireGDLRS.verFilaVida(false);
 
-            //ArticunoACG.verNombre(false);
-            //ArticunoACG.verPocionVida(false);
-            //ArticunoACG.verPocionEnergia(false);
-
+            ArticunoACG.verFondo(false);
+            ArticunoACG.verNombre(false);
+            ArticunoACG.verPocionVida(false);
+            ArticunoACG.verPocionEnergia(false);
+            ArticunoACG.verFilaEnergia(false);
+            ArticunoACG.verFilaVida(false);
+            
+            GengarJCC.verFondo(false);
             GengarJCC.verNombre(false);
             GengarJCC.verPocionVida(false);
             GengarJCC.verPocionEnergia(false);
@@ -83,9 +106,12 @@ namespace App_Pokemon
             //MyUCLucario.verPocionVida(false);
             //MyUCLucario.verPocionEnergia(false);
 
-            //ToxicroackJPG.verNombre(false);
-            //ToxicroackJPG.verPocionVida(false);
-            //ToxicroackJPG.verPocionEnergia(false);
+            ToxicroackJPG.verFondo(false);
+            ToxicroackJPG.verNombre(false);
+            ToxicroackJPG.verFilaEnergia(false);
+            ToxicroackJPG.verFilaVida(false);
+            ToxicroackJPG.verPocionVida(false);
+            ToxicroackJPG.verPocionEnergia(false);
 
             //DragoniteCSD.verNombre(false);
             //DragoniteCSD.verPocionVida(false);
@@ -163,9 +189,9 @@ namespace App_Pokemon
                     sbaux.Begin();
                     sbaux.Completed += (s, ev) => { 
                         sbaux.Stop(); 
-                        txt_intentos.Text = "Intentos restantes: " + (max_intentos - contador).ToString();                    
+                        txt_intentos.Text = "Intentos restantes: " + (max_intentos - contador).ToString();
+                        dtTimeB.Start();
                     };
-                    
                 }
 
             }

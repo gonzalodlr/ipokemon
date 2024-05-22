@@ -44,8 +44,8 @@ namespace App_Pokemon
             myMap.ZoomLevel = 6;
 
             // Define las coordenadas de las ciudades
-            AddMapIcon(new BasicGeoposition() { Latitude = 40.416775, Longitude = -3.703790 }, "Madrid", "Gengar");
-            AddMapIcon(new BasicGeoposition() { Latitude = 39.862831, Longitude = -4.027323 }, "Toledo", "DracoFire");
+            AddMapIcon(new BasicGeoposition() { Latitude = 40.416775, Longitude = -3.703790 }, "Madrid", "DracoFire");
+            AddMapIcon(new BasicGeoposition() { Latitude = 39.862831, Longitude = -4.027323 }, "Toledo", "Gengar");
             AddMapIcon(new BasicGeoposition() { Latitude = 38.984783, Longitude = -3.927045 }, "Ciudad Real", "Toxicroac");
             AddMapIcon(new BasicGeoposition() { Latitude = 43.361914, Longitude = -5.849389 }, "Asturias", "Articuno");
 
@@ -74,11 +74,19 @@ namespace App_Pokemon
 
                 if (clickedIcon.Title.ToString() == "Madrid")
                 {
-                    Frame.Navigate(typeof(CapturarPage), "Gengar");
+                    Frame.Navigate(typeof(CapturarPage), "DracoFire");
                 }
                 else if (clickedIcon.Title.ToString() == "Toledo")
                 {
-                    Frame.Navigate(typeof(CapturarPage), "DracoFire");
+                    Frame.Navigate(typeof(CapturarPage), "Gengar");
+                }
+                else if (clickedIcon.Title.ToString() == "Asturias")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Articuno");
+                }
+                else if (clickedIcon.Title.ToString() == "Ciudad Real")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Toxicroac");
                 }
 
             }

@@ -172,34 +172,5 @@ namespace App_Pokemon
             return control;
         }
 
-        private void btn_ataqueFuerte_Click(object sender, RoutedEventArgs e)
-        {
-            if (pokemon_seleccionado != null)
-            {
-                pokemon_seleccionado.animacionAtaqueFuerte();
-            }
-        }
-        private void btn_ataqueDebil_Click(object sender, RoutedEventArgs e)
-        {
-            if (pokemon_seleccionado != null)
-            {
-                pokemon_seleccionado.animacionAtaqueFlojo();
-            }
-        }
-        private void btn_defensa_Click(object sender, RoutedEventArgs e)
-        {
-            if (pokemon_seleccionado != null)
-            {
-                pokemon_seleccionado.animacionDefensa();
-            }
-        }
-        private void btn_recuperacion_Click(object sender, RoutedEventArgs e)
-        {
-            if (pokemon_seleccionado != null)
-            {
-                pokemon_seleccionado.animacionDescasar();
-            }
-        }
-
     }
 }

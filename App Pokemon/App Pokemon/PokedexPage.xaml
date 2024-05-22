@@ -28,12 +28,11 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="600"/>
         </Grid.ColumnDefinitions>
 
         <!-- Columna izquierda (Detalle del Pokémon seleccionado) -->
-        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" MinWidth="600">
+        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" MinWidth="600" Visibility="Collapsed">
             <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -102,11 +101,7 @@
                     <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5" VerticalAlignment="Center" >
                         <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
                     </StackPanel>
-                    <Button  x:Name="btn_ataqueFuerte" Content="Ataque Fuerte" Grid.Column="0"  Grid.Row="3" VerticalAlignment="Center" Background="#FFAF3F3F" CornerRadius="10,10,10,10" Padding="40,0,40,0" HorizontalAlignment="Center" Click="btn_ataqueFuerte_Click" Foreground="White"/>
-                    <Button  x:Name="btn_ataqueDebil" Content="Ataque débil" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Background="#FF69934B" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_ataqueDebil_Click"/>
-                    <Button  x:Name="btn_defensa" Content="Defensa" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Background="#FF568B9D" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_defensa_Click"/>
-                    <Button x:Name="btn_recuperacion" Content="Recuperación" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Background="#FF905686" CornerRadius="10,10,10,10" HorizontalAlignment="Center" Padding="60,0,60,0" Click="btn_recuperacion_Click"/>
-
+                    
                 </Grid>
             </Grid>
         </Grid>
@@ -151,8 +146,12 @@
                                 <RowDefinition Height="50*"/>
                             </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="0" Text="{Binding Nombre}" />
-                            <TextBlock  Grid.Row="1" Text="{Binding Tipo}"/>
+                            <TextBlock Grid.Row="0" Text="{Binding Nombre}" FontSize="36" FontFamily="Footlight MT Light" HorizontalAlignment="Center" />
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5" VerticalAlignment="Top" >
+                                <TextBlock Text="{Binding Tipo}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </StackPanel>
+
                         </Grid>
 
                     </Grid>
@@ -160,17 +159,5 @@
             </ListView.ItemTemplate>
 
         </ListView>
-
-        <StackPanel Width="200" Grid.Column="2">
-            <TextBlock Margin="8,8,8,4" Style="{ThemeResource BaseTextBlockStyle}">Filter by...</TextBlock>
-            <TextBox x:Name="FilterByFirstName" Width="150" Header="Name" Margin="8"
-HorizontalAlignment="Left" />
-            <TextBox x:Name="FilterByType" Width="150" Header="Type" Margin="8"
-HorizontalAlignment="Left" />
-            <TextBox x:Name="FilterByCategory" Width="150" Header="Category" Margin="8"
-HorizontalAlignment="Left" />
-        </StackPanel>
-
-        
     </Grid>
 </Page>

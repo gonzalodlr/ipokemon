@@ -462,6 +462,7 @@
     <Content Include="Assets\AcercaDe.png" />
     <Content Include="Assets\home.png" />
     <Content Include="Assets\icon_pokeball.png" />
+    <Content Include="Assets\imgCaptura\Captura_fondo.jpg" />
     <Content Include="Assets\imgCaptura\Error.png" />
     <Content Include="Assets\imgCaptura\Ok.png" />
     <Content Include="Assets\imgCombatePage\Multijugador.png" />
