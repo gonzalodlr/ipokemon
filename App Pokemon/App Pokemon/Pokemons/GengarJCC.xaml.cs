@@ -59,6 +59,20 @@ namespace Sesion4
             sb_B.Begin();
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Start animations or other initialization tasks here
+            try
+            {
+                Storyboard sb = (Storyboard)this.Resources["InicialMoverExtremidades"];
+                sb.Begin();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error starting InicialMoverExtremidades: {ex.Message}");
+            }
+        }
+
         private void usarPocionVida(object sender, PointerRoutedEventArgs e)
         {
             dtTime = new DispatcherTimer();
@@ -184,10 +198,21 @@ namespace Sesion4
 
         public void animacionAtaqueFuerte()
         {
-            Storyboard animacion = this.Resources["AnimacionAtaqueFuerte"] as Storyboard;
-            if (animacion != null)
+            try
             {
-                animacion.Begin();
+                Storyboard animacion = this.Resources["AnimacionAtaqueFuerte"] as Storyboard;
+                if (animacion != null)
+                {
+                    animacion.Begin();
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("No se encontró el Storyboard AnimacionAtaqueFuerte.");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error en animacionAtaqueFuerte: {ex.Message}");
             }
         }
 
