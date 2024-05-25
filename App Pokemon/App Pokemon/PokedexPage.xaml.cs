@@ -12,6 +12,8 @@ using Scizor_AdrianPeinado;
 using PokemonNoelia;
 using OrtizCañameroRoberto_Snorlax;
 using ToxicroackJPG;
+using Windows.UI.Xaml.Documents;
+using Windows.Foundation;
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App_Pokemon
@@ -27,9 +29,80 @@ namespace App_Pokemon
         {
             this.InitializeComponent();
             configurar_pokedex();
+            richTextBlock.SizeChanged += RichTextBlock_SizeChanged;
         }
 
-        private void configurar_pokedex()
+        private void RichTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // Implement logic to adjust font size based on RichTextBlock's size
+            double newFontSize = CalculateOptimalFontSize();
+            foreach (var block in richTextBlock.Blocks)
+            {
+                if (block is Paragraph paragraph)
+                {
+                    foreach (var inline in paragraph.Inlines)
+                    {
+                        if (inline is Run run)
+                        {
+                            run.FontSize = newFontSize;
+                        }
+                    }
+                }
+            }
+        }
+
+        private double CalculateOptimalFontSize()
+        {
+            double minFontSize = 10;
+            double maxFontSize = 100;
+            double fontSize = maxFontSize;
+
+            while (minFontSize < maxFontSize)
+            {
+                fontSize = (minFontSize + maxFontSize) / 2;
+
+                if (DoesTextFit(fontSize))
+                {
+                    minFontSize = fontSize + 0.1;
+                }
+                else
+                {
+                    maxFontSize = fontSize - 0.1;
+                }
+            }
+
+            return fontSize;
+        }
+
+        private bool DoesTextFit(double fontSize)
+        {
+            var textBlock = new TextBlock
+            {
+                TextWrapping = TextWrapping.Wrap,
+                TextTrimming = TextTrimming.None,
+                FontSize = fontSize
+            };
+
+            foreach (var block in richTextBlock.Blocks)
+            {
+                if (block is Paragraph paragraph)
+                {
+                    foreach (var inline in paragraph.Inlines)
+                    {
+                        if (inline is Run run)
+                        {
+                            textBlock.Text += run.Text;
+                        }
+                    }
+                }
+            }
+
+            textBlock.Measure(new Size(richTextBlock.ActualWidth, double.PositiveInfinity));
+
+            return textBlock.DesiredSize.Height <= richTextBlock.ActualHeight;
+        }
+
+    private void configurar_pokedex()
         {
             DracofireGDLRS.verFondo(false);
             DracofireGDLRS.verNombre(false);

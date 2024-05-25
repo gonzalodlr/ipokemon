@@ -27,12 +27,15 @@
             <ImageBrush Opacity="0.5" ImageSource="/Assets/imgPokedex/pokedexBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="600"/>
+            <ColumnDefinition MinWidth="600" Width="*"/>
+            <ColumnDefinition MinWidth="600" Width="600"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="600" Height="*"/>
+        </Grid.RowDefinitions>
 
-        <!-- Columna izquierda (Detalle del Pokémon seleccionado) -->
-        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" MinWidth="600" Visibility="Collapsed">
+        <!-- Columna izquierda (Detalle del Pokémon seleccionado) -->          
+        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" Visibility="Collapsed">
             <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -55,9 +58,10 @@
                     </Viewbox>
                 </Grid>
 
-                <Grid Grid.Row="1" Background="#FFE8E8E8" Margin="20,5,20,10" CornerRadius="0,0,20,10">
+                <Grid Grid.Row="1" Background="#FFE8E8E8" Margin="20,5,20,10" CornerRadius="20,20,20,10">
 
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
                         <ColumnDefinition Width="10*"/>
                         <ColumnDefinition Width="10*"/>
                     </Grid.ColumnDefinitions>
@@ -65,15 +69,13 @@
                         <RowDefinition Height="10*"/>
                         <RowDefinition Height="10*"/>
                         <RowDefinition Height="10*"/>
-                        <RowDefinition Height="5*"/>
-                        <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
+                    <Rectangle Fill="#FF262626" Grid.RowSpan="5" HorizontalAlignment="Right" Width="1" Margin="0,50,-0.5,10" Grid.Row="1" />
+                    <Rectangle Fill="#FF262626" Grid.RowSpan="5" HorizontalAlignment="Right" Width="1" Margin="0,50,-0.5,10" Grid.Row="1" Grid.Column="1"/>
 
-                    <Ellipse Fill="#FF262626" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="100" Margin="0,-55,0,0" />
-                    <Rectangle Fill="#FF262626" Grid.RowSpan="5" HorizontalAlignment="Right" Width="1" Margin="0,50,-0.5,10" />
-
-                    <TextBlock Text="Información" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial Black"/>
-                    <TextBlock Text="Categoría" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial Black"/>
+                    <TextBlock Text="Información" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" FontFamily="Arial Black" Grid.Row="1"/>
+                    <TextBlock Text="Categoría" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" FontFamily="Arial Black" Grid.Row="1"/>
+                    <TextBlock Text="Evolución" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontFamily="Arial Black" Grid.Row="1"/>
 
 
                     <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,225,0">
@@ -101,6 +103,14 @@
                     <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFA6A6A6" Padding="10,5,10,5" VerticalAlignment="Center" >
                         <TextBlock Text="{Binding Categoría}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
                     </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" CornerRadius="5,5,5,5" Background="#FFEDA5A5" Padding="10,5,10,5" VerticalAlignment="Top" >
+                        <TextBlock Text="{Binding Evolucion}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black"/>
+                    </StackPanel>
+                    <RichTextBlock x:Name="richTextBlock" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black">
+                        <Paragraph>
+                            <Run Text="{Binding Descripcion}" />
+                        </Paragraph>
+                    </RichTextBlock>
                     
                 </Grid>
             </Grid>
