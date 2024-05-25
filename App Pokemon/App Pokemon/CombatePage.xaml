@@ -31,22 +31,21 @@
         <Grid.Background>
             <ImageBrush Opacity="0.85" Stretch="UniformToFill" ImageSource="/AssetsDracoFireGDLRS/escenario2.jpg"/>
         </Grid.Background>
-        <TextBlock x:Name="tbTurno" Text="Turno del Jugador 1" FontSize="24" HorizontalAlignment="Center" Grid.Row="0"/>
         <Viewbox x:Name="vb_Pokemon1" Grid.Row="1" Grid.Column="0">
-            
+
         </Viewbox>
         <Viewbox x:Name="vb_Pokemon2"  Grid.Column="1"/>
         <Viewbox Grid.Row="2">
-            <Button x:Name="btn_ataque_fuerte"  Click="Btn_ataque_fuerte_Click" Content="Ataque fuerte" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_ataque_fuerte"  Click="Btn_ataque_fuerte_Click" Content="Ataque fuerte" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="#FFD94343" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10" Width="500"/>
         </Viewbox>
         <Viewbox Grid.Row="3">
-            <Button x:Name="btn_ataque_flojo" Click="Btn_ataque_flojo_Click" Content="Ataque flojo" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_ataque_flojo" Click="Btn_ataque_flojo_Click" Content="Ataque flojo" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" Background="#FF33643A" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10" VerticalAlignment="Top" Width="500"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="2">
-            <Button x:Name="btn_descanso" Click="Btn_descanso_Click" Content="Descansar" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_descanso" Click="Btn_descanso_Click" Content="Descansar" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="#FF9F71A3" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10" Width="500"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="3">
-            <Button x:Name="btn_defensa" Click="Btn_defensa_Click" Content="Defensa" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="Black" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10"/>
+            <Button x:Name="btn_defensa" Click="Btn_defensa_Click" Content="Defensa" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited" HorizontalAlignment="Center" Background="#FF448E97" FontSize="36" CornerRadius="5,5,5,5" Padding="100,10,100,10" Margin="10,10,10,10" Width="500"/>
         </Viewbox>
 
         <Grid x:Name="GameEndPanel" Background="SlateGray" CornerRadius="20" Width="500" Height="500" Visibility="Collapsed"  Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -66,14 +65,11 @@
                         <TextBlock Text=" Revancha" Margin="5,0,0,0" FontSize="20" Foreground="White"/>
                     </StackPanel>
                 </Button>
-                
+
             </StackPanel>
         </Grid>
-
-
-
+        <Viewbox HorizontalAlignment="Left" Margin="20,10,0,0">
+            <TextBlock x:Name="tbTurno" Text="Turno del Jugador 1" FontSize="36" HorizontalAlignment="Left" FontFamily="Algerian" Height="390"/>
+        </Viewbox>
     </Grid>
-    
-    
-    
 </Page>

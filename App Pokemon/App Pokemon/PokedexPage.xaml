@@ -35,7 +35,7 @@
         </Grid.RowDefinitions>
 
         <!-- Columna izquierda (Detalle del Pokémon seleccionado) -->          
-        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" Visibility="Collapsed">
+        <Grid x:Name="pokemonDetailGrid" Grid.Column="0" Background="#FF262626" Margin="20,0,0,0" Visibility="Collapsed">
             <Grid CornerRadius="5,5,5,5" BorderThickness="5,5,5,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

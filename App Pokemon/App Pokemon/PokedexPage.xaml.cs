@@ -14,6 +14,7 @@ using OrtizCañameroRoberto_Snorlax;
 using ToxicroackJPG;
 using Windows.UI.Xaml.Documents;
 using Windows.Foundation;
+using Windows.UI.ViewManagement;
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App_Pokemon
@@ -28,10 +29,24 @@ namespace App_Pokemon
         public PokedexPage()
         {
             this.InitializeComponent();
+            SetMinimumWindowSize();
+            //this.SizeChanged += PokedexPage_SizeChanged;
             configurar_pokedex();
             richTextBlock.SizeChanged += RichTextBlock_SizeChanged;
         }
-
+        private void SetMinimumWindowSize()
+        {
+            var applicationView = ApplicationView.GetForCurrentView();
+            applicationView.SetPreferredMinSize(new Windows.Foundation.Size(1800, 600)); // Aquí establecemos el tamaño mínimo de la ventana
+        }
+        private void PokedexPage_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var applicationView = ApplicationView.GetForCurrentView();
+            if (applicationView.VisibleBounds.Width < 1800)
+            {
+                applicationView.TryResizeView(new Windows.Foundation.Size(1800, applicationView.VisibleBounds.Height));
+            }
+        }
         private void RichTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // Implement logic to adjust font size based on RichTextBlock's size
