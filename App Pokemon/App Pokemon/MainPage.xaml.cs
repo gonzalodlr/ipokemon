@@ -138,6 +138,10 @@ namespace App_Pokemon
                     break;
             }
         }
+        private void NavigationView_Loaded(object sender, RoutedEventArgs e)
+        {
+            navigationView.IsPaneOpen = false; // Ocultar el panel de navegación al iniciar
+        }
         private void Dudas_Tapped(object sender, TappedRoutedEventArgs e)
         {
             fmMain.Navigate(typeof(AcercaDePage));
