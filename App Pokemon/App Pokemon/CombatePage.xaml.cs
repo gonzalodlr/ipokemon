@@ -48,14 +48,17 @@ namespace App_Pokemon
 
         // descanso recupera vida
         private double recuperacion = 25;
-        
+
+        private DispatcherTimer ataqueTimer;
+        private double vidaReducir;
+        private iPokemon defensorActual;
+
 
         public CombatePage()
         {
             this.InitializeComponent();
+            InicializarTimer();
         }
-
-
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -72,6 +75,7 @@ namespace App_Pokemon
             }
 
         }
+
 
         private void MostrarPokemons(iPokemon pokemonJugador1, iPokemon pokemonJugador2)
         {
@@ -121,7 +125,7 @@ namespace App_Pokemon
         private void CambiarTurno()
         {
             turnoActual = turnoActual == 1 ? 2 : 1;
-            tbTurno.Text = $"Turno del Jugador {turnoActual}";
+            tbTurno.Text = $"Turno para {(turnoActual == 1 ? "Jugador 1" : (modoDeJuego == "solo" ? "CPU" : "Jugador 2"))}";
 
             if (modoDeJuego == "solo" && turnoActual == 2)
             {
@@ -145,28 +149,6 @@ namespace App_Pokemon
             btn_defensa.IsEnabled = true;
         }
 
-        private void MostrarMensajeFinal(string mensaje)
-        {
-            tbTurno.Text = mensaje;
-            tbTurno.Visibility = Visibility.Collapsed;
-            GameEndPanel.Visibility = Visibility.Visible;
-
-        }
-
-        private void MostrarMensajeenGrid(string mensaje)
-        {
-            tbGanador.Text = mensaje;
-            //GameEndPanel.Visibility = Visibility.Visible;
-
-        }
-
-        private void DesactivarAcciones()
-        {
-            btn_ataque_fuerte.IsEnabled = false;
-            btn_ataque_flojo.IsEnabled = false;
-            btn_descanso.IsEnabled = false;
-            btn_defensa.IsEnabled = false;
-        }
 
         private void CheckGameOver()
         {
@@ -174,7 +156,7 @@ namespace App_Pokemon
             {
                 (pokemonControlJugador1 as iPokemon).animacionDerrota();
                 MostrarMensajeFinal("Pokemon 2 ha ganado");
-                MostrarMensajeenGrid("¡Jugador 2 ha ganado!");
+                MostrarMensajeenGrid(modoDeJuego == "solo" ? "¡CPU ha ganado!" : "¡Jugador 2 ha ganado!");
                 DesactivarAcciones();
             }
             else if ((pokemonControlJugador2 as iPokemon).Vida <= 0)
@@ -203,6 +185,7 @@ namespace App_Pokemon
             if (modoDeJuego == "solo" && turnoActual == 2)
             {
                 RealizarAtaqueFuerte(pokemonControlJugador2, pokemonControlJugador1);
+                MostrarMovimiento("CPU", "Ataque Fuerte");
             }
             else
             {
@@ -212,10 +195,12 @@ namespace App_Pokemon
                 if (turnoActual == 1)
                 {
                     RealizarAtaqueFuerte(controlActivo1, controlActivo2);
+                    MostrarMovimiento("Jugador 1", "Ataque Fuerte");
                 }
                 else
                 {
                     RealizarAtaqueFuerte(controlActivo2, controlActivo1);
+                    MostrarMovimiento("Jugador 2", "Ataque Fuerte");
                 }
             }
         }
@@ -227,11 +212,12 @@ namespace App_Pokemon
                 pokemonAtacante.animacionAtaqueFuerte();
                 if (defensor is iPokemon pokemonDefensor)
                 {
-                    pokemonDefensor.Vida -= ataque_Fuerte;
+                    vidaReducir = ataque_Fuerte;
+                    defensorActual = pokemonDefensor;
+                    ataqueTimer.Start();
                 }
             }
-            CambiarTurno();
-            CheckGameOver();
+            
         }
 
 
@@ -240,6 +226,7 @@ namespace App_Pokemon
             if (modoDeJuego == "solo" && turnoActual == 2)
             {
                 RealizarAtaqueFlojo(pokemonControlJugador2, pokemonControlJugador1);
+                MostrarMovimiento("CPU", "Ataque Débil");
             }
             else
             {
@@ -249,6 +236,8 @@ namespace App_Pokemon
                 if (turnoActual == 1)
                 {
                     RealizarAtaqueFlojo(controlActivo1, controlActivo2);
+                    MostrarMovimiento("Jugador 1", "Ataque Débil");
+                    MostrarMovimiento("Jugador 2", "Ataque Débil");
                 }
                 else
                 {
@@ -264,27 +253,57 @@ namespace App_Pokemon
                 pokemonAtacante.animacionAtaqueFlojo();
                 if (defensor is iPokemon pokemonDefensor)
                 {
-                    pokemonDefensor.Vida -= ataque_Debil;
+                    vidaReducir = ataque_Debil;
+                    defensorActual = pokemonDefensor;
+                    ataqueTimer.Start();
                 }
             }
-            CambiarTurno();
-            CheckGameOver();
+            
         }
+
+        private void InicializarTimer()
+        {
+            ataqueTimer = new DispatcherTimer();
+            ataqueTimer.Interval = TimeSpan.FromMilliseconds(100);
+            ataqueTimer.Tick += AtaqueTimer_Tick;
+        }
+
+        private void AtaqueTimer_Tick(object sender, object e)
+        {
+            if (defensorActual != null && vidaReducir > 0)
+            {
+                double decremento = Math.Min(vidaReducir, ataque_Fuerte / 50); // Baja la vida en 50 pasos
+                defensorActual.Vida -= decremento;
+                vidaReducir -= decremento;
+
+                if (vidaReducir <= 0)
+                {
+                    ataqueTimer.Stop();
+                    CambiarTurno();
+                    CheckGameOver();
+                }
+            }
+        }
+
+
         private void Btn_descanso_Click(object sender, RoutedEventArgs e)
         {
             if (modoDeJuego == "solo" && turnoActual == 2)
             {
                 RealizarDescanso(pokemonControlJugador2);
+                MostrarMovimiento("CPU", "Descanso");
             }
             else
             {
                 if (turnoActual == 1)
                 {
                     RealizarDescanso(pokemonControlJugador1);
+                    MostrarMovimiento("Jugador 1", "Descanso");
                 }
                 else
                 {
                     RealizarDescanso(pokemonControlJugador2);
+                    MostrarMovimiento("Jugador 2", "Descanso");
                 }
             }
         }
@@ -305,16 +324,19 @@ namespace App_Pokemon
             if (modoDeJuego == "solo" && turnoActual == 2)
             {
                 RealizarDefensa(pokemonControlJugador2);
+                MostrarMovimiento("CPU", "Defensa");
             }
             else
             {
                 if (turnoActual == 1)
                 {
                     RealizarDefensa(pokemonControlJugador1);
+                    MostrarMovimiento("Jugador 1", "Defensa");
                 }
                 else
                 {
                     RealizarDefensa(pokemonControlJugador2);
+                    MostrarMovimiento("Jugador 2", "Defensa");
                 }
             }
         }
@@ -381,6 +403,34 @@ namespace App_Pokemon
                 navigationView.SelectedItem = navigationView.MenuItems[0];
             }
         }
+        private void MostrarMensajeFinal(string mensaje)
+        {
+            tbTurno.Text = mensaje;
+            tbTurno.Visibility = Visibility.Collapsed;
+            GameEndPanel.Visibility = Visibility.Visible;
+
+        }
+
+        private void MostrarMensajeenGrid(string mensaje)
+        {
+            tbGanador.Text = mensaje;
+            //GameEndPanel.Visibility = Visibility.Visible;
+
+        }
+
+        private void MostrarMovimiento(string jugador, string movimiento)
+        {
+            tbMovimiento.Text = $"{jugador} ha usado {movimiento}";
+        }
+
+        private void DesactivarAcciones()
+        {
+            btn_ataque_fuerte.IsEnabled = false;
+            btn_ataque_flojo.IsEnabled = false;
+            btn_descanso.IsEnabled = false;
+            btn_defensa.IsEnabled = false;
+        }
+
 
         private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
