@@ -42,14 +42,9 @@ namespace App_Pokemon
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
-            // No repetir la inicialización de la aplicación si la ventana tiene contenido todavía,
-            // solo asegurarse de que la ventana está activa.
             if (rootFrame == null)
             {
-                // Crear un marco para que actúe como contexto de navegación y navegar a la primera página.
                 rootFrame = new Frame();
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
-
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -57,23 +52,15 @@ namespace App_Pokemon
                     //TODO: Cargar el estado de la aplicación suspendida previamente
                 }
 
-                // Poner el marco en la ventana actual.
                 Window.Current.Content = rootFrame;
             }
 
-            if (e.PrelaunchActivated == false)
+            if (rootFrame.Content == null)
             {
-
-                if (rootFrame.Content == null)
-                {
-                    // Cuando no se restaura la pila de navegación, navegar a la primera página,
-                    // configurando la nueva página pasándole la información requerida como
-                    //parámetro de navegación
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
-                }
-                // Asegurarse de que la ventana actual está activa.
-                Window.Current.Activate();
+                rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
+
+            Window.Current.Activate();
         }
 
         /// <summary>

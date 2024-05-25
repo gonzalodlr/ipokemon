@@ -33,82 +33,85 @@ namespace App_Pokemon
             AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
             TileContent content = new TileContent()
-			{
-				Visual = new TileVisual()
-				{
-					TileMedium = new TileBinding()
-					{
-						Content = new TileBindingContentAdaptive()
-						{
-							Children =
+            {
+                Visual = new TileVisual()
+                {
+                    TileMedium = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children =
                             {
-                             new AdaptiveText()
-                             {
-                             Text = "IPOkemon",
-                            HintStyle = AdaptiveTextStyle.Subtitle
-                             },
-                             new AdaptiveText()
-                             {Text = "Un proyecto de IPO2",
-                            HintStyle = AdaptiveTextStyle.CaptionSubtle
-                             },
-                             }
-						}
-					},
-					TileWide = new TileBinding()
-					{
-						Branding = TileBranding.NameAndLogo,
-						DisplayName = "Version 1.0",
-						Content = new TileBindingContentAdaptive()
-						{
-							Children = {
-                             new AdaptiveText()
-                            {
-                             Text = "IPOkemon",
-                             HintStyle = AdaptiveTextStyle.Subtitle
-                             },
-                             new AdaptiveText()
-                             {
-                             Text = "Un Proyecto de IPO2",
-                             HintStyle = AdaptiveTextStyle.CaptionSubtle
-                             },
-                             new AdaptiveText()
-                             {
-                             Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
-                            HintWrap = true,
-                             }
-                             }
-						}
-					},
-					TileLarge = new TileBinding()
-					{
-						Content = new TileBindingContentAdaptive()
-						{
-							Children = {
-                             new AdaptiveText()
-                            {
-                             Text = "IPOkemon",
-                            HintStyle = AdaptiveTextStyle.Subtitle
-                             },
-                             new AdaptiveText()
-                             {
-                             Text = "Un Proyecto de IPO2",
-                            HintStyle = AdaptiveTextStyle.CaptionSubtle
-                             },
-                             new AdaptiveText()
-                            {
-                             Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
-                             HintStyle = AdaptiveTextStyle.CaptionSubtle
-                             }
-                             }
-						}
-					},
-				}
-			};
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un proyecto de IPO2",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                            }
+                        }
+                    },
+                    TileWide = new TileBinding()
+                    {
+                        Branding = TileBranding.NameAndLogo,
+                        DisplayName = "Version 1.0",
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children = {
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un Proyecto de IPO2",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
+                                    HintWrap = true,
+                                }
+                            }
+                        }
+                    },
+                    TileLarge = new TileBinding()
+                    {
+                        Content = new TileBindingContentAdaptive()
+                        {
+                            Children = {
+                                new AdaptiveText()
+                                {
+                                    Text = "IPOkemon",
+                                    HintStyle = AdaptiveTextStyle.Subtitle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Un Proyecto de IPO2",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "Una aplicación sobre Pokemon hecha con tecnología UWP",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle
+                                }
+                            }
+                        }
+                    },
+                }
+            };
             var notification = new TileNotification(content.GetXml());
             notification.ExpirationTime = DateTimeOffset.UtcNow.AddSeconds(30);
             var updater = TileUpdateManager.CreateTileUpdaterForApplication();
             updater.Update(notification);
         }
+
+        public Frame MainFrame => fmMain;
 
 
         private void viPokedex_PointerReleased(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -161,9 +164,9 @@ namespace App_Pokemon
 
         private void opcionVolver(object sender, BackRequestedEventArgs e)
         {
-            if (fmMain.BackStack.Any())
+            if (MainFrame.BackStack.Any())
             {
-                fmMain.GoBack();
+                MainFrame.GoBack();
             }
         }
         private void ShowWelcomeNotification()

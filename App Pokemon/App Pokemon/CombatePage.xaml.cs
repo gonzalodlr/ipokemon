@@ -389,18 +389,23 @@ namespace App_Pokemon
 
         private void BtnIrInicio_Click(object sender, RoutedEventArgs e) //Hay que echarle un ojo a esto
         {
-            // Navegar a la página MainPage
-            this.Frame.Navigate(typeof(MainPage));
+            var rootFrame = Window.Current.Content as Frame;
 
-            // Obtener una referencia al NavigationView de MainPage
-            MainPage mainPage = Window.Current.Content as MainPage;
-            NavigationView navigationView = mainPage?.FindName("navigationView") as NavigationView;
-
-            // Verificar si se obtuvo una referencia válida al NavigationView
-            if (navigationView != null)
+            if (rootFrame != null)
             {
-                // Seleccionar el elemento "Inicio" en el NavigationView
-                navigationView.SelectedItem = navigationView.MenuItems[0];
+                // Navegar a la página principal sin crear una nueva instancia
+                if (rootFrame.Content is MainPage mainPage)
+                {
+                    // Navegar al contenido inicial de MainPage
+                    mainPage.MainFrame.Navigate(typeof(InicioCombate)); // O navega a la página deseada dentro de MainPage
+                }
+                else
+                {
+                    rootFrame.Navigate(typeof(MainPage));
+                }
+
+                // Limpiar el historial de navegación
+                rootFrame.BackStack.Clear();
             }
         }
         private void MostrarMensajeFinal(string mensaje)
