@@ -27,8 +27,11 @@ namespace App_Pokemon
     public sealed partial class EligePokemonPage : Page
     {
         private List<iPokemon> pokemonsSeleccionados = new List<iPokemon>();
+        private List<iPokemon> todosLosPokemons = new List<iPokemon>();
+
         private int jugadorActual = 1;
         private string modoDeJuego;
+
         private iPokemon seleccionJugador1;
         private iPokemon seleccionJugador2;
         private iPokemon pokemonTempSeleccionado;
@@ -53,12 +56,16 @@ namespace App_Pokemon
             {
                 MostrarMensaje("Jugador 1, escoge un Pokémon");
             }
+            else if (modoDeJuego == "solo")
+            {
+                MostrarMensaje("Jugador 1, escoge un Pokémon");
+            }
 
         }
 
         private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
-            // Obtén el ancho y el alto actual de la ventana
+            //Obtienen el ancho y el alto actual de la ventana
             double width = Window.Current.Bounds.Width;
             double height = Window.Current.Bounds.Height;
 
@@ -77,55 +84,24 @@ namespace App_Pokemon
 
         private void configurar_pokedex()
         {
-            DracofireGDLRS.verFondo(false);
-            DracofireGDLRS.verNombre(false);
-            DracofireGDLRS.verFilaVida(false);
-            DracofireGDLRS.verFilaEnergia(false);
-            DracofireGDLRS.verPocionVida(false);
-            DracofireGDLRS.verPocionEnergia(false);
+            //lista de todos los Pokémon disponibles
+            todosLosPokemons.Add(DracofireGDLRS);
+            todosLosPokemons.Add(ArticunoACG);
+            todosLosPokemons.Add(GengarJCC);
+            todosLosPokemons.Add(MyUCLucario);
+            todosLosPokemons.Add(ToxicroackJPG);
+            todosLosPokemons.Add(DragoniteCSD);
 
-            ArticunoACG.verFondo(false);
-            ArticunoACG.verNombre(false);
-            ArticunoACG.verFilaVida(false);
-            ArticunoACG.verFilaEnergia(false);
-            ArticunoACG.verPocionVida(false);
-            ArticunoACG.verPocionEnergia(false);
-
-            GengarJCC.verFondo(false);
-            GengarJCC.verNombre(false);
-            GengarJCC.verFilaVida(false);
-            GengarJCC.verFilaEnergia(false);
-            GengarJCC.verPocionVida(false);
-            GengarJCC.verPocionEnergia(false);
-
-            MyUCLucario.verFondo(false);
-            MyUCLucario.verNombre(false);
-            MyUCLucario.verFilaVida(false);
-            MyUCLucario.verFilaEnergia(false);
-            MyUCLucario.verPocionVida(false);
-            MyUCLucario.verPocionEnergia(false);
-
-            ToxicroackJPG.verFondo(false);
-            ToxicroackJPG.verNombre(false);
-            ToxicroackJPG.verFilaVida(false);
-            ToxicroackJPG.verFilaEnergia(false);
-            ToxicroackJPG.verPocionVida(false);
-            ToxicroackJPG.verPocionEnergia(false);
-
-            DragoniteCSD.verFondo(false);
-            DragoniteCSD.verNombre(false);
-            DragoniteCSD.verFilaVida(false);
-            DragoniteCSD.verFilaEnergia(false);
-            DragoniteCSD.verPocionVida(false);
-            DragoniteCSD.verPocionEnergia(false);
-
-
-            //CharizardASM.verFondo(false);
-            //CharizardASM.verNombre(false);
-            //CharizardASM.verFilaVida(false);
-            //CharizardASM.verFilaEnergia(false);
-            //CharizardASM.verPocionVida(false);
-            //CharizardASM.verPocionEnergia(false);
+            //ocultar fondo y esas cosas
+            foreach (var pokemon in todosLosPokemons)
+            {
+                pokemon.verFondo(false);
+                pokemon.verNombre(false);
+                pokemon.verFilaVida(false);
+                pokemon.verFilaEnergia(false);
+                pokemon.verPocionVida(false);
+                pokemon.verPocionEnergia(false);
+            }
         }
 
         private void PokemonPointerEntered(object sender, PointerRoutedEventArgs e)
@@ -144,17 +120,13 @@ namespace App_Pokemon
             {
                 var selectedControl = ContentGridView.SelectedItem as UserControl;
 
-                // Haz lo que necesites con el control seleccionado
             }
            
         }
 
         private void ContentGridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            // Aquí puedes manejar el evento de clic en un elemento del GridView
-            // Por ejemplo, puedes acceder al elemento haciendo casting del argumento e:
-            //var clickedControl = e.ClickedItem as UserControl;
-            // Haz lo que necesites con el control clickeado
+            //Para cuando hemos clickado un pokemon
             var clickedItem = e.ClickedItem as iPokemon;
             if (clickedItem != null)
             {
@@ -175,16 +147,27 @@ namespace App_Pokemon
         {
             if (pokemonTempSeleccionado != null)
             {
-                if (jugadorActual == 1)
+                if (modoDeJuego == "multijugador")
+                {
+                    if (jugadorActual == 1)
+                    {
+                        seleccionJugador1 = pokemonTempSeleccionado;
+                        jugadorActual = 2;
+                        pokemonTempSeleccionado = null; // Resetea la selección temporal
+                        MostrarMensaje("Jugador 2, escoge un Pokémon");
+                    }
+                    else if (jugadorActual == 2)
+                    {
+                        seleccionJugador2 = pokemonTempSeleccionado;
+                        NavegarAPantallaDeCombate();
+                    }
+                }
+                else if (modoDeJuego == "solo")
                 {
                     seleccionJugador1 = pokemonTempSeleccionado;
-                    jugadorActual = 2;
-                    pokemonTempSeleccionado = null; // Resetea la selección temporal
-                    MostrarMensaje("Jugador 2, escoge un Pokémon");
-                }
-                else if (jugadorActual == 2)
-                {
-                    seleccionJugador2 = pokemonTempSeleccionado;
+                    //selecciona aleatoriamente un Pokémon para la máquina
+                    Random random = new Random();
+                    seleccionJugador2 = todosLosPokemons[random.Next(todosLosPokemons.Count)];
                     NavegarAPantallaDeCombate();
                 }
             }
@@ -204,6 +187,7 @@ namespace App_Pokemon
         {
             public iPokemon Jugador1 { get; set; }
             public iPokemon Jugador2 { get; set; }
+            public string ModoDeJuego { get; set; }
         }
 
         private void NavegarAPantallaDeCombate()
@@ -211,10 +195,10 @@ namespace App_Pokemon
             var parameters = new PokemonSelectionParameters
             {
                 Jugador1 = seleccionJugador1,
-                Jugador2 = seleccionJugador2
+                Jugador2 = seleccionJugador2,
+                ModoDeJuego = modoDeJuego
             };
 
-            //Frame.Navigate(typeof(CombatePage), new { Jugador1 = seleccionJugador1, Jugador2 = seleccionJugador2 });
             Frame.Navigate(typeof(CombatePage), parameters);
         }
     }
