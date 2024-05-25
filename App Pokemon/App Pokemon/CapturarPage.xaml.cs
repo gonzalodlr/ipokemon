@@ -196,5 +196,10 @@ namespace App_Pokemon
 
             }
         }
+
+        private void btn_Huir_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
 }

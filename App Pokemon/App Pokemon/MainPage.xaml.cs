@@ -8,6 +8,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,9 +30,10 @@ namespace App_Pokemon
         {
             this.InitializeComponent();
             ShowWelcomeNotification();
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-            AppViewBackButtonVisibility.Visible;
-            SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
+            fmMain.Navigated += OnNavigated;
+            //SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+            //AppViewBackButtonVisibility.Visible;
+            //SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
             TileContent content = new TileContent()
             {
                 Visual = new TileVisual()
@@ -113,6 +115,46 @@ namespace App_Pokemon
 
         public Frame MainFrame => fmMain;
 
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            // Cambia el título de la ventana dependiendo de la página
+            if (e.SourcePageType == typeof(MainPage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Inicio";
+            }
+            else if (e.SourcePageType == typeof(PokedexPage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Pokedex";
+            }
+            else if (e.SourcePageType == typeof(MisPokemonPage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Pokemons";
+            }
+            else if (e.SourcePageType == typeof(EligePokemonPage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Pokemons";
+            }
+            else if (e.SourcePageType == typeof(CombatePage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Combate";
+            }
+            else if (e.SourcePageType == typeof(CapturarMap))
+            {
+                ApplicationView.GetForCurrentView().Title = "Capturar";
+            }
+            else if (e.SourcePageType == typeof(CapturarPage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Capturar";
+            }
+            else if (e.SourcePageType == typeof(InicioCombate))
+            {
+                ApplicationView.GetForCurrentView().Title = "Combate";
+            }
+            else if (e.SourcePageType == typeof(AcercaDePage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Acerca de Nosotros";
+            }
+        }
 
         private void viPokedex_PointerReleased(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
@@ -187,6 +229,15 @@ namespace App_Pokemon
 
             // Muestra la notificación
             ToastNotificationManager.CreateToastNotifier().Show(toast);
+        }
+
+        private void navigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+            // Manejar la acción de retroceso aquí
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+            }
         }
     }
 }

@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
 namespace App_Pokemon
 {
     /// <summary>
@@ -31,8 +21,8 @@ namespace App_Pokemon
             this.RequestedTheme = ApplicationTheme.Dark;
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        
         }
-
         /// <summary>
         /// Se invoca cuando la aplicación la inicia normalmente el usuario final. Se usarán otros puntos
         /// de entrada cuando la aplicación se inicie para abrir un archivo específico, por ejemplo.
@@ -46,21 +36,27 @@ namespace App_Pokemon
             {
                 rootFrame = new Frame();
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Cargar el estado de la aplicación suspendida previamente
-                }
-
+                rootFrame.Navigated += OnNavigated; // Agrega el evento Navigated
                 Window.Current.Content = rootFrame;
             }
 
-            if (rootFrame.Content == null)
+            if (e.PrelaunchActivated == false)
             {
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                if (rootFrame.Content == null)
+                {
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                }
+                Window.Current.Activate();
             }
+        }
 
-            Window.Current.Activate();
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            // Cambia el título de la ventana dependiendo de la página
+            if (e.SourcePageType == typeof(MainPage))
+            {
+                ApplicationView.GetForCurrentView().Title = "Inicio";
+            }
         }
 
         /// <summary>

@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <NavigationView x:Name="navigationView" ItemInvoked="viPokedex_PointerReleased" IsSettingsVisible="False" IsBackEnabled="True" PaneDisplayMode="LeftCompact" Grid.RowSpan="2" Grid.ColumnSpan="2" Loaded="NavigationView_Loaded">
+        <NavigationView x:Name="navigationView" ItemInvoked="viPokedex_PointerReleased" IsSettingsVisible="False" IsBackEnabled="True" PaneDisplayMode="LeftCompact" Grid.RowSpan="2" Grid.ColumnSpan="2" Loaded="NavigationView_Loaded" BackRequested="navigationView_BackRequested">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Inicio" x:Name="viHome" Icon="Home"/>
                 <NavigationViewItem Content="Mis Pokemon" x:Name="viPokemons" Icon="AllApps"/>

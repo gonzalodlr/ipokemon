@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="5af229d3-b390-465b-8ad9-27550acbf2c9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>App_Pokemon</DisplayName>
+    <DisplayName>IPOkemon</DisplayName>
     <PublisherDisplayName>Usuario</PublisherDisplayName>
     <Logo>Assets\Tiles\icon_pokeball.png</Logo>
   </Properties>
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="App_Pokemon.App">
       <uap:VisualElements
-        DisplayName="App_Pokemon"
+        DisplayName="IPOkemon"
         Square150x150Logo="Assets\Tiles\icon_pokeball.png"
         Square44x44Logo="Assets\Tiles\icon_pokeball.png"
         Description="Aplicación Ipokemon, juego sobre pokemons."

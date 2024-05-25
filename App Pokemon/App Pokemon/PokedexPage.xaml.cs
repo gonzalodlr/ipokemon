@@ -29,22 +29,27 @@ namespace App_Pokemon
         public PokedexPage()
         {
             this.InitializeComponent();
-            SetMinimumWindowSize();
-            //this.SizeChanged += PokedexPage_SizeChanged;
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1800, 1000));
+            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
             configurar_pokedex();
             richTextBlock.SizeChanged += RichTextBlock_SizeChanged;
         }
-        private void SetMinimumWindowSize()
+        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
-            var applicationView = ApplicationView.GetForCurrentView();
-            applicationView.SetPreferredMinSize(new Windows.Foundation.Size(1800, 600)); // Aquí establecemos el tamaño mínimo de la ventana
-        }
-        private void PokedexPage_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            var applicationView = ApplicationView.GetForCurrentView();
-            if (applicationView.VisibleBounds.Width < 1800)
+            //Obtienen el ancho y el alto actual de la ventana
+            double width = Window.Current.Bounds.Width;
+            double height = Window.Current.Bounds.Height;
+
+            // Si el ancho es menor que 600, ajusta el ancho a 600
+            if (width < 1800)
             {
-                applicationView.TryResizeView(new Windows.Foundation.Size(1800, applicationView.VisibleBounds.Height));
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(1800, height));
+            }
+
+            // Si la altura es menor que 600, ajusta la altura a 600
+            if (height < 1000)
+            {
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(width, 1000));
             }
         }
         private void RichTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
