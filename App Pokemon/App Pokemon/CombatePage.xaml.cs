@@ -107,7 +107,7 @@ namespace App_Pokemon
                 pokemonControl.verPocionEnergia(false);
                 pokemonControl.verNombre(false);
 
-                // inicialmente los pokemons tienen 100 de vida y 100 de energía
+                // inicialmente los pokemons tienen 100 de vida y de energía
                 pokemonControl.Vida = 100;
                 pokemonControl.Energia = 100;
             }
@@ -377,15 +377,11 @@ namespace App_Pokemon
             }
         }
 
-
-
-
         private void BtnRevancha_Click(object sender, RoutedEventArgs e)
         {
             GameEndPanel.Visibility = Visibility.Collapsed;
             InicializarJuego();
         }
-
 
         private void BtnIrInicio_Click(object sender, RoutedEventArgs e) //Hay que echarle un ojo a esto
         {
@@ -408,6 +404,7 @@ namespace App_Pokemon
                 rootFrame.BackStack.Clear();
             }
         }
+        
         private void MostrarMensajeFinal(string mensaje)
         {
             tbTurno.Text = mensaje;
@@ -419,8 +416,6 @@ namespace App_Pokemon
         private void MostrarMensajeenGrid(string mensaje)
         {
             tbGanador.Text = mensaje;
-            //GameEndPanel.Visibility = Visibility.Visible;
-
         }
 
         private void MostrarMovimiento(string jugador, string movimiento)
@@ -435,7 +430,6 @@ namespace App_Pokemon
             btn_descanso.IsEnabled = false;
             btn_defensa.IsEnabled = false;
         }
-
 
         private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
         {

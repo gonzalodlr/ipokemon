@@ -2275,7 +2275,7 @@
         <Border x:Name="brdNombre" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="DimGray" BorderThickness="2" BorderBrush="Black" Padding="10,0,10,3">
             <TextBlock x:Name="txtNombre"  Text="Scizor" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </Border>
-        <Border x:Name="brdOpciones" BorderThickness="2" BorderBrush="Black" VerticalAlignment="Top"  HorizontalAlignment="Right" Grid.Row="4" Grid.Column="2">
+        <Border x:Name="brdOpciones" BorderThickness="2" BorderBrush="Black" VerticalAlignment="Top"  HorizontalAlignment="Right" Grid.Row="4" Grid.Column="2" Visibility="Collapsed">
             <StackPanel x:Name="stckOpcionesInterfaz" Background="GhostWhite" Padding="5" Visibility="Collapsed">
                 <ToggleSwitch x:Name="tgMenu" Header="Opciones Interfaz" Toggled="TgMenu_Toggled"/>
                 <StackPanel x:Name="stckOpcionesDesplegables" Background="GhostWhite" Padding="5" Grid.Row="4" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">

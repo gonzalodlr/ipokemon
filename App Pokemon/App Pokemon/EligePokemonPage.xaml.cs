@@ -26,7 +26,6 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class EligePokemonPage : Page
     {
-        private List<iPokemon> pokemonsSeleccionados = new List<iPokemon>();
         private List<iPokemon> todosLosPokemons = new List<iPokemon>();
 
         private int jugadorActual = 1;

@@ -15,6 +15,7 @@ using ToxicroackJPG;
 using Windows.UI.Xaml.Documents;
 using Windows.Foundation;
 using Windows.UI.ViewManagement;
+using System.Collections.ObjectModel;
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App_Pokemon
@@ -25,6 +26,7 @@ namespace App_Pokemon
     public sealed partial class PokedexPage : Page
     {
         private iPokemon pokemon_seleccionado { get; set; }
+        private ObservableCollection<UserControl> pokemons;
 
         public PokedexPage()
         {
@@ -33,6 +35,7 @@ namespace App_Pokemon
             Window.Current.SizeChanged += CurrentWindow_SizeChanged;
             configurar_pokedex();
             richTextBlock.SizeChanged += RichTextBlock_SizeChanged;
+
         }
         private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
@@ -122,104 +125,38 @@ namespace App_Pokemon
             return textBlock.DesiredSize.Height <= richTextBlock.ActualHeight;
         }
 
-    private void configurar_pokedex()
+        private void configurar_pokedex()
         {
-            DracofireGDLRS.verFondo(false);
-            DracofireGDLRS.verNombre(false);
-            DracofireGDLRS.verFilaVida(false);
-            DracofireGDLRS.verFilaEnergia(false);
-            DracofireGDLRS.verPocionVida(false);
-            DracofireGDLRS.verPocionEnergia(false);
+            pokemons = new ObservableCollection<UserControl>
+            {
+                new DracofireGDLRS(),
+                new GengarJCC(),
+                new MyUCLucario(),
+                new DragoniteCSD(),
+                new ArticunoACG(),
+                new ToxicroackJPG.ToxicroackJPG(),
+                new ChandelureNDAA(),
+                new SnorlaxROC(),
+                new ScizorAPJ(),
+                new MakuhitaAPQ2()
 
-            ArticunoACG.verFondo(false);
-            ArticunoACG.verNombre(false);
-            ArticunoACG.verFilaVida(false);
-            ArticunoACG.verFilaEnergia(false);
-            ArticunoACG.verPocionVida(false);
-            ArticunoACG.verPocionEnergia(false);
+            };
 
-            GengarJCC.verFondo(false);
-            GengarJCC.verNombre(false);
-            GengarJCC.verFilaVida(false);
-            GengarJCC.verFilaEnergia(false);
-            GengarJCC.verPocionVida(false);
-            GengarJCC.verPocionEnergia(false);
+            foreach (UserControl control in pokemons)
+            {
+                if (control is iPokemon pokemonControl)
+                {
+                    pokemonControl.verFondo(false);
+                    pokemonControl.verFilaVida(false);
+                    pokemonControl.verFilaEnergia(false);
+                    pokemonControl.verPocionVida(false);
+                    pokemonControl.verPocionEnergia(false);
+                    pokemonControl.verNombre(false);
+                }
+            }
 
-            MyUCLucario.verFondo(false);
-            MyUCLucario.verNombre(false);
-            MyUCLucario.verFilaVida(false);
-            MyUCLucario.verFilaEnergia(false);
-            MyUCLucario.verPocionVida(false);
-            MyUCLucario.verPocionEnergia(false);
+            FilteredListView.ItemsSource = pokemons;
 
-
-            ToxicroackJPG.verFondo(false);
-            ToxicroackJPG.verNombre(false);
-            ToxicroackJPG.verFilaVida(false);
-            ToxicroackJPG.verFilaEnergia(false);
-            ToxicroackJPG.verPocionVida(false);
-            ToxicroackJPG.verPocionEnergia(false);
-
-            DragoniteCSD.verFondo(false);
-            DragoniteCSD.verNombre(false);
-            DragoniteCSD.verFilaVida(false);
-            DragoniteCSD.verFilaEnergia(false);
-            DragoniteCSD.verPocionVida(false);
-            DragoniteCSD.verPocionEnergia(false);
-
-
-            /*Este Pokemon hace que pete la aplicación si se descomenta*/
-            //ButterFreeACC.verFondo(false);
-            //ButterFreeACC.verNombre(false);
-            //ButterFreeACC.verFilaVida(false);
-            //ButterFreeACC.verFilaEnergia(false);
-            //ButterFreeACC.verPocionVida(false);
-            //ButterFreeACC.verPocionEnergia(false);
-
-            
-            ChandelureNDAA.verFondo(false);
-            ChandelureNDAA.verNombre(false);
-            ChandelureNDAA.verFilaVida(false);
-            ChandelureNDAA.verFilaEnergia(false);
-            ChandelureNDAA.verPocionVida(false);
-            ChandelureNDAA.verPocionEnergia(false);
-
-
-            /*Este Pokemon es invisible xd*/
-            //PiplupMLTN.verFondo(false);
-            //PiplupMLTN.verNombre(false);
-            //PiplupMLTN.verFilaVida(false);
-            //PiplupMLTN.verFilaEnergia(false);
-            //PiplupMLTN.verPocionVida(false);
-            //PiplupMLTN.verPocionEnergia(false);
-
-            Snorlax.verFondo(false);
-            Snorlax.verNombre(false);
-            Snorlax.verFilaVida(false);
-            Snorlax.verFilaEnergia(false);
-            Snorlax.verPocionVida(false);
-            Snorlax.verPocionEnergia(false);
-
-            ScizorAPJ.verFondo(false);
-            ScizorAPJ.verNombre(false);
-            ScizorAPJ.verFilaVida(false);
-            ScizorAPJ.verFilaEnergia(false);
-            ScizorAPJ.verPocionVida(false);
-            ScizorAPJ.verPocionEnergia(false);
-
-            MakuhitaAPQ.verFondo(false);
-            MakuhitaAPQ.verNombre(false);
-            MakuhitaAPQ.verFilaVida(false);
-            MakuhitaAPQ.verFilaEnergia(false);
-            MakuhitaAPQ.verPocionVida(false);
-            MakuhitaAPQ.verPocionEnergia(false);
-
-            //CharizardASM.verFondo(false);
-            //CharizardASM.verNombre(false);
-            //CharizardASM.verFilaVida(false);
-            //CharizardASM.verFilaEnergia(false);
-            //CharizardASM.verPocionVida(false);
-            //CharizardASM.verPocionEnergia(false);
         }
                
         private void PokemonListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

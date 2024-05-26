@@ -2,14 +2,17 @@
 using ControlUsuario_IPO2;
 using LucarioGAC;
 using Microsoft.Toolkit.Uwp.Notifications;
+using Newtonsoft.Json;
 using Pokemon_Antonio_Campallo_Gomez;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -18,6 +21,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using static App_Pokemon.MisPokemonPage;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -55,7 +59,7 @@ namespace App_Pokemon
                 }
                 else if (str == "DracoFire")
                 {
-                    this.ipokemon = "DracoFire";
+                    this.ipokemon = "Dracofire";
                     vbDracofire.Visibility = Visibility.Visible;
                 }
                 else if (str == "Articuno")
@@ -65,7 +69,7 @@ namespace App_Pokemon
                 }
                 else if (str == "Toxicroac")
                 {
-                    this.ipokemon = "Toxicroac";
+                    this.ipokemon = "Toxicroack";
                     vbToxicroac.Visibility = Visibility.Visible;
                 }
             }
@@ -102,10 +106,6 @@ namespace App_Pokemon
             GengarJCC.verFilaEnergia(false);
             GengarJCC.verFilaVida(false);
 
-            //MyUCLucario.verNombre(false);
-            //MyUCLucario.verPocionVida(false);
-            //MyUCLucario.verPocionEnergia(false);
-
             ToxicroackJPG.verFondo(false);
             ToxicroackJPG.verNombre(false);
             ToxicroackJPG.verFilaEnergia(false);
@@ -113,9 +113,6 @@ namespace App_Pokemon
             ToxicroackJPG.verPocionVida(false);
             ToxicroackJPG.verPocionEnergia(false);
 
-            //DragoniteCSD.verNombre(false);
-            //DragoniteCSD.verPocionVida(false);
-            //DragoniteCSD.verPocionEnergia(false);
         }
 
         private void pbMove()
@@ -162,7 +159,7 @@ namespace App_Pokemon
                     .AddAppLogoOverride(new Uri("ms-appx:///Assets/Logo.png"), ToastGenericAppLogoCrop.Circle)
                     .SetToastDuration(0)
                     .Show();
-
+                    _ = capturarPokemonAsync(ipokemon);
                     Frame.Navigate(typeof(MisPokemonPage), ipokemon);
                 };
             }
@@ -180,7 +177,7 @@ namespace App_Pokemon
                         .AddAppLogoOverride(new Uri("ms-appx:///Assets/imgCaptura/Error.png"), ToastGenericAppLogoCrop.Circle)
                         .SetToastDuration(0)
                         .Show();
-
+                        
                         Frame.GoBack();
                     };
                 } else
@@ -194,6 +191,40 @@ namespace App_Pokemon
                     };
                 }
 
+            }
+        }
+
+        private async Task capturarPokemonAsync(string pokemonCapturado)
+        {
+            // Obtener la referencia al archivo JSON en la carpeta de datos de la aplicación
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await localFolder.CreateFileAsync("mispokemons.json", CreationCollisionOption.OpenIfExists);
+
+            // Leer el contenido del archivo JSON
+            string jsonString = await FileIO.ReadTextAsync(file);
+            PokemonNames pokemonNames;
+
+            if (!string.IsNullOrWhiteSpace(jsonString))
+            {
+                // Si el archivo no está vacío, deserializar su contenido
+                pokemonNames = JsonConvert.DeserializeObject<PokemonNames>(jsonString);
+            }
+            else
+            {
+                // Si el archivo está vacío, crear una nueva instancia de PokemonNames
+                pokemonNames = new PokemonNames { pokemonNames = new List<string>() };
+            }
+
+            // Añadir el nombre del Pokémon capturado a la lista si aún no está presente
+            if (!pokemonNames.pokemonNames.Contains(pokemonCapturado))
+            {
+                pokemonNames.pokemonNames.Add(pokemonCapturado);
+
+                // Serializar la lista actualizada a JSON
+                string updatedJsonString = JsonConvert.SerializeObject(pokemonNames);
+
+                // Escribir el JSON actualizado al archivo
+                await FileIO.WriteTextAsync(file, updatedJsonString);
             }
         }
 

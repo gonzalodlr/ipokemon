@@ -1,6 +1,13 @@
 ﻿using ClassLibrary1_Prueba;
+using ControlUsuario_IPO2;
 using Dracofire;
+using LucarioGAC;
+using OrtizCañameroRoberto_Snorlax;
 using Pokemon_Antonio_Campallo_Gomez;
+using PokemonIPO2;
+using PokemonNoelia;
+using Newtonsoft.Json;
+using Scizor_AdrianPeinado;
 using Sesion4;
 using System;
 using System.Collections.Generic;
@@ -18,6 +25,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Reflection;
+using System.Threading.Tasks;
+using Windows.Storage;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,7 +39,10 @@ namespace App_Pokemon
     public sealed partial class MisPokemonPage : Page
     {
         private iPokemon pokemon_seleccionado;
-
+        public class PokemonNames
+        {
+            public List<string> pokemonNames { get; set; }
+        }
         private ObservableCollection<UserControl> pokemons;
 
         public MisPokemonPage()
@@ -40,16 +53,13 @@ namespace App_Pokemon
 
             // Maneja el evento SizeChanged de la ventana
             Window.Current.SizeChanged += CurrentWindow_SizeChanged;
-            configurar_pokemons();
 
-            pokemons = new ObservableCollection<UserControl>
-            {
-                new DracofireGDLRS(),
-                new GengarJCC()
-            };
-
-            FlipViewPokemon.ItemsSource = pokemons;
+            _ = ConfigurarPokemonsAsync();
+                        
         }
+
+        
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -95,38 +105,75 @@ namespace App_Pokemon
             }
         }
 
-        private void configurar_pokemons()
+        private async Task ConfigurarPokemonsAsync()
         {
-            DracofireGDLRS.verFondo(false);
-            DracofireGDLRS.verNombre(false);
-            DracofireGDLRS.verPocionVida(false);
-            DracofireGDLRS.verPocionEnergia(false);
+            pokemons = new ObservableCollection<UserControl>
+    {
+        new DracofireGDLRS(),
+        new GengarJCC(),
+        new MyUCLucario(),
+        new DragoniteCSD(),
+        new ArticunoACG(),
+        new ToxicroackJPG.ToxicroackJPG(),
+        new ChandelureNDAA(),
+        new SnorlaxROC(),
+        new ScizorAPJ(),
+        new MakuhitaAPQ2()
+    };
 
-            ArticunoACG.verFondo(false);
-            ArticunoACG.verNombre(false);
-            ArticunoACG.verPocionVida(false);
-            ArticunoACG.verPocionEnergia(false);
+            // Leer el archivo JSON
+            string jsonString = await ReadJsonFileAsync("mispokemons.json");
 
-            GengarJCC.verFondo(false);
-            GengarJCC.verNombre(false);
-            GengarJCC.verPocionVida(false);
-            GengarJCC.verPocionEnergia(false);
+            if (!string.IsNullOrEmpty(jsonString))
+            {
+                PokemonNames pokemonNames = JsonConvert.DeserializeObject<PokemonNames>(jsonString);
 
-            MyUCLucario.verFondo(false);
-            MyUCLucario.verNombre(false);
-            MyUCLucario.verPocionVida(false);
-            MyUCLucario.verPocionEnergia(false);
+                // Filtrar los UserControls que coinciden con los nombres en el JSON
+                var matchedPokemons = new List<UserControl>();
 
-            ToxicroackJPG.verFondo(false);
-            ToxicroackJPG.verNombre(false);
-            ToxicroackJPG.verPocionVida(false);
-            ToxicroackJPG.verPocionEnergia(false);
+                foreach (UserControl control in pokemons)
+                {
+                    if (control is iPokemon pokemonControl && pokemonNames.pokemonNames.Contains(pokemonControl.Nombre))
+                    {
+                        pokemonControl.verFondo(false);
+                        pokemonControl.verPocionVida(false);
+                        pokemonControl.verPocionEnergia(false);
+                        pokemonControl.verNombre(false);
+                        matchedPokemons.Add(control);
+                    }
+                }
 
-            DragoniteCSD.verFondo(false);
-            DragoniteCSD.verNombre(false);
-            DragoniteCSD.verPocionVida(false);
-            DragoniteCSD.verPocionEnergia(false);
+                FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(matchedPokemons);
+            }
         }
+        public async Task<string> ReadJsonFileAsync(string fileName)
+        {
+            try
+            {
+                // Obtener la referencia a la carpeta de datos local de la aplicación
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+
+                // Obtener el archivo "mispokemons.json" en la carpeta local de la aplicación
+                StorageFile file = await localFolder.GetFileAsync(fileName);
+
+                // Leer el contenido del archivo
+                string jsonString = await FileIO.ReadTextAsync(file);
+
+                return jsonString;
+            }
+            catch (FileNotFoundException)
+            {
+                // Manejar el caso en el que el archivo no existe
+                return null;
+            }
+            catch (Exception ex)
+            {
+                // Manejar otras excepciones que puedan ocurrir durante la lectura del archivo
+                Console.WriteLine("Error al leer el archivo JSON: " + ex.Message);
+                return null;
+            }
+        }
+
 
         private void btn_ataqueFuerte_Click(object sender, RoutedEventArgs e)
         {

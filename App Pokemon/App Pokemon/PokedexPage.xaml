@@ -119,19 +119,7 @@
 
         <ListView x:Name="FilteredListView" SelectionMode="Single" ShowsScrollingPlaceholders="True" BorderThickness="1" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="400" SelectionChanged="PokemonListView_SelectionChanged" Grid.Column="1">
             <my:DracofireGDLRS x:Name="DracofireGDLRS" Margin="5"/>
-            <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
-            <my2:MyUCLucario x:Name="MyUCLucario"/>
-            <my3:ArticunoACG x:Name="ArticunoACG"/>
-            <my4:GengarJCC x:Name="GengarJCC"/>
-            <my5:ToxicroackJPG x:Name="ToxicroackJPG" />
-            <my6:DragoniteCSD x:Name="DragoniteCSD" />
-            <!--<my7:ButterFreeACC x:Name="ButterFreeACC" Margin="5"/>-->
-            <my8:ChandelureNDAA x:Name="ChandelureNDAA" />
-            <!--<my9:PiplupMLTN x:Name="PiplupMLTN" Margin="5"/>-->
-            <my10:SnorlaxROC x:Name="Snorlax" />
-            <my11:ScizorAPJ x:Name="ScizorAPJ" />
-            <my12:MakuhitaAPQ2 x:Name="MakuhitaAPQ"/>
-
+            
             <ListView.ItemsPanel >
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical"/>

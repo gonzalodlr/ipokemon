@@ -664,12 +664,18 @@
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.6</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>5.0.0.2662</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="AssetsLucarioGAC\Heart" />
+    <EmbeddedResource Include="DB\mispokemons.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Directory.Build.props" />
   </ItemGroup>
   <ItemGroup />
