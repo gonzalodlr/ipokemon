@@ -1,4 +1,7 @@
 ﻿using ClassLibrary1_Prueba;
+using Dracofire;
+using Pokemon_Antonio_Campallo_Gomez;
+using Sesion4;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,6 +29,9 @@ namespace App_Pokemon
     public sealed partial class MisPokemonPage : Page
     {
         private iPokemon pokemon_seleccionado;
+
+        private ObservableCollection<UserControl> pokemons;
+
         public MisPokemonPage()
         {
             this.InitializeComponent();
@@ -35,7 +41,41 @@ namespace App_Pokemon
             // Maneja el evento SizeChanged de la ventana
             Window.Current.SizeChanged += CurrentWindow_SizeChanged;
             configurar_pokemons();
+
+            pokemons = new ObservableCollection<UserControl>
+            {
+                new DracofireGDLRS(),
+                new GengarJCC()
+            };
+
+            FlipViewPokemon.ItemsSource = pokemons;
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            if (e.Parameter is string capturedPokemon && !string.IsNullOrEmpty(capturedPokemon))
+            {
+                AddCapturedPokemon(capturedPokemon);
+            }
+        }
+
+        private void AddCapturedPokemon(string pokemonName)
+        {
+            UserControl capturedPokemon = pokemonName switch
+            {
+                "DracoFire" => new DracofireGDLRS(),
+                "Gengar" => new GengarJCC(),
+                "Articuno" => new ArticunoACG(),
+                "Toxicroac" => new ToxicroackJPG.ToxicroackJPG(),
+                _ => null,
+            };
+
+            if (capturedPokemon != null && !pokemons.Contains(capturedPokemon))
+            {
+                pokemons.Add(capturedPokemon);
+            }
+        }
+
         private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
             // Obtén el ancho y el alto actual de la ventana

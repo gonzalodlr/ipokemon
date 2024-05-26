@@ -158,7 +158,7 @@ namespace App_Pokemon
                     ToastContentBuilder notificacion = new ToastContentBuilder();
                     notificacion.AddArgument("action", "Captura")
                     .AddText("¡Pokemon Capturado!")
-                    .AddText("Has capturado un " + ipokemon)
+                    .AddText("Has capturado un " + ipokemon+ "\n¡Lo tienes disponible en la página MisPokemon!")
                     .AddAppLogoOverride(new Uri("ms-appx:///Assets/Logo.png"), ToastGenericAppLogoCrop.Circle)
                     .SetToastDuration(0)
                     .Show();

@@ -38,10 +38,16 @@
         </Grid.Background>
 
 
-        <FlipView HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20,20,20,20" Background="#FF262626" Margin="10,10,10,10" Width="500" SelectionChanged="FlipView_SelectionChanged">
+        <FlipView x:Name="FlipViewPokemon"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  CornerRadius="20,20,20,20"
+                  Background="#FF262626"
+                  Margin="10,10,10,10"
+                  Width="500" SelectionChanged="FlipView_SelectionChanged">
             <!-- Los controles de usuario -->
             <my:DracofireGDLRS x:Name="DracofireGDLRS"/>
-            <!--<my1:CharizardASM x:Name="CharizardASM" Margin="5"/>-->
+            <!--my1:CharizardASM x:Name="CharizardASM" Margin="5"/!>-->
             <my2:MyUCLucario x:Name="MyUCLucario" />
             <my3:ArticunoACG x:Name="ArticunoACG" />
             <my4:GengarJCC x:Name="GengarJCC" />

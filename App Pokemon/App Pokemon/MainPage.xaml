@@ -25,7 +25,11 @@
         <NavigationView x:Name="navigationView" ItemInvoked="viPokedex_PointerReleased" IsSettingsVisible="False" IsBackEnabled="True" PaneDisplayMode="LeftCompact" Grid.RowSpan="2" Grid.ColumnSpan="2" Loaded="NavigationView_Loaded" BackRequested="navigationView_BackRequested">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Inicio" x:Name="viHome" Icon="Home"/>
-                <NavigationViewItem Content="Mis Pokemon" x:Name="viPokemons" Icon="AllApps"/>
+                <NavigationViewItem Content="Mis Pokemon" x:Name="viPokemons">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe215;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem Content="Pokedex" x:Name="viPokedex" Icon="AllApps"/>
                 <NavigationViewItem Content="Combate" x:Name="viCombate" Icon="People"/>
                 <NavigationViewItem Content="Capturar" x:Name="viCaptura" Icon="Map"/>
@@ -50,16 +54,20 @@
                         <TextBlock x:Name="titulo" TextWrapping="Wrap" Text="IPOKEMON" VerticalAlignment="Top" Foreground="White" FontSize="72" FontFamily="Algerian" FontWeight="Bold" TextAlignment="Center" Width="980"/>
                     </Viewbox>
                     <Viewbox x:Name="vb_pokedex" Grid.Column="1" Grid.Row="2">
-                        <Image Source="/Assets/imgMainPage/pokedex.png" Width="50" Height="50" Tapped="Pokedex_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/imgMainPage/pokedex.png" Width="50" Height="50" Tapped="Pokedex_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               ToolTipService.ToolTip="Ir a Pokedex" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
                     </Viewbox>
                     <Viewbox x:Name="vb_combat3e" Grid.Column="3" Grid.Row="2">
-                        <Image Source="/Assets/imgMainPage/pelea.jpg" Width="50" Height="50" Tapped="Pelea_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/imgMainPage/pelea.jpg" Width="50" Height="50" Tapped="Pelea_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               ToolTipService.ToolTip="Ir a Combates" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
                     </Viewbox>
                     <Viewbox x:Name="vb_acerca" Grid.Column="1" Grid.Row="3">
-                        <Image Source="/Assets/imgMainPage/dudas.png" Width="50" Height="50" Tapped="Dudas_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/imgMainPage/dudas.png" Width="50" Height="50" Tapped="Dudas_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               ToolTipService.ToolTip="Ir a Acerca de" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
                     </Viewbox>
                     <Viewbox x:Name="vb_mispokemon" Grid.Column="3" Grid.Row="3">
-                        <Image Source="/Assets/imgMainPage/mispokemon.jpg" Width="50" Height="50" Tapped="Pokemons_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/imgMainPage/mispokemon.jpg" Width="50" Height="50" Tapped="Pokemons_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               ToolTipService.ToolTip="Ir a MisPokemon" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
                     </Viewbox>
                 </Grid>
             </Frame>
