@@ -27,7 +27,7 @@
                   Margin="10,10,10,10"
                   Width="500" SelectionChanged="FlipView_SelectionChanged">
             <!-- Los controles de usuario -->
-            <my:DracofireGDLRS/>
+            
             
             <FlipView.ItemsPanel >
                 <ItemsPanelTemplate>

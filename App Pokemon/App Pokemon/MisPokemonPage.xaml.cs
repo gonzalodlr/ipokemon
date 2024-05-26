@@ -59,8 +59,6 @@ namespace App_Pokemon
                         
         }
 
-        
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -136,6 +134,35 @@ namespace App_Pokemon
                 FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(matchedPokemons);
             }
         }
+        private async Task EliminarPokemonAsync(string pokemonAEliminar)
+        {
+            // Obtener la referencia al archivo JSON en la carpeta de datos de la aplicación
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await localFolder.GetFileAsync("mispokemons.json");
+
+            // Leer el contenido del archivo JSON
+            string jsonString = await FileIO.ReadTextAsync(file);
+            PokemonNames pokemonNames;
+
+            if (!string.IsNullOrWhiteSpace(jsonString))
+            {
+                // Si el archivo no está vacío, deserializar su contenido
+                pokemonNames = JsonConvert.DeserializeObject<PokemonNames>(jsonString);
+
+                // Eliminar el nombre del Pokémon de la lista si está presente
+                if (pokemonNames.pokemonNames.Contains(pokemonAEliminar))
+                {
+                    pokemonNames.pokemonNames.Remove(pokemonAEliminar);
+
+                    // Serializar la lista actualizada a JSON
+                    string updatedJsonString = JsonConvert.SerializeObject(pokemonNames);
+
+                    // Escribir el JSON actualizado al archivo
+                    await FileIO.WriteTextAsync(file, updatedJsonString);
+                }
+            }
+        }
+
         public async Task<string> ReadJsonFileAsync(string fileName)
         {
             try
@@ -198,7 +225,7 @@ namespace App_Pokemon
             if (e.AddedItems.Count > 0)
             {
                 // Obtener el elemento seleccionado actualmente en el FlipView
-                var pokemon = e.AddedItems[0] as iPokemon;
+                var pokemon = e.AddedItems[e.AddedItems.Count - 1] as iPokemon;
                 pokemon_seleccionado = pokemon;
             }
         }
@@ -207,11 +234,19 @@ namespace App_Pokemon
         {
             if (pokemon_seleccionado != null && FlipViewPokemon.ItemsSource != null)
             {
-                var itemsSource = FlipViewPokemon.ItemsSource as ObservableCollection<iPokemon>;
-                if (itemsSource != null && itemsSource.Contains(pokemon_seleccionado))
+                var itemsSource = FlipViewPokemon.ItemsSource;
+                if (itemsSource is IList<UserControl> itemsList)
                 {
-                    itemsSource.Remove(pokemon_seleccionado);
-                    pokemon_seleccionado = null;
+                    
+                        if (itemsList.Contains((UserControl)pokemon_seleccionado))
+                        {
+
+                            _ = EliminarPokemonAsync(pokemon_seleccionado.Nombre);
+                            itemsList.Remove((UserControl)pokemon_seleccionado);
+                            pokemon_seleccionado = null;
+                            FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(itemsList);
+                        }
+                    
                 }
             }
         }
