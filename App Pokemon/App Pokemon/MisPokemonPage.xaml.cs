@@ -28,6 +28,7 @@ using Windows.UI.Xaml.Navigation;
 using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Storage;
+using System.Xml.Linq;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -65,24 +66,13 @@ namespace App_Pokemon
             base.OnNavigatedTo(e);
             if (e.Parameter is string capturedPokemon && !string.IsNullOrEmpty(capturedPokemon))
             {
-                AddCapturedPokemon(capturedPokemon);
-            }
-        }
-
-        private void AddCapturedPokemon(string pokemonName)
-        {
-            UserControl capturedPokemon = pokemonName switch
-            {
-                "DracoFire" => new DracofireGDLRS(),
-                "Gengar" => new GengarJCC(),
-                "Articuno" => new ArticunoACG(),
-                "Toxicroac" => new ToxicroackJPG.ToxicroackJPG(),
-                _ => null,
-            };
-
-            if (capturedPokemon != null && !pokemons.Contains(capturedPokemon))
-            {
-                pokemons.Add(capturedPokemon);
+                _ = ConfigurarPokemonsAsync();
+                // Seleccionar el elemento con el nombre igual a e.Parameter
+                var selectedPokemon = pokemons.FirstOrDefault(p => p is iPokemon && (p as iPokemon).Nombre == capturedPokemon);
+                if (selectedPokemon != null)
+                {
+                    FlipViewPokemon.SelectedItem = selectedPokemon;
+                }
             }
         }
 
@@ -210,6 +200,19 @@ namespace App_Pokemon
                 // Obtener el elemento seleccionado actualmente en el FlipView
                 var pokemon = e.AddedItems[0] as iPokemon;
                 pokemon_seleccionado = pokemon;
+            }
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (pokemon_seleccionado != null && FlipViewPokemon.ItemsSource != null)
+            {
+                var itemsSource = FlipViewPokemon.ItemsSource as ObservableCollection<iPokemon>;
+                if (itemsSource != null && itemsSource.Contains(pokemon_seleccionado))
+                {
+                    itemsSource.Remove(pokemon_seleccionado);
+                    pokemon_seleccionado = null;
+                }
             }
         }
     }        

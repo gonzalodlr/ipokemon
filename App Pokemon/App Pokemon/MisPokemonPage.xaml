@@ -10,26 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <!--<Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="PointerOver">
-                                        <VisualState.Setters>
-                                            <Setter Target="{Binding Background}" Value="Black"/>
-                                        </VisualState.Setters>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>-->
-
+       
     </Page.Resources>
     
     <Grid>
@@ -46,14 +27,8 @@
                   Margin="10,10,10,10"
                   Width="500" SelectionChanged="FlipView_SelectionChanged">
             <!-- Los controles de usuario -->
-            <my:DracofireGDLRS x:Name="DracofireGDLRS"/>
-            <!--my1:CharizardASM x:Name="CharizardASM" Margin="5"/!>-->
-            <my2:MyUCLucario x:Name="MyUCLucario" />
-            <my3:ArticunoACG x:Name="ArticunoACG" />
-            <my4:GengarJCC x:Name="GengarJCC" />
-            <my5:ToxicroackJPG x:Name="ToxicroackJPG"/>
-            <my6:DragoniteCSD x:Name="DragoniteCSD"/>
-
+            <my:DracofireGDLRS/>
+            
             <FlipView.ItemsPanel >
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Horizontal"/>
@@ -79,6 +54,7 @@
                             <Viewbox Grid.Row="0">
                                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
                             </Viewbox>
+                            <Button x:Name="btn_delete" Content="X" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFA74C4C" CornerRadius="5,5,5,5" Padding="10,0,10,0" Margin="10,10,10,10" Foreground="White" FontFamily="Comic Sans MS" Click="btn_delete_Click"/>
                             <Viewbox Grid.Row="1">
                                 <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
                             </Viewbox>
