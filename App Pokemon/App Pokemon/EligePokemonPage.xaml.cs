@@ -138,8 +138,6 @@ namespace App_Pokemon
                 Debug.WriteLine("Clicked item is not a Pokemon.");
                 Debug.WriteLine($"Clicked item: {clickedItem}");
             }
-
-
         }
 
         private void ConfirmarSeleccion_Click(object sender, RoutedEventArgs e)

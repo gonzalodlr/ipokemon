@@ -59,17 +59,22 @@ namespace App_Pokemon
                         
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
+
             if (e.Parameter is string capturedPokemon && !string.IsNullOrEmpty(capturedPokemon))
             {
-                _ = ConfigurarPokemonsAsync();
+                await ConfigurarPokemonsAsync();
                 // Seleccionar el elemento con el nombre igual a e.Parameter
-                var selectedPokemon = pokemons.FirstOrDefault(p => p is iPokemon && (p as iPokemon).Nombre == capturedPokemon);
-                if (selectedPokemon != null)
+                var items= FlipViewPokemon.ItemsSource;
+                
+                if (items is IList<UserControl> itemsList)
                 {
-                    FlipViewPokemon.SelectedItem = selectedPokemon;
+                    // si existe el elemento en array con nombre = a capturedPokemon
+                    if (itemsList.Any(p => p is iPokemon && (p as iPokemon).Nombre == capturedPokemon))
+                    {
+                        FlipViewPokemon.SelectedItem = itemsList.FirstOrDefault(p => p is iPokemon && (p as iPokemon).Nombre == capturedPokemon);
+                    }
                 }
             }
         }
@@ -237,16 +242,13 @@ namespace App_Pokemon
                 var itemsSource = FlipViewPokemon.ItemsSource;
                 if (itemsSource is IList<UserControl> itemsList)
                 {
-                    
                         if (itemsList.Contains((UserControl)pokemon_seleccionado))
                         {
-
                             _ = EliminarPokemonAsync(pokemon_seleccionado.Nombre);
                             itemsList.Remove((UserControl)pokemon_seleccionado);
                             pokemon_seleccionado = null;
                             FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(itemsList);
-                        }
-                    
+                        }   
                 }
             }
         }

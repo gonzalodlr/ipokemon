@@ -151,7 +151,7 @@ namespace App_Pokemon
             {
                 Storyboard sbaux = (Storyboard)this.Resources["LanzarBien"];
                 sbaux.Begin();
-                sbaux.Completed += (s, ev) => { sbaux.Stop();
+                sbaux.Completed += async (s, ev) => { sbaux.Stop();
                     ToastContentBuilder notificacion = new ToastContentBuilder();
                     notificacion.AddArgument("action", "Captura")
                     .AddText("¡Pokemon Capturado!")
@@ -159,7 +159,7 @@ namespace App_Pokemon
                     .AddAppLogoOverride(new Uri("ms-appx:///Assets/Logo.png"), ToastGenericAppLogoCrop.Circle)
                     .SetToastDuration(0)
                     .Show();
-                    _ = capturarPokemonAsync(ipokemon);
+                    await capturarPokemonAsync(ipokemon);
                     Frame.Navigate(typeof(MisPokemonPage), ipokemon);
                 };
             }
