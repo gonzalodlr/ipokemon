@@ -56,7 +56,29 @@ namespace App_Pokemon
             Window.Current.SizeChanged += CurrentWindow_SizeChanged;
 
             _ = ConfigurarPokemonsAsync();
-                        
+
+            
+        }
+
+        private void inicio()
+        {
+            bool x = false;
+            var itemsSource = FlipViewPokemon.ItemsSource;
+            if (itemsSource is IList<UserControl> itemsList)
+            { 
+                x = itemsList.Any();
+            }
+
+            if (itemsSource == null || !x)
+            {
+                txt_pokemons.Visibility = Visibility.Visible;
+                FlipViewPokemon.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                txt_pokemons.Visibility = Visibility.Collapsed;
+                FlipViewPokemon.Visibility = Visibility.Visible;
+            }
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -138,6 +160,7 @@ namespace App_Pokemon
 
                 FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(matchedPokemons);
             }
+            inicio();
         }
         private async Task EliminarPokemonAsync(string pokemonAEliminar)
         {

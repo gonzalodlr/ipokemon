@@ -53,11 +53,15 @@
                     <Viewbox x:Name="vb_titulo" Grid.Row="1" Grid.ColumnSpan="5">
                         <TextBlock x:Name="titulo" TextWrapping="Wrap" Text="IPOKEMON" VerticalAlignment="Top" Foreground="White" FontSize="72" FontFamily="Algerian" FontWeight="Bold" TextAlignment="Center" Width="980"/>
                     </Viewbox>
-                    <Viewbox x:Name="vb_pokedex" Grid.Column="1" Grid.Row="2">
+                    <Viewbox x:Name="vb_pokedex" Grid.Column="1" Grid.Row="2" Margin="0,0,100,0">
                         <Image Source="/Assets/imgMainPage/pokedex.png" Width="50" Height="50" Tapped="Pokedex_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
                                ToolTipService.ToolTip="Ir a Pokedex" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
                     </Viewbox>
-                    <Viewbox x:Name="vb_combat3e" Grid.Column="3" Grid.Row="2">
+                    <Viewbox x:Name="vb_captura" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="20,20,20,20" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <Image Source="/Assets/imgCaptura/capturarImage.jpg" Width="50" Height="50" Tapped="Capturar_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        ToolTipService.ToolTip="Ir a Capturar" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
+                    </Viewbox>
+                    <Viewbox x:Name="vb_combat3e" Grid.Column="3" Grid.Row="2" Margin="100,0,0,0">
                         <Image Source="/Assets/imgMainPage/pelea.jpg" Width="50" Height="50" Tapped="Pelea_Tapped" HorizontalAlignment="Center" VerticalAlignment="Center"
                                ToolTipService.ToolTip="Ir a Combates" PointerEntered="Image_PointerEntered" PointerExited="Image_PointerExited"/>
                     </Viewbox>

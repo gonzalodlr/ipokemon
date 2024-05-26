@@ -10,14 +10,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-       
+
     </Page.Resources>
-    
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/AssetsDracofireGDLRS/imFondo.png" Stretch="UniformToFill"/>
         </Grid.Background>
-
 
         <FlipView x:Name="FlipViewPokemon"
                   HorizontalAlignment="Center"
@@ -27,8 +26,8 @@
                   Margin="10,10,10,10"
                   Width="500" SelectionChanged="FlipView_SelectionChanged">
             <!-- Los controles de usuario -->
-            
-            
+
+
             <FlipView.ItemsPanel >
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Horizontal"/>
@@ -45,7 +44,6 @@
                             <RowDefinition Height="15*"/>
                             <RowDefinition Height="15*"/>
                         </Grid.RowDefinitions>
-
                         <Grid Grid.Row="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="5*"/>
@@ -75,7 +73,7 @@
                             </Grid.RowDefinitions>
 
                             <Ellipse Fill="#FF262626" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="100" Margin="0,-55,0,0" />
- <Rectangle Fill="#FF262626" Grid.RowSpan="5" HorizontalAlignment="Right" Width="1" Margin="0,50,-0.5,10" />
+                            <Rectangle Fill="#FF262626" Grid.RowSpan="5" HorizontalAlignment="Right" Width="1" Margin="0,50,-0.5,10" />
 
                             <TextBlock Text="Información" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial Black"/>
                             <TextBlock Text="Categoría" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial Black"/>
@@ -116,6 +114,8 @@
                 </DataTemplate>
             </FlipView.ItemTemplate>
         </FlipView>
-
+        <StackPanel x:Name="txt_pokemons" CornerRadius="40,40,40,40" Background="#FF846D6D" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50,80,50,80" Margin="80,80,80,80">
+            <TextBlock Text="Captura pokemons para poder verlos aquí." TextWrapping="Wrap" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" Foreground="White" Margin="5,0,5,0" VerticalAlignment="Center" TextAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Page>
