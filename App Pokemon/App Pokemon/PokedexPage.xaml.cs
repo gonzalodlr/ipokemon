@@ -14,6 +14,9 @@ using OrtizCañameroRoberto_Snorlax;
 using ButterFreeACC;
 using ToxicroackJPG;
 using CharizardASM;
+using LaprasACE;
+using POKEMON_VFJD;
+using PokemonAron;
 using Windows.UI.Xaml.Documents;
 using Windows.UI.ViewManagement;
 using System.Collections.ObjectModel;
@@ -126,8 +129,10 @@ namespace App_Pokemon
                 new SnorlaxROC(),
                 new ScizorAPJ(),
                 new piplupUserControl.PiplupMLTN(),
-                new MakuhitaAPQ2()
-
+                new MakuhitaAPQ2(),
+                new Lapras(),
+                new AronMCC(),
+                new GarchompVFJD()
             };
 
             foreach (UserControl control in pokemons)
@@ -176,6 +181,9 @@ namespace App_Pokemon
                 ScizorAPJ _ => new ScizorAPJ(),
                 MakuhitaAPQ2 _ => new MakuhitaAPQ2(),
                 piplupUserControl.PiplupMLTN _ => new piplupUserControl.PiplupMLTN(),
+                Lapras _ => new Lapras(),
+                AronMCC _ => new AronMCC(),
+                GarchompVFJD _ => new GarchompVFJD(),
                 _ => throw new InvalidOperationException("Tipo de Pokémon no soportado"),
             };
 

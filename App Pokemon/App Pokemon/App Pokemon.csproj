@@ -131,6 +131,12 @@
     <Compile Include="EligePokemonPage.xaml.cs">
       <DependentUpon>EligePokemonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pokemons\AronMCC.xaml.cs">
+      <DependentUpon>AronMCC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\LaprasACE.xaml.cs">
+      <DependentUpon>LaprasACE.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PokedexPage.xaml.cs">
       <DependentUpon>PokedexPage.xaml</DependentUpon>
     </Compile>
@@ -154,6 +160,9 @@
     </Compile>
     <Compile Include="Pokemons\DragoniteCSD.xaml.cs">
       <DependentUpon>DragoniteCSD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemons\GarchompVFJD.xaml.cs">
+      <DependentUpon>GarchompVFJD.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pokemons\GengarJCC.xaml.cs">
       <DependentUpon>GengarJCC.xaml</DependentUpon>
@@ -228,6 +237,23 @@
     <Content Include="Assets+Pokemon+inicial\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets+Pokemon+inicial\StoreLogo.png" />
     <Content Include="Assets+Pokemon+inicial\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsAronMCC\Energia.png" />
+    <Content Include="AssetsAronMCC\escudoRoca.png" />
+    <Content Include="AssetsAronMCC\Imagen fondo.jpg" />
+    <Content Include="AssetsAronMCC\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsAronMCC\PocionEnergia.png" />
+    <Content Include="AssetsAronMCC\PocionVida.png" />
+    <Content Include="AssetsAronMCC\SplashScreen.scale-100.png" />
+    <Content Include="AssetsAronMCC\SplashScreen.scale-125.png" />
+    <Content Include="AssetsAronMCC\SplashScreen.scale-150.png" />
+    <Content Include="AssetsAronMCC\SplashScreen.scale-200.png" />
+    <Content Include="AssetsAronMCC\SplashScreen.scale-400.png" />
+    <Content Include="AssetsAronMCC\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsAronMCC\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsAronMCC\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsAronMCC\StoreLogo.png" />
+    <Content Include="AssetsAronMCC\Vida.png" />
+    <Content Include="AssetsAronMCC\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsArticunoACG\CabezazoRalentizado.mp3" />
     <Content Include="AssetsArticunoACG\corazonVida.png" />
     <Content Include="AssetsArticunoACG\DerrotadoBien.mp3" />
@@ -368,6 +394,33 @@
     <Content Include="AssetsDragoniteCSD\termometro.png" />
     <Content Include="AssetsDragoniteCSD\Vidapokemon2.png" />
     <Content Include="AssetsDragoniteCSD\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsGarchompVFJD\445.png" />
+    <Content Include="AssetsGarchompVFJD\bolaescudo.png" />
+    <Content Include="AssetsGarchompVFJD\bolaFuego-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\circuloescudo-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\descarga %282%29.png" />
+    <Content Include="AssetsGarchompVFJD\efectosEnergia.png" />
+    <Content Include="AssetsGarchompVFJD\efectosVida.png" />
+    <Content Include="AssetsGarchompVFJD\escudo.png" />
+    <Content Include="AssetsGarchompVFJD\escudoazul-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\forest.png" />
+    <Content Include="AssetsGarchompVFJD\heart-png.png" />
+    <Content Include="AssetsGarchompVFJD\icono_vida.png" />
+    <Content Include="AssetsGarchompVFJD\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsGarchompVFJD\pocionEnergiaTomando.png" />
+    <Content Include="AssetsGarchompVFJD\pocionVidaTomando.png" />
+    <Content Include="AssetsGarchompVFJD\pocion_energia.png" />
+    <Content Include="AssetsGarchompVFJD\pocion_vida.png" />
+    <Content Include="AssetsGarchompVFJD\pokemon.png" />
+    <Content Include="AssetsGarchompVFJD\raio.png" />
+    <Content Include="AssetsGarchompVFJD\SplashScreen.scale-200.png" />
+    <Content Include="AssetsGarchompVFJD\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsGarchompVFJD\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsGarchompVFJD\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsGarchompVFJD\StoreLogo.png" />
+    <Content Include="AssetsGarchompVFJD\sueño-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsGarchompVFJD\zarpazo-removebg-preview.png" />
     <Content Include="AssetsGengarJCC\corazon.png" />
     <Content Include="AssetsGengarJCC\energia.png" />
     <Content Include="AssetsGengarJCC\LockScreenLogo.scale-200.png" />
@@ -380,6 +433,40 @@
     <Content Include="AssetsGengarJCC\StoreLogo.png" />
     <Content Include="AssetsGengarJCC\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsGengarJCC\z10o_buuk_210129.jpg" />
+    <Content Include="AssetsLaprasACE\LockScreenLogo.scale-200.png" />
+    <Content Include="AssetsLaprasACE\Sounds\AtaqueDebil.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\AtaqueFuerte.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\Cansado.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\Descanso.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\Escudo.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\lapras.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\Muerte.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\PonerEscudo.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\PowerDown.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\PowerUp.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\QuitarCansado.mp3" />
+    <Content Include="AssetsLaprasACE\Sounds\QuitarEscudo.mp3" />
+    <Content Include="AssetsLaprasACE\SplashScreen.scale-200.png" />
+    <Content Include="AssetsLaprasACE\Square150x150Logo.scale-200.png" />
+    <Content Include="AssetsLaprasACE\Square44x44Logo.scale-200.png" />
+    <Content Include="AssetsLaprasACE\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="AssetsLaprasACE\StoreLogo.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\almohada2.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\brillo.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\bubble.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\destello.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\escudo.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\forest.jpg" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\forest2.jpg" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\heart.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\heart_potion.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\moraton.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\shield.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\shield_potion.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\sudor.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\tirita.png" />
+    <Content Include="AssetsLaprasACE\UI_Pokemon\tumba3.png" />
+    <Content Include="AssetsLaprasACE\Wide310x150Logo.scale-200.png" />
     <Content Include="AssetsLucarioGAC\AuraSphere.mp3" />
     <Content Include="AssetsLucarioGAC\AuraSphere.png" />
     <Content Include="AssetsLucarioGAC\BattleShild.png" />
@@ -577,6 +664,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pokemons\AronMCC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\LaprasACE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PokedexPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -606,6 +701,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pokemons\DragoniteCSD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pokemons\GarchompVFJD.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -675,6 +774,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="AssetsGarchompVFJD\organic-olive-oil-healthy-cooking.zip" />
     <None Include="AssetsLucarioGAC\Heart" />
     <EmbeddedResource Include="DB\mispokemons.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
