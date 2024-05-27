@@ -5,10 +5,13 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Composition;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -22,10 +25,16 @@ namespace App_Pokemon
     /// </summary>
     public sealed partial class InicioCombate : Page
     {
+
+        private Compositor _compositor;
+
         public InicioCombate()
         {
             this.InitializeComponent();
+            
         }
+
+
         private void Solo_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(EligePokemonPage), "solo");
@@ -34,5 +43,16 @@ namespace App_Pokemon
         {
             this.Frame.Navigate(typeof(EligePokemonPage), "multijugador");
         }
+
+        private void Grid_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Hand, 1);
+        }
+
+        private void Grid_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Arrow, 1);
+        }
+
     }
 }

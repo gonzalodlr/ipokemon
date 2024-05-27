@@ -258,20 +258,33 @@ namespace App_Pokemon
             }
         }
 
-        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        private async void btn_delete_Click(object sender, RoutedEventArgs e)
         {
-            if (pokemon_seleccionado != null && FlipViewPokemon.ItemsSource != null)
+            var dialog = new ContentDialog
             {
-                var itemsSource = FlipViewPokemon.ItemsSource;
-                if (itemsSource is IList<UserControl> itemsList)
+                Title = "Confirmación de eliminación",
+                Content = "¿Estás seguro de que deseas eliminar el Pokémon?",
+                PrimaryButtonText = "Sí",
+                CloseButtonText = "No"
+            };
+
+            var result = await dialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                if (pokemon_seleccionado != null && FlipViewPokemon.ItemsSource != null)
                 {
+                    var itemsSource = FlipViewPokemon.ItemsSource;
+                    if (itemsSource is IList<UserControl> itemsList)
+                    {
                         if (itemsList.Contains((UserControl)pokemon_seleccionado))
                         {
                             _ = EliminarPokemonAsync(pokemon_seleccionado.Nombre);
                             itemsList.Remove((UserControl)pokemon_seleccionado);
                             pokemon_seleccionado = null;
                             FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(itemsList);
-                        }   
+                        }
+                    }
                 }
             }
         }

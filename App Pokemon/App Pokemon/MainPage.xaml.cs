@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Notifications;
 using Windows.UI.ViewManagement;
@@ -204,6 +205,11 @@ namespace App_Pokemon
             fmMain.Navigate(typeof(PokedexPage));
         }
 
+        private void Capturar_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            fmMain.Navigate(typeof(CapturarMap));
+        }   
+
         private void opcionVolver(object sender, BackRequestedEventArgs e)
         {
             if (MainFrame.BackStack.Any())
@@ -247,6 +253,20 @@ namespace App_Pokemon
 
         private void Image_PointerExited(object sender, PointerRoutedEventArgs e)
         {
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Arrow, 1);
+        }
+
+        private void Border_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            var border = sender as Border;
+            border.Background = new SolidColorBrush(Colors.LightGray);
+            Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Hand, 1);
+        }
+
+        private void Border_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            var border = sender as Border;
+            border.Background = new SolidColorBrush(Colors.Transparent);
             Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Arrow, 1);
         }
     }

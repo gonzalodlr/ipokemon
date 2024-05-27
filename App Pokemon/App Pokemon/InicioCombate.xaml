@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Assets/Intro.png"/>
+            <ImageBrush ImageSource="/Assets/arena.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="125*"/>
@@ -25,24 +25,16 @@
             <RowDefinition Height="444*"/>
             <RowDefinition Height="187*"/>
         </Grid.RowDefinitions>
-        <Viewbox x:Name="vb_titulo" Grid.ColumnSpan="5">
-            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="Elige Modo de Juego" FontSize="36" FontFamily="Algerian" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Viewbox x:Name="vb_titulo" Grid.Row="0" Grid.ColumnSpan="5">
+            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="ELIGE MODO DE JUEGO" FontWeight="Bold" FontSize="30" FontFamily="Segoe UI" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Viewbox>
-        <Viewbox Grid.Row="2" Grid.Column="1">
-            <Image Source="/Assets/imgCombatePage/solo.jpg" Tapped="Solo_Tapped" Width="12" Height="7" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill">
-                <Image.RenderTransform>
-                    <CompositeTransform ScaleX="1"/>
-                </Image.RenderTransform>
-            </Image>
-        </Viewbox>
-        <Viewbox Grid.Column="3" Grid.Row="2">
-            <Image Source="/Assets/imgCombatePage/Multijugador.png" Tapped="Multijugador_Tapped" Height="537" Width="892" Stretch="UniformToFill" />
-        </Viewbox>
-        <Viewbox Grid.Column="1" Grid.Row="1">
-            <TextBlock TextWrapping="Wrap" Text="Solo" FontSize="48" Foreground="Black" FontFamily="Algerian" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,24,0,20"/>
-        </Viewbox>
-        <Viewbox Grid.Column="3" Grid.Row="1">
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Multijugador" VerticalAlignment="Center" FontSize="48" Foreground="Black" FontFamily="Algerian"/>
-        </Viewbox>
+        <Grid Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" PointerEntered="Grid_PointerEntered" PointerExited="Grid_PointerExited" Tapped="Solo_Tapped">
+            <Image Source="/Assets/imgCombatePage/solo.jpg" Width="350" Height="200" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill" Opacity="0.8"/>
+            <TextBlock x:Name="TextSolo" Text="SOLO" FontSize="25" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" PointerEntered="Grid_PointerEntered" PointerExited="Grid_PointerExited" Tapped="Multijugador_Tapped">
+            <Image Source="/Assets/imgCombatePage/Multijugador.png" Width="350" Height="200" Stretch="UniformToFill" Opacity="0.8"/>
+            <TextBlock Text="MULTIJUGADOR" FontSize="25" Foreground="White" FontFamily="Segoe UI" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+        </Grid>
     </Grid>
 </Page>

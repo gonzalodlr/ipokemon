@@ -26,7 +26,7 @@
         </Grid.RowDefinitions>
 
         <Viewbox Grid.Row="0">
-            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="Elige tu Pokemon" FontSize="36" FontFamily="Algerian" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="tituloInicioCombate" TextWrapping="Wrap" Text="Elige tu Pokemon" FontSize="36" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Viewbox>
         
         <GridView   x:Name="ContentGridView"
@@ -110,7 +110,7 @@
         </GridView>
 
         <Viewbox Grid.Row="2">
-            <TextBlock x:Name="MensajeTextBlock" Text="" FontSize="36" FontFamily="Algerian" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="MensajeTextBlock" Text="" FontSize="36" FontFamily="Segoe UI" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Viewbox> 
     </Grid>
 </Page>

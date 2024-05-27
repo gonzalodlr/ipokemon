@@ -10,7 +10,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-
+        <ContentDialog x:Key="DeleteConfirmationDialog"
+                       Title="Confirmación de eliminación"
+                       PrimaryButtonText="Sí"
+                       CloseButtonText="No">
+            <TextBlock Text="¿Estás seguro de que deseas eliminar el Pokémon?" />
+        </ContentDialog>
     </Page.Resources>
 
     <Grid>
@@ -52,7 +57,9 @@
                             <Viewbox Grid.Row="0">
                                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2"  Text="{Binding Nombre}" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" FocusVisualPrimaryBrush="White" Margin="5,0,5,0"/>
                             </Viewbox>
-                            <Button x:Name="btn_delete" Content="X" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFA74C4C" CornerRadius="5,5,5,5" Padding="10,0,10,0" Margin="10,10,10,10" Foreground="White" FontFamily="Comic Sans MS" Click="btn_delete_Click"/>
+                            <Button x:Name="btn_delete" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFA74C4C" CornerRadius="5" Padding="10,0,10,0" Margin="10" Foreground="White" FontFamily="Comic Sans MS" Click="btn_delete_Click">
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74D;" Foreground="White"/>
+                            </Button>
                             <Viewbox Grid.Row="1">
                                 <ContentPresenter Content="{Binding}" Width="250" Height="250"/>
                             </Viewbox>
@@ -118,4 +125,6 @@
             <TextBlock Text="Captura pokemons para poder verlos aquí." TextWrapping="Wrap" FontSize="72" FontFamily="Sylfaen" HorizontalAlignment="Center" Foreground="White" Margin="5,0,5,0" VerticalAlignment="Center" TextAlignment="Center"/>
         </StackPanel>
     </Grid>
+    
+    
 </Page>

@@ -460,7 +460,9 @@
     <Content Include="AssetsScizorAPJ\StoreLogo.png" />
     <Content Include="AssetsScizorAPJ\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\AcercaDe.png" />
+    <Content Include="Assets\arena.jpg" />
     <Content Include="Assets\home.png" />
+    <Content Include="Assets\home1.jpg" />
     <Content Include="Assets\icon_pokeball.png" />
     <Content Include="Assets\imgCaptura\capturarImage.jpg" />
     <Content Include="Assets\imgCaptura\Captura_fondo.jpg" />
