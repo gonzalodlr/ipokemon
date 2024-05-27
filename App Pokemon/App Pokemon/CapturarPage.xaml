@@ -1,4 +1,4 @@
-﻿<Page xmlns:my3="using:ToxicroackJPG"  xmlns:my2="using:Pokemon_Antonio_Campallo_Gomez"  xmlns:my1="using:Sesion4"  xmlns:my="using:Dracofire" 
+﻿<Page xmlns:my10="using:PokemonIPO2"  xmlns:my9="using:Scizor_AdrianPeinado"  xmlns:my8="using:LucarioGAC"  xmlns:my7="using:CharizardASM"  xmlns:my6="using:PokemonNoelia"  xmlns:my5="using:OrtizCañameroRoberto_Snorlax"  xmlns:my4="using:ControlUsuario_IPO2"  xmlns:my3="using:ToxicroackJPG"  xmlns:my2="using:Pokemon_Antonio_Campallo_Gomez"  xmlns:my1="using:Sesion4"  xmlns:my="using:Dracofire" 
     x:Class="App_Pokemon.CapturarPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -97,7 +97,27 @@
         <Viewbox x:Name="vbDracofire" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <my:DracofireGDLRS x:Name="DracofireGDLRS" />
         </Viewbox>
-
+        <Viewbox x:Name="vbChandelure" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my6:ChandelureNDAA x:Name="ChandelureNDAA"/>
+        </Viewbox>
+        <Viewbox x:Name="vbSnorlax" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my5:SnorlaxROC x:Name="SnorlaxROC"/>
+        </Viewbox>
+        <Viewbox x:Name="vbDragonite" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my4:DragoniteCSD x:Name="DragoniteCSD"/>
+        </Viewbox>
+        <Viewbox x:Name="vbCharizard" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my7:CharizardASM x:Name="CharizardASM"/>
+        </Viewbox>
+        <Viewbox x:Name="vbLucario" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my8:MyUCLucario x:Name="MyUCLucario"/>
+        </Viewbox>
+        <Viewbox x:Name="vbScizor" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my9:ScizorAPJ x:Name="ScizorAPJ"/>
+        </Viewbox>
+        <Viewbox x:Name="vbMakuhita" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <my10:MakuhitaAPQ2 x:Name="MakuhitaAPQ2"/>
+        </Viewbox>
         <Viewbox x:Name="vbGengar" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <my1:GengarJCC x:Name="GengarJCC" />
         </Viewbox>

@@ -279,10 +279,11 @@ namespace App_Pokemon
                     {
                         if (itemsList.Contains((UserControl)pokemon_seleccionado))
                         {
-                            _ = EliminarPokemonAsync(pokemon_seleccionado.Nombre);
+                            await EliminarPokemonAsync(pokemon_seleccionado.Nombre);
                             itemsList.Remove((UserControl)pokemon_seleccionado);
                             pokemon_seleccionado = null;
                             FlipViewPokemon.ItemsSource = new ObservableCollection<UserControl>(itemsList);
+                            inicio();
                         }
                     }
                 }

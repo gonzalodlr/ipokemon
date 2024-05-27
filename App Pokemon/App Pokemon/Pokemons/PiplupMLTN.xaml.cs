@@ -69,11 +69,20 @@ namespace piplupUserControl
         public void verFilaVida(bool ver)
         {
             VerVida = ver;
+            if (!ver)
+            {
+                barra_vida.Visibility = Visibility.Collapsed;
+                simbolo_vida.Visibility = Visibility.Collapsed;
+            }
         }
 
         public void verFilaEnergia(bool ver)
         {
-            VerEnergia = ver; 
+            if (!ver)
+            {
+                barra_ataque.Visibility = Visibility.Collapsed;
+                simbolo_energia.Visibility = Visibility.Collapsed;
+            }
         }
 
         public void verPocionVida(bool ver)

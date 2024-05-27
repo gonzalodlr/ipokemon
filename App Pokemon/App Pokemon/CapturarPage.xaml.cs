@@ -72,6 +72,41 @@ namespace App_Pokemon
                     this.ipokemon = "Toxicroack";
                     vbToxicroac.Visibility = Visibility.Visible;
                 }
+                else if (str == "Dragonite")
+                {
+                    this.ipokemon = "Dragonite";
+                    vbDragonite.Visibility = Visibility.Visible;
+                }
+                else if (str == "Chandelure")
+                {
+                    this.ipokemon = "Chandelure";
+                    vbChandelure.Visibility = Visibility.Visible;
+                }
+                else if (str == "Snorlax")
+                {
+                    this.ipokemon = "Snorlax";
+                    vbSnorlax.Visibility = Visibility.Visible;
+                }
+                else if (str == "Charizard")
+                {
+                    this.ipokemon = "Charizard";
+                    vbCharizard.Visibility = Visibility.Visible;
+                }
+                else if (str == "Makuhita")
+                {
+                    this.ipokemon = "Makuhita";
+                    vbMakuhita.Visibility = Visibility.Visible;
+                }
+                else if (str == "Scizor")
+                {
+                    this.ipokemon = "Scizor";
+                    vbScizor.Visibility = Visibility.Visible;
+                }
+                else if (str == "Lucario")
+                {
+                    this.ipokemon = "Lucario";
+                    vbLucario.Visibility = Visibility.Visible;
+                }
             }
         }
 
@@ -81,6 +116,13 @@ namespace App_Pokemon
             vbGengar.Visibility = Visibility.Collapsed;
             vbArticuno.Visibility = Visibility.Collapsed;
             vbToxicroac.Visibility = Visibility.Collapsed;
+            vbDragonite.Visibility = Visibility.Collapsed;
+            vbChandelure.Visibility = Visibility.Collapsed;
+            vbSnorlax.Visibility = Visibility.Collapsed;
+            vbCharizard.Visibility = Visibility.Collapsed;
+            vbMakuhita.Visibility = Visibility.Collapsed;
+            vbScizor.Visibility = Visibility.Collapsed;
+            vbLucario.Visibility = Visibility.Collapsed;
         }
 
         private void configurar_pokemons()
@@ -113,6 +155,55 @@ namespace App_Pokemon
             ToxicroackJPG.verPocionVida(false);
             ToxicroackJPG.verPocionEnergia(false);
 
+            DragoniteCSD.verFondo(false);
+            DragoniteCSD.verNombre(false);
+            DragoniteCSD.verFilaEnergia(false);
+            DragoniteCSD.verFilaVida(false);
+            DragoniteCSD.verPocionVida(false);
+            DragoniteCSD.verPocionEnergia(false);
+
+            ChandelureNDAA.verFondo(false);
+            ChandelureNDAA.verNombre(false);
+            ChandelureNDAA.verFilaEnergia(false);
+            ChandelureNDAA.verFilaVida(false);
+            ChandelureNDAA.verPocionVida(false);
+            ChandelureNDAA.verPocionEnergia(false);
+
+            SnorlaxROC.verFondo(false);
+            SnorlaxROC.verNombre(false);
+            SnorlaxROC.verFilaEnergia(false);
+            SnorlaxROC.verFilaVida(false);
+            SnorlaxROC.verPocionVida(false);
+            SnorlaxROC.verPocionEnergia(false);
+
+            CharizardASM.verFondo(false);
+            CharizardASM.verNombre(false);
+            CharizardASM.verFilaEnergia(false);
+            CharizardASM.verFilaVida(false);
+            CharizardASM.verPocionVida(false);
+            CharizardASM.verPocionEnergia(false);
+
+            MakuhitaAPQ2.verFondo(false);
+            MakuhitaAPQ2.verNombre(false);
+            MakuhitaAPQ2.verFilaEnergia(false);
+            MakuhitaAPQ2.verFilaVida(false);
+            MakuhitaAPQ2.verPocionVida(false);
+            MakuhitaAPQ2.verPocionEnergia(false);
+
+            ScizorAPJ.verFondo(false);
+            ScizorAPJ.verNombre(false);
+            ScizorAPJ.verFilaEnergia(false);
+            ScizorAPJ.verFilaVida(false);
+            ScizorAPJ.verPocionVida(false);
+            ScizorAPJ.verPocionEnergia(false);
+
+            MyUCLucario.verFondo(false);
+            MyUCLucario.verNombre(false);
+            MyUCLucario.verFilaEnergia(false);
+            MyUCLucario.verFilaVida(false);
+            MyUCLucario.verPocionVida(false);
+            MyUCLucario.verPocionEnergia(false);
+             
         }
 
         private void pbMove()

@@ -11,11 +11,13 @@ using PokemonIPO2;
 using Scizor_AdrianPeinado;
 using PokemonNoelia;
 using OrtizCañameroRoberto_Snorlax;
+using ButterFreeACC;
 using ToxicroackJPG;
+using CharizardASM;
 using Windows.UI.Xaml.Documents;
-using Windows.Foundation;
 using Windows.UI.ViewManagement;
 using System.Collections.ObjectModel;
+using Windows.Foundation;
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App_Pokemon
@@ -32,29 +34,12 @@ namespace App_Pokemon
         {
             this.InitializeComponent();
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1800, 1000));
-            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
+
             configurar_pokedex();
             richTextBlock.SizeChanged += RichTextBlock_SizeChanged;
 
         }
-        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
-        {
-            //Obtienen el ancho y el alto actual de la ventana
-            double width = Window.Current.Bounds.Width;
-            double height = Window.Current.Bounds.Height;
-
-            // Si el ancho es menor que 600, ajusta el ancho a 600
-            if (width < 1800)
-            {
-                ApplicationView.GetForCurrentView().TryResizeView(new Size(1800, height));
-            }
-
-            // Si la altura es menor que 600, ajusta la altura a 600
-            if (height < 1000)
-            {
-                ApplicationView.GetForCurrentView().TryResizeView(new Size(width, 1000));
-            }
-        }
+        
         private void RichTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // Implement logic to adjust font size based on RichTextBlock's size
@@ -131,6 +116,8 @@ namespace App_Pokemon
             {
                 new DracofireGDLRS(),
                 new GengarJCC(),
+                //new CharizardASM.CharizardASM(), a pesar de arreglarlo sigue petando el programa pero no da error parece magia
+                //new ButterFreeACC.ButterFreeACC(), igual: no funciona a pesar de no dar error
                 new MyUCLucario(),
                 new DragoniteCSD(),
                 new ArticunoACG(),
@@ -138,6 +125,7 @@ namespace App_Pokemon
                 new ChandelureNDAA(),
                 new SnorlaxROC(),
                 new ScizorAPJ(),
+                new piplupUserControl.PiplupMLTN(),
                 new MakuhitaAPQ2()
 
             };
@@ -187,6 +175,7 @@ namespace App_Pokemon
                 SnorlaxROC _ => new SnorlaxROC(),
                 ScizorAPJ _ => new ScizorAPJ(),
                 MakuhitaAPQ2 _ => new MakuhitaAPQ2(),
+                piplupUserControl.PiplupMLTN _ => new piplupUserControl.PiplupMLTN(),
                 _ => throw new InvalidOperationException("Tipo de Pokémon no soportado"),
             };
 
@@ -202,5 +191,21 @@ namespace App_Pokemon
             return control;
         }
 
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // Obtiene el ancho y el alto actual de la ventana
+            double width = e.NewSize.Width;
+            double height = e.NewSize.Height;
+
+            // Si el ancho es menor que 1800, ajusta el ancho a 1800
+            if (width < 1800 || height < 1000)
+            {
+                double newWidth = width < 1800 ? 1800 : width;
+                double newHeight = height < 1000 ? 1000 : height;
+
+                // Redimensiona la ventana a las dimensiones mínimas permitidas
+                ApplicationView.GetForCurrentView().TryResizeView(new Size(newWidth, newHeight));
+            }
+        }
     }
 }

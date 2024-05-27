@@ -199,14 +199,13 @@ namespace CharizardASM
 
         public void verFondo(bool ver)
         {
-            Image background = this.FindName("background") as Image;
             if (ver)
             {
-                background.Visibility = Visibility.Visible;
+                background_imagen.Visibility = Visibility.Visible;
             }
             else
             {
-                background.Visibility = Visibility.Collapsed;
+                background_imagen.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -242,10 +241,12 @@ namespace CharizardASM
             if (ver)
             {
                 green_potion.Visibility = Visibility.Visible;
+                imagenVida.Visibility = Visibility.Visible;
             }
             else
             {
                 green_potion.Visibility = Visibility.Collapsed;
+                imagenVida.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -255,10 +256,12 @@ namespace CharizardASM
             if (ver)
             {
                 blue_potion.Visibility = Visibility.Visible;
+                imagenEnergia.Visibility = Visibility.Visible;
             }
             else
             {
                 blue_potion.Visibility = Visibility.Collapsed;
+                imagenEnergia.Visibility = Visibility.Collapsed;
             }
         }
 

@@ -18,9 +18,9 @@
     xmlns:my10="using:OrtizCañameroRoberto_Snorlax"
     xmlns:my11="using:Scizor_AdrianPeinado"
     xmlns:my12="using:PokemonIPO2"
-    
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    SizeChanged="Page_SizeChanged">
 
     <Grid>
         <Grid.Background>

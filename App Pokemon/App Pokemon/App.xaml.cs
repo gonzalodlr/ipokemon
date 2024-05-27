@@ -1,6 +1,7 @@
 ﻿using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -48,6 +49,8 @@ namespace App_Pokemon
                 }
                 Window.Current.Activate();
             }
+            // Establecer el tamaño mínimo de la ventana
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1800, 1000));
         }
 
         private void OnNavigated(object sender, NavigationEventArgs e)

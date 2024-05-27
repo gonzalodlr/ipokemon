@@ -234,10 +234,7 @@ namespace PokemonNoelia
 
         public void animacionDescasar()
         {
-            sbaux = (Storyboard)this.Resources["Vida"];
-            sbaux.Begin();
-            mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsChandelureNDAA/VidaSonidoFeliz.mp4"));
-            mpSonidos.Play();
+            
         }
 
         public void animacionHerido()

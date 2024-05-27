@@ -5,7 +5,7 @@
     xmlns:local="using:piplupUserControl"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="1080" Width="1635">
+    mc:Ignorable="d">
 
     <UserControl.Resources>
         <Storyboard x:Name="ataqueFuerte_RayoBurbuja">
@@ -1145,7 +1145,7 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid x:Name="Grid_General" FocusVisualPrimaryBrush="{x:Null}">
+    <Grid x:Name="Grid_General">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="127*"/>
             <ColumnDefinition Width="1220*"/>
@@ -1169,8 +1169,8 @@
         <Image x:Name="simbolo_energia" HorizontalAlignment="Left" Height="105" VerticalAlignment="Center" Width="115" Grid.Row="1" Source="/AssetsPiplupMLTN/energia_sin_fondo.png" Margin="10,0,0,0"/>
         <Image x:Name="pocion_vida" HorizontalAlignment="Left" Height="81" VerticalAlignment="Center" Width="82" Grid.Column="2" Source="/AssetsPiplupMLTN/pocion_roja_sin_fondo.png" PointerReleased="pocion_vida_PointerReleased" Margin="37,0,0,0"/>
         <Image x:Name="pocion_energia" HorizontalAlignment="Center" Height="101" VerticalAlignment="Center" Width="139" Grid.Column="2" Source="/AssetsPiplupMLTN/pocion_amarilla_sin_fondo.png" RenderTransformOrigin="0.505,0.613" Stretch="Fill" PointerReleased="pocion_energia_PointerReleased" Grid.Row="1"/>
-        <Grid Grid.ColumnSpan="2" Margin="127,0,0,0" Grid.Row="2">
-            <Canvas x:Name="piplup" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="400" Margin="410,318,0,0" RenderTransformOrigin="0.5,0.5">
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Canvas x:Name="piplup" Height="400" Width="400" RenderTransformOrigin="0.5,0.5">
                 <Canvas.RenderTransform>
                     <CompositeTransform/>
                 </Canvas.RenderTransform>
@@ -1352,7 +1352,8 @@
                     </Path>
                 </Canvas>
             </Canvas>
-            <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="624,456,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Source="/AssetsPiplupMLTN/rayo_burbuja_sin_fondo.png" Stretch="Fill" Opacity="0">
+        </Viewbox>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="624,456,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Source="/AssetsPiplupMLTN/rayo_burbuja_sin_fondo.png" Stretch="Fill" Opacity="0">
                 <Image.FocusVisualPrimaryBrush>
                     <ImageBrush/>
                 </Image.FocusVisualPrimaryBrush>
@@ -1505,7 +1506,6 @@
                     <CompositeTransform/>
                 </Image.RenderTransform>
             </Image>
-        </Grid>
         <TextBlock x:Name="txtNombre" Grid.Column="1" HorizontalAlignment="Left" Margin="545,752,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Piplup" VerticalAlignment="Top" Height="62" Width="132" FontSize="40"/>
 
     </Grid>

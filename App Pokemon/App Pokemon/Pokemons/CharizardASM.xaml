@@ -784,15 +784,15 @@
             <RowDefinition Height="70*" />
             <RowDefinition Height="10*" />
         </Grid.RowDefinitions>
-        <Rectangle Stroke="Black" Grid.ColumnSpan="3" Grid.RowSpan="4">
+        <Rectangle x:Name="background_imagen" Stroke="Black" Grid.ColumnSpan="3" Grid.RowSpan="4">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/AssetsCharizardASM/CharizardASM/background.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <ProgressBar x:Name="pb_heal"  Grid.Column="1" Grid.Row="0" Background="#7FFF0000" Value="70" Foreground="Red" VerticalAlignment="Stretch" Margin="20,10,20,10"/>
         <ProgressBar x:Name="pb_energy"  Grid.Column="1" Grid.Row="1" Margin="20,10,20,10" Background="#66D2D200" Foreground="Yellow" Value="75" VerticalAlignment="Stretch"/>
-        <Image Grid.Row="0" Grid.Column="0" Source="/AssetsCharizardASM/CharizardASM/heart.png"/>
-        <Image Grid.Row="1" Grid.Column="0" Source="/AssetsCharizardASM/CharizardASM/shield.png"/>
+        <Image x:Name="imagenVida" Grid.Row="0" Grid.Column="0" Source="/AssetsCharizardASM/CharizardASM/heart.png"/>
+        <Image x:Name="imagenEnergia" Grid.Row="1" Grid.Column="0" Source="/AssetsCharizardASM/CharizardASM/shield.png"/>
         <Image x:Name="green_potion" Grid.Row="0" Grid.Column="2" Source="/AssetsCharizardASM/CharizardASM/green_potion.png" PointerReleased="green_potion_PointerReleased"/>
         <Image x:Name="blue_potion" Grid.Row="1" Grid.Column="2" Source="/AssetsCharizardASM/CharizardASM/blue_potion.png"/>
         <TextBlock x:Name="name" Grid.Column="1" Grid.Row="3" Text="Charizard" Margin="50,0,50,2" FontSize="50" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="White" FocusVisualSecondaryBrush="#99FFFFFF" FocusVisualPrimaryBrush="White" SelectionHighlightColor="#FF684D6F"/>

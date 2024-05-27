@@ -44,10 +44,17 @@ namespace App_Pokemon
             myMap.ZoomLevel = 6;
 
             // Define las coordenadas de las ciudades
-            AddMapIcon(new BasicGeoposition() { Latitude = 40.416775, Longitude = -3.703790 }, "Madrid", "DracoFire");
-            AddMapIcon(new BasicGeoposition() { Latitude = 39.862831, Longitude = -4.027323 }, "Toledo", "Gengar");
-            AddMapIcon(new BasicGeoposition() { Latitude = 38.984783, Longitude = -3.927045 }, "Ciudad Real", "Toxicroac");
-            AddMapIcon(new BasicGeoposition() { Latitude = 43.361914, Longitude = -5.849389 }, "Asturias", "Articuno");
+            AddMapIcon(new BasicGeoposition() { Latitude = 40.416775, Longitude = -3.703790 }, "Madrid - DracoFire", "DracoFire");
+            AddMapIcon(new BasicGeoposition() { Latitude = 39.862831, Longitude = -4.027323 }, "Toledo - Gengar", "Gengar");
+            AddMapIcon(new BasicGeoposition() { Latitude = 38.984783, Longitude = -3.927045 }, "Ciudad Real - Toxicroack", "Toxicroac");
+            AddMapIcon(new BasicGeoposition() { Latitude = 43.361914, Longitude = -5.849389 }, "Asturias - Articuno", "Articuno");
+            AddMapIcon(new BasicGeoposition() { Latitude = 41.149610, Longitude = -8.611000 }, "Oporto - Chandelure", "Chandelure");
+            AddMapIcon(new BasicGeoposition() { Latitude = 43.263012, Longitude = -2.934985 }, "Bilbao - Charizard", "Charizard");
+            AddMapIcon(new BasicGeoposition() { Latitude = 37.176487, Longitude = -3.597929 }, "Granada - Dragonite", "Dragonite");
+            AddMapIcon(new BasicGeoposition() { Latitude = 37.992240, Longitude = -1.130654 }, "Murcia - Snorlax", "Snorlax");
+            AddMapIcon(new BasicGeoposition() { Latitude = 41.385064, Longitude = 2.173404 }, "Barcelona - Lucario", "Lucario");
+            AddMapIcon(new BasicGeoposition() { Latitude = 39.469907, Longitude = -0.376288 }, "Valencia - Makuhita", "Makuhita");
+            AddMapIcon(new BasicGeoposition() { Latitude = 37.261421, Longitude = -6.944722 }, "Huelva - Scizor", "Scizor");
 
             myMap.MapElementClick += MapControl_MapElementClick;
         }
@@ -72,23 +79,50 @@ namespace App_Pokemon
             if (args.MapElements.FirstOrDefault() is MapIcon clickedIcon)
             {
 
-                if (clickedIcon.Title.ToString() == "Madrid")
+                if (clickedIcon.Title.ToString() == "Madrid - DracoFire")
                 {
                     Frame.Navigate(typeof(CapturarPage), "DracoFire");
                 }
-                else if (clickedIcon.Title.ToString() == "Toledo")
+                else if (clickedIcon.Title.ToString() == "Toledo - Gengar")
                 {
                     Frame.Navigate(typeof(CapturarPage), "Gengar");
                 }
-                else if (clickedIcon.Title.ToString() == "Asturias")
+                else if (clickedIcon.Title.ToString() == "Asturias - Articuno")
                 {
                     Frame.Navigate(typeof(CapturarPage), "Articuno");
                 }
-                else if (clickedIcon.Title.ToString() == "Ciudad Real")
+                else if (clickedIcon.Title.ToString() == "Ciudad Real - Toxicroack")
                 {
                     Frame.Navigate(typeof(CapturarPage), "Toxicroac");
                 }
-
+                else if (clickedIcon.Title.ToString() == "Oporto - Chandelure")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Chandelure");
+                }
+                else if (clickedIcon.Title.ToString() == "Bilbao - Charizard")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Charizard");
+                }
+                else if (clickedIcon.Title.ToString() == "Granada - Dragonite")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Dragonite");
+                }
+                else if (clickedIcon.Title.ToString() == "Murcia - Snorlax")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Snorlax");
+                }
+                else if (clickedIcon.Title.ToString() == "Barcelona - Lucario")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Lucario");
+                }
+                else if (clickedIcon.Title.ToString() == "Valencia - Makuhita")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Makuhita");
+                }
+                else if (clickedIcon.Title.ToString() == "Huelva - Scizor")
+                {
+                    Frame.Navigate(typeof(CapturarPage), "Scizor");
+                }
             }
         }
 
