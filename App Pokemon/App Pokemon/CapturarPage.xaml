@@ -129,7 +129,7 @@
         <Button Content="Usar pokeball" Grid.Column="3" Grid.Row="3" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="4" Grid.ColumnSpan="2" Width="400" Height="200" CornerRadius="40,40,40,40" Background="#FF8DC666" FontSize="48" Foreground="Black" FontFamily="Comic Sans MS"/>
         <Button x:Name="btn_Huir" Content="Huir" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="4" Grid.ColumnSpan="2" Width="400" Height="200" CornerRadius="40,40,40,40" Background="#FFAB2828" FontSize="48" Click="btn_Huir_Click" FontFamily="Comic Sans MS"/>
 
-        <ProgressBar x:Name="pbFuerza" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Height="25" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderBrush="Black">
+        <ProgressBar x:Name="pbFuerza" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Height="25" UseLayoutRounding="False" d:LayoutRounding="Auto" BorderBrush="Black" Visibility="Collapsed">
             <ProgressBar.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Transparent"/>
