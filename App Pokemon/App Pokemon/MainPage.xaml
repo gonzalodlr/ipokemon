@@ -4,12 +4,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:NavigationView="using:Microsoft.UI.Xaml.Controls"
-
     x:Class="App_Pokemon.MainPage"
     mc:Ignorable="d">
 
     <Grid>
-        
         <Grid.Background>
             <ImageBrush Opacity="0.80" Stretch="UniformToFill" ImageSource="/Assets/home1.jpg"/>
         </Grid.Background>
@@ -54,27 +52,33 @@
                         <TextBlock x:Name="titulo" TextWrapping="Wrap"  Text="iPokemon" VerticalAlignment="Top" Foreground="White" FontSize="72" FontFamily="Segoe UI" FontWeight="Bold" TextAlignment="Center" Width="980"/>
                     </Viewbox>
 
-                    <StackPanel Grid.Row="4" Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Spacing="80" Margin="0,115,0,20">
-                        <Border x:Name="borderPokedex" CornerRadius="30" Background="Transparent" Width="150" Height="150" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
-                            <Image Source="/Assets/imgMainPage/pokedex.png" Width="140" Height="140" Stretch="UniformToFill" Tapped="Pokedex_Tapped" ToolTipService.ToolTip="Ir a Pokedex" />
+                    <Grid Grid.Row="4" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,115,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="borderPokedex" CornerRadius="30" Background="Transparent" Grid.Column="0" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited" Margin="40,0">
+                            <Image Source="/Assets/imgMainPage/pokedex.png" Width="140" Height="140" Stretch="UniformToFill" Tapped="Pokedex_Tapped" ToolTipService.ToolTip="Ir a Pokedex" Margin="5"/>
                         </Border>
-                        <Border x:Name="borderCaptura" CornerRadius="30" Background="Transparent" Width="150" Height="150" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
-                            <Image Source="/Assets/imgCaptura/capturarImage.jpg" Width="140" Height="140" Stretch="UniformToFill" Tapped="Capturar_Tapped" ToolTipService.ToolTip="Ir a Capturar" />
+                        <Border x:Name="borderCaptura" CornerRadius="30" Background="Transparent" Grid.Column="1" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited" Margin="40,0">
+                            <Image Source="/Assets/imgCaptura/capturarImage.jpg" Width="140" Height="140" Stretch="UniformToFill" Tapped="Capturar_Tapped" ToolTipService.ToolTip="Ir a Capturar" Margin="5"/>
                         </Border>
-                        <Border x:Name="borderCombate" CornerRadius="30" Background="Transparent" Width="150" Height="150" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
-                            <Image Source="/Assets/imgMainPage/pelea.jpg" Width="135" Height="135" Stretch="UniformToFill" Tapped="Pelea_Tapped" ToolTipService.ToolTip="Ir a Combates" />
+                        <Border x:Name="borderCombate" CornerRadius="30" Background="Transparent" Grid.Column="2" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited" Margin="40,0">
+                            <Image Source="/Assets/imgMainPage/pelea.jpg" Width="135" Height="135" Stretch="UniformToFill" Tapped="Pelea_Tapped" ToolTipService.ToolTip="Ir a Combates" Margin="5"/>
                         </Border>
-                        <Border x:Name="borderMisPokemon" CornerRadius="30" Background="Transparent" Width="150" Height="150" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
-                            <Image Source="/Assets/imgMainPage/mispokemon.jpg" Width="140" Height="140" Stretch="UniformToFill" Tapped="Pokemons_Tapped" ToolTipService.ToolTip="Ir a MisPokemon" />
+                        <Border x:Name="borderMisPokemon" CornerRadius="30" Background="Transparent" Grid.Column="3" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited" Margin="40,0">
+                            <Image Source="/Assets/imgMainPage/mispokemon.jpg" Width="140" Height="140" Stretch="UniformToFill" Tapped="Pokemons_Tapped" ToolTipService.ToolTip="Ir a MisPokemon" Margin="5"/>
                         </Border>
-                        <Border x:Name="borderDudas" CornerRadius="30" Background="Transparent" Width="150" Height="150" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited">
-                            <Image Source="/Assets/imgMainPage/dudas.png" Width="140" Height="140" Stretch="UniformToFill" Tapped="Dudas_Tapped" ToolTipService.ToolTip="Ir a Acerca de" />
+                        <Border x:Name="borderDudas" CornerRadius="30" Background="Transparent" Grid.Column="4" PointerEntered="Border_PointerEntered" PointerExited="Border_PointerExited" Margin="40,0">
+                            <Image Source="/Assets/imgMainPage/dudas.png" Width="140" Height="140" Stretch="UniformToFill" Tapped="Dudas_Tapped" ToolTipService.ToolTip="Ir a Acerca de" Margin="5"/>
                         </Border>
-                    </StackPanel>
-
+                    </Grid>
                 </Grid>
             </Frame>
         </NavigationView>
-
     </Grid>
 </Page>
+
