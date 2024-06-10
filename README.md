@@ -4,7 +4,7 @@
 
 <h1 align="center"> IPOkemon </h1>
 
-![Home page](doc/screenshoots/home.png)
+![Home page](screenshoots/inicio.png)
 
 ## ¿En qué consiste este proyecto?
 
@@ -20,7 +20,7 @@ _Herramientas tecnológicas utilizadas para crear el proyecto:_
 
 - [Git](https://git-scm.com/downloads) - Para el control de versiones
 - [Visual Studio](https://visualstudio.microsoft.com/es/downloads/) - IDE de la aplicación
-- [xalm](https://learn.microsoft.com/es-es/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0) - Lenguaje de marcado para la interfaz
+- [Xalm](https://learn.microsoft.com/es-es/dotnet/desktop/wpf/xaml/?view=netdesktop-8.0) - Lenguaje de marcado para la interfaz
 - [C#](https://learn.microsoft.com/es-es/dotnet/csharp/) - Lenguaje programación
 
 ### Pre-requisitos 📋
@@ -42,6 +42,36 @@ Abrir el archivo "App Pokemon.sln" y ejecutar el proyecto.
 ## Contribuyendo 🖇️
 
 Si quiere contribuir, contacte conmigo.
+
+## Tutorial
+
+### Página Pokedex
+
+![Pokedex](screenshoots/pokedex.png)
+
+### Página Pokemons
+
+![Pokemons](screenshoots/pokemons.png)
+
+### Página Elegir Pokemon Combate
+
+![Elegir Pokemon Combate](screenshoots/escogerCombate.png)
+
+### Página Combate
+
+![Combate](screenshoots/combate.png)
+
+### Usando ataque flojo:
+
+![Ataque Flojo](screenshoots/ataques.png)
+
+### Página Mapa de Captura
+
+![Mapa de Captura](screenshoots/mapa.png)
+
+### Página Captura Pokemon
+
+![Capturar](screenshoots/capturar.png)
 
 ## Autores ✒️
 
